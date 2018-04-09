@@ -5,16 +5,20 @@
   min-width: 100%;
   padding-right: 25px;
   padding-left: 25px;
+    padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 #about-section {
 /*   min-height: 50vh; */
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 #projects-section {
   background: #808e95;
   color: white;
-  padding-top: 20px;
+  padding-top: 40px;
   padding-bottom: 40px;
 /*   min-height: 75vh; */
 }
@@ -37,10 +41,12 @@
 
 #contact-section {
 /*   min-height: 50vh; */
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 #contact-section h3 {
-  padding-top: 20px;
+  padding-top: 40px;
   padding-bottom: 40px;
   margin-bottom: 10px;
 }
@@ -54,7 +60,7 @@ html {
 body {
   /* Margin bottom by footer height */
     margin-bottom: 60px;
-    padding-top: 5rem;
+    /*padding-top: 5rem;*/
 }
 
 .footer {
