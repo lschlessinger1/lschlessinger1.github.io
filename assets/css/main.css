@@ -21,6 +21,7 @@
 
 #projects-section img {
   width:100%;
+  max-height: 350px;
   object-fit: contain;
 /*   margin: 0 35px; */
 }
