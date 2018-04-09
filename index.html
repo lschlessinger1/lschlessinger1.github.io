@@ -1,85 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Carlos Alvarez, Theme designer & developer living in Madrid, Spain.">
-    <meta name="author" content="Carlos Alvarez">
-    <link rel="shortcut icon" href="assets/ico/favicon.png">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Louis Schlessinger">
+      <meta name="author" content="Louis Schlessinger">
+      <link rel="icon" href="assets/ico/favicon.png">
+      <title>Lou Schlessinger</title>
+      <!-- Bootstrap core CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <!-- Custom styles for this template -->
+      <link href="assets/css/main.css" rel="stylesheet">
+   </head>
+   <body data-spy="scroll" data-target=".navbar" data-offset="50">
+      <main role="main">
+         <nav id="main-navbar" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#intro-section">Lou Schlessinger</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+               <ul class="navbar-nav">
+                  <li class="nav-item">
+                     <a class="nav-link" href="#about-section">About</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#projects-section">Projects</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#contact-section">Contact</a>
+                  </li>
+               </ul>
+            </div>
+         </nav>
+         <section id="intro-section" class="text-center">
+            <h1 class="display-4">Lou Schlessinger</h1>
+            <p class="lead">Full-stack Developer</p>
+         </section>
+         <section id="about-section">
+            <div class="container">
+               <h3 id="about" class="display-4">About</h3>
+               <p class="lead">
+                  Hello!
+                  <br><br>
+                  My name is Lou Schlessinger.
+                  <br><br>
+                  I’m an engineering student at <a href="https://wustl.edu">Washington University in St. Louis</a>. I study computer science and will be graduating in December 2018. I like making, thinking, and developing.
+               </p>
+            </div>
+         </section>
+         <section id="projects-section">
+            <div class="container">
+               <h3 id="projects" class="display-4" >Projects</h3>
+               <div class="row">
+                  <div class="col-md-4">
+                     <h4 class="text-center">Procedural Terrain Generation</h4>
+                     <div class="container">
+                        <img class="border border-white" src="assets/img/fractal_terrain_img.png" />
+                     </div>
+                     <div class="container text-center btn-container">
+                        <a href="https://lschlessinger1.github.io/fractalTerrainGeneration/main.html" class="btn btn-light">View Project</a>
+                     </div>
+                  </div>
+                  <div class="col-md-4">
+                     <h4 class="text-center">TraffickCam Android App</h4>
+                     <div class="container">
+                        <img class="border border-white" src="assets/img/traffickcam_main_activity.png" />
+                     </div>
+                     <div class="container text-center btn-container">
+                        <a href="https://play.google.com/store/apps/details?id=com.exchangeinitiative.traffickcam" class="btn btn-light">View On Google Play Store</a>
+                     </div>
+                  </div>
+                  <div class="col-md-4">
+                     <h4 class="text-center">Global Terrorism Database Clustering</h4>
+                     <div class="container">
+                        <img class="border border-white" src="assets/img/gtd_img.png" />
+                     </div>
+                     <div class="container text-center btn-container">
+                        <a href="https://github.com/lschlessinger1/Global-Terrorism-Database-K-Means" class="btn btn-light">View Project</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-4">
+                     <h4 class="text-center">SnackHack</h4>
+                     <div class="container">
+                        <img class="border border-white" src="assets/img/snackhack.jpg" />
+                     </div>
+                     <div class="container text-center btn-container">
+                        <a href="https://devpost.com/software/snackhack" class="btn btn-light">View Project</a>
+                     </div>
+                  </div>
+                  <div class="col-md-4">
+                     <h4 class="text-center">Algorithms</h4>
+                     <div class="container">
+                        <img class="border border-white" src="assets/img/code.png" />
+                     </div>
+                     <div class="container text-center btn-container">
+                        <a href="https://github.com/lschlessinger1/Algorithms" class="btn btn-light">View on GitHub</a>
+                     </div>
+                  </div>
+                  <div class="col-md-4">
+                     <h4 class="text-center">Electoral Map</h4>
+                     <div class="container">
+                        <img class="border border-white" src="assets/img/electoral-map.png" />
+                     </div>
+                     <div class="container text-center btn-container">
+                        <a href="https://lschlessinger1.github.io/electoral-map/main.html" class="btn btn-light">View Project</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section id="contact-section">
+            <div class="container">
+               <h3 id="contact" class="display-4">Contact</h3>
+               <div class="social-btn-group text-center">
+                  <a href="https://github.com/lschlessinger1"><i id="social-gh" class="fa fa-github-square fa-3x"></i></a>
+                  <a href="https://www.linkedin.com/pub/lou-schlessinger/3b/4a6/b36"><i id="social-li" class="fa fa-linkedin-square fa-3x"></i></a>
+                  <a href="https://twitter.com/louschlessinger"><i id="social-tw" class="fa fa-twitter-square fa-3x"></i></a>
+                  <a href="https://plus.google.com/u/0/102780967967707380413/posts"><i id="social-gp" class="fa fa-google-plus-square fa-3x"></i></a>
+                  <a href="mailto:louschlessinger96@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x"></i></a>
+               </div>
+            </div>
+         </section>
+      </main>
 
-    <title>Louis Schlessinger</title>
+      <footer class="footer">
+         <div class="container text-center">
+            <p class="text-muted">
+               &copy 2018 Louis Schlessinger
+            </p>
+         </div>
+      </footer>
 
-    <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
-
-
-    <!-- Custom styles for this template -->
-    <link href="assets/css/main.css" rel="stylesheet">
-    
-    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
-
-  </head>
-
-  <body>
-
-
-    <div class="container">
-    	<div class="logo">
-	    	<!--<img src="assets/img/logo.png" width="100" alt="BlackTie.co">-->
-    	</div>
-		<div class="row centered">
-			<div class="col-lg-8 col-lg-offset-2 w">
-				<h1>Louis<br/>Schlessinger</h1>
-			</div>
-		</div>
-		<div class="row centered">
-			<div class="col-lg-8 col-lg-offset-2 w tooltip-demo">
-				<a data-toggle="tooltip" title="Email Me!" href="mailto:louschlessinger96@gmail.com"><i class="fa fa-envelope"></i></a>
-				<a data-toggle="tooltip" title="LinkedIn" href="https://www.linkedin.com/pub/lou-schlessinger/3b/4a6/b36"><i class="fa fa-linkedin"></i></a>
-				<a data-toggle="tooltip" title="Github" href="https://github.com/lschlessinger1"><i class="fa fa-github"></i></a>
-				<a data-toggle="tooltip" title="Stack Overflow" href="http://stackoverflow.com/users/2554416/lschessinger"><i class="fa fa-stack-overflow"></i></a>
-				<a data-toggle="tooltip" title="Twitter" href="https://twitter.com/louschlessinger"><i class="fa fa-twitter"></i></a>
-				<a data-toggle="tooltip" title="Facebook" href="https://www.facebook.com/lschlessinger"><i class="fa fa-facebook"></i></a>
-				<a data-toggle="tooltip" title="Google+" href="https://plus.google.com/u/0/102780967967707380413/posts"><i class="fa fa-google-plus"></i></a>
-				<a data-toggle="tooltip" title="YouTube" href="http://www.youtube.com/channel/UCi_qPY3LUhdxXp8z09JZcXA"><i class="fa fa-youtube"></i></a>
-				<a data-toggle="tooltip" title="Flickr" href="https://www.flickr.com/photos/65796662@N04/"><i class="fa fa-flickr"></i></a>
-			</div>
-		</div>
-    </div><!-- /.container -->
-    
-    <div class="container">
-    	<div class="row w centered">
-    		<br>		
-    		<div class="col-lg-6 col-lg-offset-3">
-    			<p><!-- insert text here at some point --></p>
-    		</div>
-    	</div>
-    </div>
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-
-    <script>
-    $('.tooltip-demo').tooltip({
-      selector: "[data-toggle=tooltip]",
-      container: "body"
-    })
-	</script>
-
-
-    <!--BACKSTRETCH-->
-    <!-- This can be an image of any size. This script will stretch to fit in any screen size.-->
-    <script type="text/javascript" src="assets/js/jquery.backstretch.min.js"></script>
-    <script>
-        $.backstretch("assets/img/bg.jpg", {speed: 500});
-    </script>
-
-  </body>
+      <!-- Bootstrap core JavaScript
+         ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <script src="main.js"></script>
+   </body>
 </html>
