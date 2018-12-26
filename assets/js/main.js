@@ -7,7 +7,7 @@ function smoothScroll(e) {
     e.preventDefault();
 
     // store hash
-    var hash = this.hash;
+    const hash = this.hash;
 
     // animate
     $('html, body').animate({
