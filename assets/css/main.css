@@ -19,18 +19,25 @@
     padding-bottom: 60px;
 }
 
-#projects-section img {
+#projects-section img, #research-section img {
     width: 100%;
     height: 300px;
     object-fit: contain;
 }
 
-#projects-section .btn-container {
+#projects-section .btn-container,  #research-section .btn-container{
     margin-top: 15px;
     margin-bottom: 15px;
 }
 
-#projects-section .row {
+#research-section {
+    background: #F9F7F7;
+    color: black;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+#research-section .row {
     margin-bottom: 60px;
 }
 
@@ -41,6 +48,7 @@
 }
 
 #projects,
+#research,
 #about,
 #contact {
     padding-bottom: 40px;
