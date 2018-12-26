@@ -1,5 +1,6 @@
 #intro-section {
-    background: #3F72AF;
+    background-image: url("../img/bg_header.png");
+    background-color: #3F72AF;
     color: white;
     min-width: 100%;
     padding: 20% 25px;
