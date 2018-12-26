@@ -5,6 +5,15 @@
     padding: 20% 25px;
 }
 
+#full-name {
+    padding: 10px 0;
+    font-weight: bold;
+}
+
+#tagline {
+    font-weight: bolder;
+}
+
 #about-section {
     background: #F9F7F7;
     color: black;
