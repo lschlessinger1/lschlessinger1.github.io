@@ -5,11 +5,15 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-41897305-3"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
 
-      gtag('config', 'UA-41897305-3');
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-41897305-3');
     </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,232 +22,328 @@
     <link rel="icon" href="assets/ico/favicon.png">
     <title>Lou Schlessinger</title>
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Custom styles for this template -->
     <link href="assets/css/main.css" rel="stylesheet">
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
-    <main>
-        <nav id="main-navbar" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <a class="navbar-brand" href="#intro-section">Lou Schlessinger</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about-section">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects-section">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#research-section">Research</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact-section">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <section id="intro-section" class="text-center">
-            <h1 id="full-name" class="display-4">Lou Schlessinger</h1>
-            <p id="tagline" class="lead">Full-stack Developer</p>
-        </section>
-        <section id="about-section">
-            <div class="container">
-                <h2 id="about" class="display-4">About</h2>
-                <p class="lead">
-                    Hello!
-                    <br>
-                    <br> My name is Lou Schlessinger.
-                    <br>
-                    <br> I was a student at <a href="https://wustl.edu">Washington University in St. Louis</a> studying
-                    computer science and physics. I graduated in December 2018 with a Master's in computer science.
-                    My concentration is in data mining and machine learning. I am currently working on my
-                    <a href="https://github.com/lschlessinger1/MS-project">Master's Project</a> in automated machine
-                    learning.
-                </p>
-            </div>
-        </section>
-        <section id="projects-section">
-            <div class="container">
-                <h2 id="projects" class="display-4">Projects</h2>
-
-                <div class="row">
-                    <div class="col-md-5 bg-white mb-3">
-                        <div class="img-container">
-                            <img src="assets/img/fractal_terrain_img.png"  alt="fractal terrain"
-                                 title="An example terrain that was procedurally generated"/>
-                        </div>
-                        <p class="text-muted"><span class="font-weight-bold">Procedural Terrain Generation</span>&nbsp;&nbsp; After reading about fractals and their applications in technology, I learned about fractal terrain generation and how it can be used to create stunningly realistic landscapes using a relatively simple algorithm. I created a WebGL rendering implementation of a terrain generator that was based on a 3d-projected terrain map on a canvas element implementation. It uses the <a href="https://en.wikipedia.org/wiki/Diamond-square_algorithm">Diamond Square Algorithm</a> to procedurally generate terrain.</p>
-                        <div class="container text-center btn-container">
-                            <a href="https://lschlessinger1.github.io/fractalTerrainGeneration/main.html" class="btn btn-primary">View Project</a>
-                        </div>
-                    </div>
-                    <div class="col-md-5 offset-md-2 bg-white mb-3">
-                        <div class="img-container">
-                            <img class="border border-white" src="assets/img/image_quilting.png"
-                                 alt="Image quilting synthesis results" title="Image quilting synthesis results. For each pair of images, the left is the original one, and the right is the synthesized one."/>
-                        </div>
-                        <p class="text-muted"><span class="font-weight-bold">Image Quilting</span>&nbsp;&nbsp;An implementation of "Image Quilting for Texture Synthesis and Transfer" (Elfros & Freeman, 2001).</p>
-                        <div class="container text-center btn-container">
-                            <a href="https://github.com/lschlessinger1/image-quilting" class="btn btn-primary">View on GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-5 bg-white mb-3">
-                        <div class="img-container">
-                            <img class="border border-white" src="assets/img/income.png"
-                                 alt="Correlation matrix of adult dataset" title="A correlation matrix of features"/>
-                        </div>
-                        <p class="text-muted"><span class="font-weight-bold">Income Prediction</span>&nbsp;&nbsp;An evaluation of several machine learning methods applied to the Adult Data Set to predict income.</p>
-                        <div class="container text-center btn-container">
-                            <a href="https://github.com/lschlessinger1/Income-Prediction" class="btn btn-primary">View on GitHub</a>
-                        </div>
-                    </div>
-                    <div class="col-md-5 offset-md-2 bg-white mb-3">
-                        <div class="img-container">
-                            <img src="assets/img/gtd_img.png"  alt="Global Terrorism Database clustering"
-                            title="A geo-clustering of terrorist incidents (k = 5)"/>
-                        </div>
-                        <p class="text-muted"><span class="font-weight-bold">Global Terrorism Geo-Clustering in Spark</span>&nbsp;&nbsp; A visualization of k-means clustering on terrorist attack locations. It contains more than 170,000 terrorist attacks from all over the world from 1970 to 2016. I implemented k-means in PySpark to cluster the different geo-locations of the terrorist attacks.</p>
-                        <div class="container text-center btn-container">
-                            <a href="https://github.com/lschlessinger1/Global-Terrorism-Database-K-Means" class="btn btn-primary">View on GitHub</a>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="row">
-                    <div class="col-md-5 bg-white mb-3">
-                        <div class="img-container">
-                            <img class="border border-white" src="assets/img/choco_viz.png"
-                                 alt="Artisanal chocolate ratings bar chart" title="Artisanal chocolate ratings bar chart"/>
-                        </div>
-                        <p class="text-muted"><span class="font-weight-bold">Artisanal Chocolate Exploration</span>&nbsp;&nbsp;A D3 visualization of artisanal chocolate companies and ratings using expert review data from the Manhattan Chocolate Society.</p>
-                        <div class="container text-center btn-container">
-                            <a href="http://louschlessinger.com/Chocolate-Rating-Visualization/main.html" class="btn btn-primary">View Project</a>
-                        </div>
-                    </div>
-                    <div class="col-md-5 offset-md-2 bg-white mb-3">
-                        <div class="img-container">
-                            <img class="border border-white" src="assets/img/electoral_map.png"
-                                 alt="Electoral map cartogram" title="Electoral map of the 2012 election"/>
-                        </div>
-                        <p class="text-muted"><span class="font-weight-bold">Electoral Map</span>&nbsp;&nbsp;A D3 Cartogram of U.S. presidential elections ranging from 1940 - 2016.</p>
-                        <div class="container text-center btn-container">
-                            <a href="https://lschlessinger1.github.io/electoral-map/main.html" class="btn btn-primary">View Project</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-5 bg-white mb-3">
-                        <div class="img-container">
-                            <img class="border border-white" src="assets/img/code.jpg"  alt="Generic image of code"/>
-                        </div>
-                        <p class="text-muted"><span class="font-weight-bold">Algorithms</span>&nbsp;&nbsp;A collection of algorithms I have implemented in various languages consisting of topics ranging from machine learning to multi-agent systems. For example, this repository contains my implementations of AdaBoost, neural networks, the auction algorithm, etc.</p>
-                        <div class="container text-center btn-container">
-                            <a href="https://github.com/lschlessinger1/Algorithms" class="btn btn-primary">View on GitHub</a>
-                        </div>
-                    </div>
-                    <div class="col-md-5 offset-md-2 bg-white mb-3">
-                        <div class="img-container">
-                            <img class="border border-white" src="assets/img/stocks.png"  alt="Generic image of stocks"/>
-                        </div>
-                        <p class="text-muted"><span class="font-weight-bold">Bayesian Stock Price Prediction</span>&nbsp;&nbsp;An evaluation of stock price prediction algorithms using analyst ratings.</p>
-                        <div class="container text-center btn-container">
-                            <a href="https://github.com/lschlessinger1/Bayesian-Stock-Price-Prediction" class="btn btn-primary">View on GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-5 bg-white mb-3">
-                        <div class="img-container">
-                            <img src="assets/img/traffickcam_main_activity.png"
-                                 alt="Traffickcam main activity screenshot" title="Traffickcam main activity screenshot"/>
-                        </div>
-                        <p class="text-muted"><span class="font-weight-bold">TraffickCam Android App</span>&nbsp;&nbsp; An app that enables you to help combat sex trafficking by uploading photos of the hotel rooms you stay in when you travel. I developed the TraffickCam Android app on the Google Play Store while working in the Media and Machines Lab at Washington University in St. Louis. More information about TraffickCam and the Exchange Initiative is available through the website, <a href="https://traffickcam.com">traffickcam.com</a>.</p>
-                        <div class="container text-center btn-container">
-                            <a href="https://play.google.com/store/apps/details?id=com.exchangeinitiative.traffickcam" class="btn btn-primary">View On Google Play Store</a>
-                        </div>
-                    </div>
-                    <div class="col-md-5 offset-md-2 bg-white mb-3">
-                        <div class="img-container">
-                            <img src="assets/img/snackhack.jpg"  alt="Snackhack dashboard" title="Snackhack dashboard"/>
-                        </div>
-                        <p class="text-muted"><span class="font-weight-bold">SnackHack</span>&nbsp;&nbsp; A web service and Android app that leverages Twitter's Geolocation API and Wash. U. network data to provide real-time information on just how crowded every restaurant on campus is. It displays in real-time just how crowded a restaurant really is. I made this as part of a team of four students for WUHack 2014 (Washington University in St. Louis's 40-hour Hackathon). We won the <span class="font-weight-italic">Grand Prize</span> and the <span class="font-weight-italic">OpenDNS Prize</span>.</p>
-                        <div class="container text-center btn-container">
-                            <a href="https://devpost.com/software/snackhack" class="btn btn-primary">View Project</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-        <section id="research-section">
-            <div class="container">
-                <h2 id="research" class="display-4">Research</h2>
-
-                <div class="row">
-                    <div id="ms-project" class="col-md-5 bg-white mb-3">
-                        <div class="img-container">
-                            <img class="border border-white" src="assets/img/kernel_tree.png"  alt="Kernel tree"
-                                 title="An example kernel represented by a binary expression tree"/>
-                        </div>
-                        <p class="text-muted"><span class="font-weight-bold">Automated Kernel Search (in progress)</span>&nbsp;&nbsp;Automated Kernel Search using Bayesian Optimization and Evolutionary Algorithms.</p>
-                        <div class="container text-center btn-container">
-                            <a href="https://github.com/lschlessinger1/MS-project" class="btn btn-primary">View on GitHub</a>
-                        </div>
-                    </div>
-                    <div class="col-md-5 offset-md-2 bg-white mb-3">
-                        <div class="img-container">
-                            <img class="border border-white" src="assets/img/reddit_comm_detection.png"
-                                 alt="Reddit communities" title="Subreddit communities before processing"/>
-                        </div>
-                        <p class="text-muted"><span class="font-weight-bold">Reddit Community Detection</span>&nbsp;&nbsp;A survey of community detection algorithms on Reddit data described in the paper <a href="https://github.com/lschlessinger1/reddit-community-detection/blob/master/detection_and_analysis_of_subreddit_communities.pdf">Detection and Analysis of Subreddit Communities</a>.</p>
-                        <div class="container text-center btn-container">
-                            <a href="https://github.com/lschlessinger1/reddit-community-detection" class="btn btn-primary">View on GitHub</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="contact-section">
-            <div class="container">
-                <h2 id="contact" class="display-4">Contact</h2>
-                <div class="social-btn-group text-center">
-                    <a href="https://github.com/lschlessinger1"><i id="social-gh" class="fa fa-github-square fa-3x"></i></a>
-                    <a href="https://www.linkedin.com/pub/lou-schlessinger/3b/4a6/b36"><i id="social-li" class="fa fa-linkedin-square fa-3x"></i></a>
-                    <a href="mailto:louschlessinger96@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x"></i></a>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer class="footer">
-        <div class="container text-center">
-            <p class="text-muted">
-                &copy;
-                <script type="text/javascript">
-                    document.write(new Date().getFullYear());
-                </script>
-                Louis Schlessinger
+<main>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" id="main-navbar">
+        <a class="navbar-brand" href="#intro-section">Lou Schlessinger</a>
+        <button aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler"
+                data-target="#navbarCollapse" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#about-section">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects-section">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#research-section">Research</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact-section">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section class="text-center" id="intro-section">
+        <h1 class="display-4" id="full-name">Lou Schlessinger</h1>
+        <p class="lead" id="tagline">Full-stack Developer</p>
+    </section>
+    <section id="about-section">
+        <div class="container">
+            <h2 class="display-4" id="about">About</h2>
+            <p class="lead">
+                Hello!
+                <br>
+                <br> My name is Lou Schlessinger.
+                <br>
+                <br> I was a student at <a href="https://wustl.edu">Washington University in St. Louis</a> studying
+                computer science and physics. I graduated in December 2018 with a Master's in computer science.
+                My concentration is in data mining and machine learning. I am currently working on my
+                <a href="https://github.com/lschlessinger1/MS-project">Master's Project</a> in automated machine
+                learning.
             </p>
         </div>
-    </footer>
-    <!-- Bootstrap core JavaScript
-         ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="assets/js/main.js"></script>
+    </section>
+    <section id="projects-section">
+        <div class="container">
+            <h2 class="display-4" id="projects">Projects</h2>
+
+            <div class="row">
+                <div class="col-md-5 bg-white mb-3">
+                    <div class="img-container">
+                        <picture>
+                            <source srcset="assets/img/fractal_terrain_img.webp" type="image/webp">
+                            <img class="border border-white" src="assets/img/fractal_terrain_img.png"
+                                 title="An example terrain that was procedurally generated">
+                        </picture>
+                    </div>
+                    <p class="text-muted"><span class="font-weight-bold">Procedural Terrain Generation</span>&nbsp;&nbsp;
+                        After reading about fractals and their applications in technology, I learned about fractal
+                        terrain generation and how it can be used to create stunningly realistic landscapes using a
+                        relatively simple algorithm. I created a WebGL rendering implementation of a terrain generator
+                        that was based on a 3d-projected terrain map on a canvas element implementation. It uses the <a
+                                href="https://en.wikipedia.org/wiki/Diamond-square_algorithm">Diamond Square
+                            Algorithm</a> to procedurally generate terrain.</p>
+                    <div class="container text-center btn-container">
+                        <a class="btn btn-primary"
+                           href="https://lschlessinger1.github.io/fractalTerrainGeneration/main.html">View Project</a>
+                    </div>
+                </div>
+                <div class="col-md-5 offset-md-2 bg-white mb-3">
+                    <div class="img-container">
+                        <picture>
+                            <source srcset="assets/img/image_quilting.webp" type="image/webp">
+                            <img class="border border-white" src="assets/img/image_quilting.png"
+                                 alt="Image quilting synthesis results" title="Image quilting synthesis results. For
+                                   each pair of images, the left is the original one, and the right is the synthesized
+                                   one.">
+                        </picture>
+                    </div>
+                    <p class="text-muted"><span class="font-weight-bold">Image Quilting</span>&nbsp;&nbsp;An
+                        implementation of "Image Quilting for Texture Synthesis and Transfer" (Elfros & Freeman, 2001).
+                    </p>
+                    <div class="container text-center btn-container">
+                        <a class="btn btn-primary" href="https://github.com/lschlessinger1/image-quilting">View on
+                            GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-5 bg-white mb-3">
+                    <div class="img-container">
+                        <picture>
+                            <source srcset="assets/img/income.webp" type="image/webp">
+                            <img class="border border-white" src="assets/img/income.png"
+                                 alt="Correlation matrix of adult dataset" title="A correlation matrix of features">
+                        </picture>
+                    </div>
+                    <p class="text-muted"><span class="font-weight-bold">Income Prediction</span>&nbsp;&nbsp;An
+                        evaluation of several machine learning methods applied to the Adult Data Set to predict income.
+                    </p>
+                    <div class="container text-center btn-container">
+                        <a class="btn btn-primary" href="https://github.com/lschlessinger1/Income-Prediction">View on
+                            GitHub</a>
+                    </div>
+                </div>
+                <div class="col-md-5 offset-md-2 bg-white mb-3">
+                    <div class="img-container">
+                        <picture>
+                            <source srcset="assets/img/gtd_img.webp" type="image/webp">
+                            <img alt="Global Terrorism Database clustering" src="assets/img/gtd_img.png"
+                                 title="A geo-clustering of terrorist incidents (k = 5)"/>
+                        </picture>
+                    </div>
+                    <p class="text-muted"><span class="font-weight-bold">Global Terrorism Geo-Clustering in Spark</span>&nbsp;&nbsp;
+                        A visualization of k-means clustering on terrorist attack locations. It contains more than
+                        170,000 terrorist attacks from all over the world from 1970 to 2016. I implemented k-means in
+                        PySpark to cluster the different geo-locations of the terrorist attacks.</p>
+                    <div class="container text-center btn-container">
+                        <a class="btn btn-primary"
+                           href="https://github.com/lschlessinger1/Global-Terrorism-Database-K-Means">View on GitHub</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-5 bg-white mb-3">
+                    <div class="img-container">
+                        <picture>
+                            <source srcset="assets/img/choco_viz.webp" type="image/webp">
+                            <img class="border border-white" src="assets/img/choco_viz.png"
+                                 alt="Artisanal chocolate ratings bar chart"
+                                 title="Artisanal chocolate ratings bar chart"/>
+                        </picture>
+                    </div>
+                    <p class="text-muted"><span class="font-weight-bold">Artisanal Chocolate Exploration</span>&nbsp;&nbsp;A
+                        D3 visualization of artisanal chocolate companies and ratings using expert review data from the
+                        Manhattan Chocolate Society.</p>
+                    <div class="container text-center btn-container">
+                        <a class="btn btn-primary"
+                           href="http://louschlessinger.com/Chocolate-Rating-Visualization/main.html">View Project</a>
+                    </div>
+                </div>
+                <div class="col-md-5 offset-md-2 bg-white mb-3">
+                    <div class="img-container">
+                        <picture>
+                            <source srcset="assets/img/electoral_map.webp" type="image/webp">
+                            <img class="border border-white" src="assets/img/electoral_map.png"
+                                 alt="Electoral map cartogram" title="Electoral map of the 2012 election"/>
+                        </picture>
+                    </div>
+                    <p class="text-muted"><span class="font-weight-bold">Electoral Map</span>&nbsp;&nbsp;A D3 Cartogram
+                        of U.S. presidential elections ranging from 1940 - 2016.</p>
+                    <div class="container text-center btn-container">
+                        <a class="btn btn-primary" href="https://lschlessinger1.github.io/electoral-map/main.html">View
+                            Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-5 bg-white mb-3">
+                    <div class="img-container">
+                        <picture>
+                            <source srcset="assets/img/code.webp" type="image/webp">
+                            <img alt="Generic image of code" class="border border-white" src="assets/img/code.jpg"/>
+                        </picture>
+                    </div>
+                    <p class="text-muted"><span class="font-weight-bold">Algorithms</span>&nbsp;&nbsp;A collection of
+                        algorithms I have implemented in various languages consisting of topics ranging from machine
+                        learning to multi-agent systems. For example, this repository contains my implementations of
+                        AdaBoost, neural networks, the auction algorithm, etc.</p>
+                    <div class="container text-center btn-container">
+                        <a class="btn btn-primary" href="https://github.com/lschlessinger1/Algorithms">View on
+                            GitHub</a>
+                    </div>
+                </div>
+                <div class="col-md-5 offset-md-2 bg-white mb-3">
+                    <div class="img-container">
+                        <picture>
+                            <source srcset="assets/img/stocks.webp" type="image/webp">
+                            <img alt="Generic image of stocks" class="border border-white" src="assets/img/stocks.png"/>
+                        </picture>
+                    </div>
+                    <p class="text-muted"><span class="font-weight-bold">Bayesian Stock Price Prediction</span>&nbsp;&nbsp;An
+                        evaluation of stock price prediction algorithms using analyst ratings.</p>
+                    <div class="container text-center btn-container">
+                        <a class="btn btn-primary"
+                           href="https://github.com/lschlessinger1/Bayesian-Stock-Price-Prediction">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-5 bg-white mb-3">
+                    <div class="img-container">
+                        <picture>
+                            <source srcset="assets/img/traffickcam_main_activity.webp" type="image/webp">
+                            <img src="assets/img/traffickcam_main_activity.png"
+                                 alt="Traffickcam main activity screenshot"
+                                 title="Traffickcam main activity screenshot"/>
+                        </picture>
+                    </div>
+                    <p class="text-muted"><span class="font-weight-bold">TraffickCam Android App</span>&nbsp;&nbsp; An
+                        app that enables you to help combat sex trafficking by uploading photos of the hotel rooms you
+                        stay in when you travel. I developed the TraffickCam Android app on the Google Play Store while
+                        working in the Media and Machines Lab at Washington University in St. Louis. More information
+                        about TraffickCam and the Exchange Initiative is available through the website, <a
+                                href="https://traffickcam.com">traffickcam.com</a>.</p>
+                    <div class="container text-center btn-container">
+                        <a class="btn btn-primary"
+                           href="https://play.google.com/store/apps/details?id=com.exchangeinitiative.traffickcam">View
+                            On Google Play Store</a>
+                    </div>
+                </div>
+                <div class="col-md-5 offset-md-2 bg-white mb-3">
+                    <div class="img-container">
+                        <picture>
+                            <source srcset="assets/img/snackhack.webp" type="image/webp">
+                            <img alt="Snackhack dashboard" src="assets/img/snackhack.jpg" title="Snackhack dashboard"/>
+                        </picture>
+                    </div>
+                    <p class="text-muted"><span class="font-weight-bold">SnackHack</span>&nbsp;&nbsp; A web service and
+                        Android app that leverages Twitter's Geolocation API and Wash. U. network data to provide
+                        real-time information on just how crowded every restaurant on campus is. It displays in
+                        real-time just how crowded a restaurant really is. I made this as part of a team of
+                        four students for WUHack 2014 (Washington University in St. Louis's 40-hour Hackathon). We won
+                        the <span class="font-weight-italic">Grand Prize</span> and the <span
+                                class="font-weight-italic">OpenDNS Prize</span>.</p>
+                    <div class="container text-center btn-container">
+                        <a class="btn btn-primary" href="https://devpost.com/software/snackhack">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section id="research-section">
+        <div class="container">
+            <h2 class="display-4" id="research">Research</h2>
+
+            <div class="row">
+                <div class="col-md-5 bg-white mb-3" id="ms-project">
+                    <div class="img-container">
+                        <picture>
+                            <source srcset="assets/img/kernel_tree.webp" type="image/webp">
+                            <img alt="Kernel tree" class="border border-white" src="assets/img/kernel_tree.png"
+                                 title="An example kernel represented by a binary expression tree"/>
+                        </picture>
+                    </div>
+                    <p class="text-muted"><span class="font-weight-bold">Automated Kernel Search (in progress)</span>&nbsp;&nbsp;Automated
+                        Kernel Search using Bayesian Optimization and Evolutionary Algorithms.</p>
+                    <div class="container text-center btn-container">
+                        <a class="btn btn-primary" href="https://github.com/lschlessinger1/MS-project">View on
+                            GitHub</a>
+                    </div>
+                </div>
+                <div class="col-md-5 offset-md-2 bg-white mb-3">
+                    <div class="img-container">
+                        <picture>
+                            <source srcset="assets/img/reddit_comm_detection.webp" type="image/webp">
+                            <img class="border border-white" src="assets/img/reddit_comm_detection.png"
+                                 alt="Reddit communities" title="Subreddit communities before processing"/>
+                        </picture>
+                    </div>
+                    <p class="text-muted"><span class="font-weight-bold">Reddit Community Detection</span>&nbsp;&nbsp;A
+                        survey of community detection algorithms on Reddit data described in the paper <a
+                                href="https://github.com/lschlessinger1/reddit-community-detection/blob/master/detection_and_analysis_of_subreddit_communities.pdf">Detection
+                            and Analysis of Subreddit Communities</a>.</p>
+                    <div class="container text-center btn-container">
+                        <a class="btn btn-primary" href="https://github.com/lschlessinger1/reddit-community-detection">View
+                            on GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact-section">
+        <div class="container">
+            <h2 class="display-4" id="contact">Contact</h2>
+            <div class="social-btn-group text-center">
+                <a href="https://github.com/lschlessinger1"><i class="fa fa-github-square fa-3x" id="social-gh"></i></a>
+                <a href="https://www.linkedin.com/pub/lou-schlessinger/3b/4a6/b36"><i
+                        class="fa fa-linkedin-square fa-3x"
+                        id="social-li"></i></a>
+                <a href="mailto:louschlessinger96@gmail.com"><i class="fa fa-envelope-square fa-3x" id="social-em"></i></a>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    <div class="container text-center">
+        <p class="text-muted">
+            &copy;
+            <script type="text/javascript">
+                document.write(new Date().getFullYear());
+            </script>
+            Louis Schlessinger
+        </p>
+    </div>
+</footer>
+<!-- Bootstrap core JavaScript
+     ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 
 </html>
