@@ -48,10 +48,10 @@
                     <a class="nav-link" href="#about-section">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#projects-section">Projects</a>
+                    <a class="nav-link" href="#research-section">Research</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#research-section">Research</a>
+                    <a class="nav-link" href="#projects-section">Projects</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#contact-section">Contact</a>
@@ -61,7 +61,7 @@
     </nav>
     <section class="text-center" id="intro-section">
         <h1 class="display-4" id="full-name">Lou Schlessinger</h1>
-        <p class="lead" id="tagline">Full-stack Developer</p>
+        <!--        <p class="lead" id="tagline">Full-stack Developer</p>-->
     </section>
     <section id="about-section">
         <div class="container">
@@ -72,13 +72,61 @@
                 <br> My name is Lou Schlessinger.
                 <br>
                 <br> I was a student at <a href="https://wustl.edu">Washington University in St. Louis</a> studying
-                computer science and physics. I graduated in December 2018 with a Master's in computer science.
-                My concentration is in data mining and machine learning. I am currently working on my
-                <a href="https://github.com/lschlessinger1/MS-project">Master's Project</a> in automated machine
-                learning.
+                computer science and physics. I graduated in December 2018 with a B.S. and M.S. in computer science.
+                My primary research interests are in <strong>automated machine learning</strong> and
+                <strong>meta-learning</strong>.
             </p>
         </div>
     </section>
+
+    <section id="research-section">
+        <div class="container">
+            <h2 class="display-4" id="research">Research</h2>
+
+            <div class="row">
+                <div class="col-md-5 bg-white mb-3" id="meta-learn-2019">
+                    <div class="img-container">
+                        <picture>
+                            <source srcset="assets/img/kernel_encoding_example.webp" type="image/webp">
+                            <img alt="Compositional kernel encoding" class="border border-white"
+                                 src="assets/img/kernel_encoding_example.png"
+                                 title="An example compositional kernel encoding (full binary tree)"/>
+                        </picture>
+                    </div>
+                    <p class="text-muted"><span class="font-weight-bold">Automated Model Search Using Bayesian Optimization and Genetic Programming</span>
+                        <br><small>Louis Schlessinger<span
+                                class="font-weight-light">, Gustavo Malkomes, Roman Garnett</span>
+                            <br><span class="font-italic">3rd Workshop on Meta-Learning at NeurIPS 2019, Vancouver, Canada</span><br></small>
+                    </p>
+                    <div class="container text-center btn-container">
+                        <a class="btn btn-primary"
+                           href="http://metalearning.ml/2019/papers/metalearn2019-schlessinger.pdf">
+                            View paper
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-5 offset-md-2 bg-white mb-3" id="ms-project">
+                    <div class="img-container">
+                        <picture>
+                            <source srcset="assets/img/kernel_tree.webp" type="image/webp">
+                            <img alt="Kernel tree" class="border border-white" src="assets/img/kernel_tree.png"
+                                 title="An example kernel represented by a binary expression tree"/>
+                        </picture>
+                    </div>
+                    <p class="text-muted"><span class="font-weight-bold">Automated Kernel Search using Evolutionary
+                        Algorithms</span><br><small>Louis Schlessinger</small><br><span class="font-italic"><small>Master's Project, Washington University in St. Louis, May 2019</small></span>
+                    </p>
+                    <div class="container text-center btn-container">
+                        <a class="btn btn-primary"
+                           href="https://github.com/lschlessinger1/MS-project/blob/master/reports/defense/report/project_report.pdf">
+                            View paper
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="projects-section">
         <div class="container">
             <h2 class="display-4" id="projects">Projects</h2>
@@ -89,6 +137,7 @@
                         <picture>
                             <source srcset="assets/img/fractal_terrain_img.webp" type="image/webp">
                             <img class="border border-white" src="assets/img/fractal_terrain_img.png"
+                                 alt="Procedurally generated terrain"
                                  title="An example terrain that was procedurally generated">
                         </picture>
                     </div>
@@ -109,9 +158,8 @@
                         <picture>
                             <source srcset="assets/img/image_quilting.webp" type="image/webp">
                             <img class="border border-white" src="assets/img/image_quilting.png"
-                                 alt="Image quilting synthesis results" title="Image quilting synthesis results. For
-                                   each pair of images, the left is the original one, and the right is the synthesized
-                                   one.">
+                                 alt="Image quilting synthesis results"
+                                 title="Image quilting synthesis results. For each pair of images, the left is the original one, and the right is the synthesized one.">
                         </picture>
                     </div>
                     <p class="text-muted"><span class="font-weight-bold">Image Quilting</span>&nbsp;&nbsp;An
@@ -271,34 +319,14 @@
                 </div>
             </div>
 
-        </div>
-    </section>
-    <section id="research-section">
-        <div class="container">
-            <h2 class="display-4" id="research">Research</h2>
-
             <div class="row">
-                <div class="col-md-5 bg-white mb-3" id="ms-project">
-                    <div class="img-container">
-                        <picture>
-                            <source srcset="assets/img/kernel_tree.webp" type="image/webp">
-                            <img alt="Kernel tree" class="border border-white" src="assets/img/kernel_tree.png"
-                                 title="An example kernel represented by a binary expression tree"/>
-                        </picture>
-                    </div>
-                    <p class="text-muted"><span class="font-weight-bold">Automated Kernel Search (in progress)</span>&nbsp;&nbsp;Automated
-                        Kernel Search using Bayesian Optimization and Evolutionary Algorithms.</p>
-                    <div class="container text-center btn-container">
-                        <a class="btn btn-primary" href="https://github.com/lschlessinger1/MS-project">View on
-                            GitHub</a>
-                    </div>
-                </div>
-                <div class="col-md-5 offset-md-2 bg-white mb-3">
+                <div class="col-md-6 offset-md-3 bg-white mb-3">
                     <div class="img-container">
                         <picture>
                             <source srcset="assets/img/reddit_comm_detection.webp" type="image/webp">
-                            <img class="border border-white" src="assets/img/reddit_comm_detection.png"
-                                 alt="Reddit communities" title="Subreddit communities before processing"/>
+                            <img alt="Reddit communities" class="border border-white"
+                                 src="assets/img/reddit_comm_detection.png"
+                                 title="Subreddit communities before processing"/>
                         </picture>
                     </div>
                     <p class="text-muted"><span class="font-weight-bold">Reddit Community Detection</span>&nbsp;&nbsp;A
@@ -313,6 +341,7 @@
             </div>
         </div>
     </section>
+
     <section id="contact-section">
         <div class="container">
             <h2 class="display-4" id="contact">Contact</h2>
