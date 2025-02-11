@@ -142,231 +142,27 @@
                 <div class="col-md-5 bg-white mb-3">
                     <div class="img-container">
                         <picture>
-                            <source srcset="assets/img/fractal_terrain_img.webp" type="image/webp">
-                            <img alt="Procedurally generated terrain" class="border border-white"
-                                 src="assets/img/fractal_terrain_img.png"
-                                 title="An example terrain that was procedurally generated">
+                            <source srcset="assets/img/math_prob_classification.png">
+                            <img alt="Math problem classification" class="border border-white"
+                                 src="assets/img/math_prob_classification.png"
+                                 title="Math problem classification example"/>
                         </picture>
                     </div>
-                    <p class="text-muted"><span class="font-weight-bold">Procedural Terrain Generation</span>&nbsp;&nbsp;
-                        After reading about fractals and their applications in technology, I learned about fractal
-                        terrain generation and how it can be used to create stunningly realistic landscapes using a
-                        relatively simple algorithm. I created a WebGL rendering implementation of a terrain generator
-                        that was based on a 3d-projected terrain map on a canvas element implementation. It uses the <a
-                                href="https://en.wikipedia.org/wiki/Diamond-square_algorithm">Diamond Square
-                            Algorithm</a> to procedurally generate terrain.</p>
-                    <div class="container text-center btn-container">
-                        <a class="btn btn-primary"
-                           href="https://lschlessinger1.github.io/fractalTerrainGeneration/main.html">View Project</a>
-                    </div>
-                </div>
-                <div class="col-md-5 offset-md-2 bg-white mb-3">
-                    <div class="img-container">
-                        <picture>
-                            <source srcset="assets/img/image_quilting.webp" type="image/webp">
-                            <img alt="Image quilting synthesis results" class="border border-white"
-                                 src="assets/img/image_quilting.png"
-                                 title="Image quilting synthesis results. For each pair of images, the left is the original one, and the right is the synthesized one.">
-                        </picture>
-                    </div>
-                    <p class="text-muted"><span class="font-weight-bold">Image Quilting</span>&nbsp;&nbsp;An
-                        implementation of "Image Quilting for Texture Synthesis and Transfer" (Elfros & Freeman, 2001).
+                    <p class="text-muted"><span
+                            class="font-weight-bold">Math problem classification</span>&nbsp;&nbsp;A
+                        method to classify the category of a math problem. This model is a fine-tuned version of
+                        <a href="https://huggingface.co/google-bert/bert-base-uncased">bert-base-uncased</a> on the part
+                        of the
+                        <a href="https://huggingface.co/datasets/hendrycks/competition_math">MATH (competition_math)</a>
+                        dataset. Specifically, it was trained as a multi-class, multi-label model on the problem text.
                     </p>
                     <div class="container text-center btn-container">
-                        <a class="btn btn-primary" href="https://github.com/lschlessinger1/image-quilting">View on
-                            GitHub</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-5 bg-white mb-3">
-                    <div class="img-container">
-                        <picture>
-                            <source srcset="assets/img/income.webp" type="image/webp">
-                            <img alt="Correlation matrix of adult dataset" class="border border-white"
-                                 src="assets/img/income.png" title="A correlation matrix of features">
-                        </picture>
-                    </div>
-                    <p class="text-muted"><span class="font-weight-bold">Income Prediction</span>&nbsp;&nbsp;An
-                        evaluation of several machine learning methods applied to the Adult Data Set to predict income.
-                    </p>
-                    <div class="container text-center btn-container">
-                        <a class="btn btn-primary" href="https://github.com/lschlessinger1/Income-Prediction">View on
-                            GitHub</a>
+                        <a class="btn btn-primary"
+                           href="https://huggingface.co/lschlessinger/bert-finetuned-math-prob-classification">View
+                            on Hugging Face</a>
                     </div>
                 </div>
                 <div class="col-md-5 offset-md-2 bg-white mb-3">
-                    <div class="img-container">
-                        <picture>
-                            <source srcset="assets/img/gtd_img.webp" type="image/webp">
-                            <img alt="Global Terrorism Database clustering" src="assets/img/gtd_img.png"
-                                 title="A geo-clustering of terrorist incidents (k = 5)"/>
-                        </picture>
-                    </div>
-                    <p class="text-muted"><span class="font-weight-bold">Global Terrorism Geo-Clustering in Spark</span>&nbsp;&nbsp;
-                        A visualization of k-means clustering on terrorist attack locations. It contains more than
-                        170,000 terrorist attacks from all over the world from 1970 to 2016. I implemented k-means in
-                        PySpark to cluster the different geo-locations of the terrorist attacks.</p>
-                    <div class="container text-center btn-container">
-                        <a class="btn btn-primary"
-                           href="https://github.com/lschlessinger1/Global-Terrorism-Database-K-Means">View on GitHub</a>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="row">
-                <div class="col-md-5 bg-white mb-3">
-                    <div class="img-container">
-                        <picture>
-                            <source srcset="assets/img/choco_viz.webp" type="image/webp">
-                            <img alt="Artisanal chocolate ratings bar chart" class="border border-white"
-                                 src="assets/img/choco_viz.png"
-                                 title="Artisanal chocolate ratings bar chart"/>
-                        </picture>
-                    </div>
-                    <p class="text-muted"><span class="font-weight-bold">Artisanal Chocolate Exploration</span>&nbsp;&nbsp;A
-                        D3 visualization of artisanal chocolate companies and ratings using expert review data from the
-                        Manhattan Chocolate Society.</p>
-                    <div class="container text-center btn-container">
-                        <a class="btn btn-primary"
-                           href="http://louschlessinger.com/Chocolate-Rating-Visualization/main.html">View Project</a>
-                    </div>
-                </div>
-                <div class="col-md-5 offset-md-2 bg-white mb-3">
-                    <div class="img-container">
-                        <picture>
-                            <source srcset="assets/img/electoral_map.webp" type="image/webp">
-                            <img alt="Electoral map cartogram" class="border border-white"
-                                 src="assets/img/electoral_map.png" title="Electoral map of the 2012 election"/>
-                        </picture>
-                    </div>
-                    <p class="text-muted"><span class="font-weight-bold">Electoral Map</span>&nbsp;&nbsp;A D3 cartogram
-                        of U.S. presidential elections ranging from 1940 to 2016.</p>
-                    <div class="container text-center btn-container">
-                        <a class="btn btn-primary" href="https://lschlessinger1.github.io/electoral-map/main.html">View
-                            Project</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-5 bg-white mb-3">
-                    <div class="img-container">
-                        <picture>
-                            <source srcset="assets/img/code.webp" type="image/webp">
-                            <img alt="Generic image of code" class="border border-white" src="assets/img/code.jpg"/>
-                        </picture>
-                    </div>
-                    <p class="text-muted"><span class="font-weight-bold">Algorithms</span>&nbsp;&nbsp;A collection of
-                        algorithms I have implemented in various languages consisting of topics ranging from machine
-                        learning to multi-agent systems. For example, this repository contains my implementations of
-                        AdaBoost, neural networks, the auction algorithm, etc.</p>
-                    <div class="container text-center btn-container">
-                        <a class="btn btn-primary" href="https://github.com/lschlessinger1/Algorithms">View on
-                            GitHub</a>
-                    </div>
-                </div>
-                <div class="col-md-5 offset-md-2 bg-white mb-3">
-                    <div class="img-container">
-                        <picture>
-                            <source srcset="assets/img/stocks.webp" type="image/webp">
-                            <img alt="Generic image of stocks" class="border border-white" src="assets/img/stocks.png"/>
-                        </picture>
-                    </div>
-                    <p class="text-muted"><span class="font-weight-bold">Bayesian Stock Price Prediction</span>&nbsp;&nbsp;An
-                        evaluation of stock price prediction algorithms using analyst ratings.</p>
-                    <div class="container text-center btn-container">
-                        <a class="btn btn-primary"
-                           href="https://github.com/lschlessinger1/Bayesian-Stock-Price-Prediction">View on GitHub</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-5 bg-white mb-3">
-                    <div class="img-container">
-                        <picture>
-                            <source srcset="assets/img/traffickcam_main_activity.webp" type="image/webp">
-                            <img alt="Traffickcam main activity screenshot"
-                                 src="assets/img/traffickcam_main_activity.png"
-                                 title="Traffickcam main activity screenshot"/>
-                        </picture>
-                    </div>
-                    <p class="text-muted"><span class="font-weight-bold">TraffickCam Android App</span>&nbsp;&nbsp; An
-                        app that enables you to help combat sex trafficking by uploading photos of the hotel rooms you
-                        stay in when you travel. I developed the TraffickCam Android app on the Google Play Store while
-                        working in the Media and Machines Lab at Washington University in St. Louis. More information
-                        about TraffickCam and the Exchange Initiative is available through the website, <a
-                                href="https://traffickcam.com">traffickcam.com</a>.</p>
-                    <div class="container text-center btn-container">
-                        <a class="btn btn-primary"
-                           href="https://play.google.com/store/apps/details?id=com.exchangeinitiative.traffickcam">View
-                            On Google Play Store</a>
-                    </div>
-                </div>
-                <div class="col-md-5 offset-md-2 bg-white mb-3">
-                    <div class="img-container">
-                        <picture>
-                            <source srcset="assets/img/snackhack.webp" type="image/webp">
-                            <img alt="Snackhack dashboard" src="assets/img/snackhack.jpg" title="Snackhack dashboard"/>
-                        </picture>
-                    </div>
-                    <p class="text-muted"><span class="font-weight-bold">SnackHack</span>&nbsp;&nbsp; A web service and
-                        Android app that leverages Twitter's Geolocation API and Wash. U. network data to provide
-                        real-time information on just how crowded every restaurant on campus is. It displays in
-                        real-time just how crowded a restaurant really is. I made this as part of a team of
-                        four students for WUHack 2014 (Washington University in St. Louis's 40-hour Hackathon). We won
-                        the <span class="font-weight-italic">Grand Prize</span> and the <span
-                                class="font-weight-italic">OpenDNS Prize</span>.</p>
-                    <div class="container text-center btn-container">
-                        <a class="btn btn-primary" href="https://devpost.com/software/snackhack">View Project</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-5 bg-white mb-3">
-                    <div class="img-container">
-                        <picture>
-                            <source srcset="assets/img/reddit_comm_detection.webp" type="image/webp">
-                            <img alt="Reddit communities" class="border border-white"
-                                 src="assets/img/reddit_comm_detection.png"
-                                 title="Subreddit communities before processing"/>
-                        </picture>
-                    </div>
-                    <p class="text-muted"><span class="font-weight-bold">Reddit Community Detection</span>&nbsp;&nbsp;A
-                        survey of community detection algorithms on Reddit data described in the paper <a
-                                href="https://github.com/lschlessinger1/reddit-community-detection/blob/master/detection_and_analysis_of_subreddit_communities.pdf">Detection
-                            and Analysis of Subreddit Communities</a>.</p>
-                    <div class="container text-center btn-container">
-                        <a class="btn btn-primary" href="https://github.com/lschlessinger1/reddit-community-detection">View
-                            on GitHub</a>
-                    </div>
-                </div>
-                <div class="col-md-5 offset-md-2 bg-white mb-3">
-                    <div class="img-container">
-                        <picture>
-                            <source srcset="assets/img/usatt_rating_analyzer_demo.png">
-                            <img alt="USATT rating analyzer demo" src="assets/img/usatt_rating_analyzer_demo.png"
-                                 title="USATT rating analyzer demo">
-                        </picture>
-                    </div>
-                    <p class="text-muted"><span class="font-weight-bold">USATT Rating Analyzer</span>&nbsp;&nbsp; A
-                        Gradio web app
-                        that helps you analyze USA table tennis (<a href="https://www.teamusa.org/usa-table-tennis">USATT</a>) 
-                        tournament and league results by providing
-                        basic statistics and visualizations of the player's performance over time.</p>
-                    <div class="container text-center btn-container">
-                        <a class="btn btn-primary"
-                           href="https://lschlessinger-usatt-rating-analyzer.hf.space">View Project</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-5 bg-white mb-3">
                     <div class="img-container">
                         <picture>
                             <source srcset="assets/img/scroll.png">
@@ -388,7 +184,10 @@
                             on GitHub</a>
                     </div>
                 </div>
-                <div class="col-md-5 offset-md-2 bg-white mb-3">
+            </div>
+
+            <div class="row">
+                <div class="col-md-5 bg-white mb-3">
                     <div class="img-container">
                         <picture>
                             <source srcset="assets/img/curvature-preview.png">
@@ -405,30 +204,230 @@
                             GitHub</a>
                     </div>
                 </div>
+                <div class="col-md-5 offset-md-2 bg-white mb-3">
+                    <div class="img-container">
+                        <picture>
+                            <source srcset="assets/img/reddit_comm_detection.webp" type="image/webp">
+                            <img alt="Reddit communities" class="border border-white"
+                                 src="assets/img/reddit_comm_detection.png"
+                                 title="Subreddit communities before processing"/>
+                        </picture>
+                    </div>
+                    <p class="text-muted"><span class="font-weight-bold">Reddit Community Detection</span>&nbsp;&nbsp;A
+                        survey of community detection algorithms on Reddit data described in the paper <a
+                                href="https://github.com/lschlessinger1/reddit-community-detection/blob/master/detection_and_analysis_of_subreddit_communities.pdf">Detection
+                            and Analysis of Subreddit Communities</a>.</p>
+                    <div class="container text-center btn-container">
+                        <a class="btn btn-primary" href="https://github.com/lschlessinger1/reddit-community-detection">View
+                            on GitHub</a>
+                    </div>
+                </div>
             </div>
 
             <div class="row">
                 <div class="col-md-5 bg-white mb-3">
                     <div class="img-container">
                         <picture>
-                            <source srcset="assets/img/math_prob_classification.png">
-                            <img alt="Math problem classification" class="border border-white"
-                                 src="assets/img/math_prob_classification.png"
-                                 title="Math problem classification example"/>
+                            <source srcset="assets/img/usatt_rating_analyzer_demo.png">
+                            <img alt="USATT rating analyzer demo" src="assets/img/usatt_rating_analyzer_demo.png"
+                                 title="USATT rating analyzer demo">
                         </picture>
                     </div>
-                    <p class="text-muted"><span
-                            class="font-weight-bold">Math problem classification</span>&nbsp;&nbsp;A
-                        method to classify the category of a math problem. This model is a fine-tuned version of
-                        <a href="https://huggingface.co/google-bert/bert-base-uncased">bert-base-uncased</a> on the part
-                        of the
-                        <a href="https://huggingface.co/datasets/hendrycks/competition_math">MATH (competition_math)</a>
-                        dataset. Specifically, it was trained as a multi-class, multi-label model on the problem text.
-                    </p>
+                    <p class="text-muted"><span class="font-weight-bold">USATT Rating Analyzer</span>&nbsp;&nbsp; A
+                        Gradio web app
+                        that helps you analyze USA table tennis (<a href="https://www.teamusa.org/usa-table-tennis">USATT</a>)
+                        tournament and league results by providing
+                        basic statistics and visualizations of the player's performance over time.</p>
                     <div class="container text-center btn-container">
                         <a class="btn btn-primary"
-                           href="https://huggingface.co/lschlessinger/bert-finetuned-math-prob-classification">View
-                            on Hugging Face</a>
+                           href="https://lschlessinger-usatt-rating-analyzer.hf.space">View Project</a>
+                    </div>
+                </div>
+                <div class="col-md-5 offset-md-2 bg-white mb-3">
+                    <div class="img-container">
+                        <picture>
+                            <source srcset="assets/img/traffickcam_main_activity.webp" type="image/webp">
+                            <img alt="Traffickcam main activity screenshot"
+                                 src="assets/img/traffickcam_main_activity.png"
+                                 title="Traffickcam main activity screenshot"/>
+                        </picture>
+                    </div>
+                    <p class="text-muted"><span class="font-weight-bold">TraffickCam Android App</span>&nbsp;&nbsp; An
+                        app that enables you to help combat sex trafficking by uploading photos of the hotel rooms you
+                        stay in when you travel. I developed the TraffickCam Android app on the Google Play Store while
+                        working in the Media and Machines Lab at Washington University in St. Louis. More information
+                        about TraffickCam and the Exchange Initiative is available through the website, <a
+                                href="https://traffickcam.com">traffickcam.com</a>.</p>
+                    <div class="container text-center btn-container">
+                        <a class="btn btn-primary"
+                           href="https://play.google.com/store/apps/details?id=com.exchangeinitiative.traffickcam">View
+                            On Google Play Store</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-5 bg-white mb-3">
+                    <div class="img-container">
+                        <picture>
+                            <source srcset="assets/img/snackhack.webp" type="image/webp">
+                            <img alt="Snackhack dashboard" src="assets/img/snackhack.jpg" title="Snackhack dashboard"/>
+                        </picture>
+                    </div>
+                    <p class="text-muted"><span class="font-weight-bold">SnackHack</span>&nbsp;&nbsp; A web service and
+                        Android app that leverages Twitter's Geolocation API and Wash. U. network data to provide
+                        real-time information on just how crowded every restaurant on campus is. It displays in
+                        real-time just how crowded a restaurant really is. I made this as part of a team of
+                        four students for WUHack 2014 (Washington University in St. Louis's 40-hour Hackathon). We won
+                        the <span class="font-weight-italic">Grand Prize</span> and the <span
+                                class="font-weight-italic">OpenDNS Prize</span>.</p>
+                    <div class="container text-center btn-container">
+                        <a class="btn btn-primary" href="https://devpost.com/software/snackhack">View Project</a>
+                    </div>
+                </div>
+                <div class="col-md-5 offset-md-2 bg-white mb-3">
+                    <div class="img-container">
+                        <picture>
+                            <source srcset="assets/img/code.webp" type="image/webp">
+                            <img alt="Generic image of code" class="border border-white" src="assets/img/code.jpg"/>
+                        </picture>
+                    </div>
+                    <p class="text-muted"><span class="font-weight-bold">Algorithms</span>&nbsp;&nbsp;A collection of
+                        algorithms I have implemented in various languages consisting of topics ranging from machine
+                        learning to multi-agent systems. For example, this repository contains my implementations of
+                        AdaBoost, neural networks, the auction algorithm, etc.</p>
+                    <div class="container text-center btn-container">
+                        <a class="btn btn-primary" href="https://github.com/lschlessinger1/Algorithms">View on
+                            GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-5 bg-white mb-3">
+                    <div class="img-container">
+                        <picture>
+                            <source srcset="assets/img/stocks.webp" type="image/webp">
+                            <img alt="Generic image of stocks" class="border border-white" src="assets/img/stocks.png"/>
+                        </picture>
+                    </div>
+                    <p class="text-muted"><span class="font-weight-bold">Bayesian Stock Price Prediction</span>&nbsp;&nbsp;An
+                        evaluation of stock price prediction algorithms using analyst ratings.</p>
+                    <div class="container text-center btn-container">
+                        <a class="btn btn-primary"
+                           href="https://github.com/lschlessinger1/Bayesian-Stock-Price-Prediction">View on GitHub</a>
+                    </div>
+                </div>
+                <div class="col-md-5 offset-md-2 bg-white mb-3">
+                    <div class="img-container">
+                        <picture>
+                            <source srcset="assets/img/choco_viz.webp" type="image/webp">
+                            <img alt="Artisanal chocolate ratings bar chart" class="border border-white"
+                                 src="assets/img/choco_viz.png"
+                                 title="Artisanal chocolate ratings bar chart"/>
+                        </picture>
+                    </div>
+                    <p class="text-muted"><span class="font-weight-bold">Artisanal Chocolate Exploration</span>&nbsp;&nbsp;A
+                        D3 visualization of artisanal chocolate companies and ratings using expert review data from the
+                        Manhattan Chocolate Society.</p>
+                    <div class="container text-center btn-container">
+                        <a class="btn btn-primary"
+                           href="http://louschlessinger.com/Chocolate-Rating-Visualization/main.html">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-5 bg-white mb-3">
+                    <div class="img-container">
+                        <picture>
+                            <source srcset="assets/img/electoral_map.webp" type="image/webp">
+                            <img alt="Electoral map cartogram" class="border border-white"
+                                 src="assets/img/electoral_map.png" title="Electoral map of the 2012 election"/>
+                        </picture>
+                    </div>
+                    <p class="text-muted"><span class="font-weight-bold">Electoral Map</span>&nbsp;&nbsp;A D3 cartogram
+                        of U.S. presidential elections ranging from 1940 to 2016.</p>
+                    <div class="container text-center btn-container">
+                        <a class="btn btn-primary" href="https://lschlessinger1.github.io/electoral-map/main.html">View
+                            Project</a>
+                    </div>
+                </div>
+                <div class="col-md-5 offset-md-2 bg-white mb-3">
+                    <div class="img-container">
+                        <picture>
+                            <source srcset="assets/img/income.webp" type="image/webp">
+                            <img alt="Correlation matrix of adult dataset" class="border border-white"
+                                 src="assets/img/income.png" title="A correlation matrix of features">
+                        </picture>
+                    </div>
+                    <p class="text-muted"><span class="font-weight-bold">Income Prediction</span>&nbsp;&nbsp;An
+                        evaluation of several machine learning methods applied to the Adult Data Set to predict income.
+                    </p>
+                    <div class="container text-center btn-container">
+                        <a class="btn btn-primary" href="https://github.com/lschlessinger1/Income-Prediction">View on
+                            GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-5 bg-white mb-3">
+                    <div class="img-container">
+                        <picture>
+                            <source srcset="assets/img/gtd_img.webp" type="image/webp">
+                            <img alt="Global Terrorism Database clustering" src="assets/img/gtd_img.png"
+                                 title="A geo-clustering of terrorist incidents (k = 5)"/>
+                        </picture>
+                    </div>
+                    <p class="text-muted"><span class="font-weight-bold">Global Terrorism Geo-Clustering in Spark</span>&nbsp;&nbsp;
+                        A visualization of k-means clustering on terrorist attack locations. It contains more than
+                        170,000 terrorist attacks from all over the world from 1970 to 2016. I implemented k-means in
+                        PySpark to cluster the different geo-locations of the terrorist attacks.</p>
+                    <div class="container text-center btn-container">
+                        <a class="btn btn-primary"
+                           href="https://github.com/lschlessinger1/Global-Terrorism-Database-K-Means">View on GitHub</a>
+                    </div>
+                </div>
+                <div class="col-md-5 offset-md-2 bg-white mb-3">
+                    <div class="img-container">
+                        <picture>
+                            <source srcset="assets/img/fractal_terrain_img.webp" type="image/webp">
+                            <img alt="Procedurally generated terrain" class="border border-white"
+                                 src="assets/img/fractal_terrain_img.png"
+                                 title="An example terrain that was procedurally generated">
+                        </picture>
+                    </div>
+                    <p class="text-muted"><span class="font-weight-bold">Procedural Terrain Generation</span>&nbsp;&nbsp;
+                        After reading about fractals and their applications in technology, I learned about fractal
+                        terrain generation and how it can be used to create stunningly realistic landscapes using a
+                        relatively simple algorithm. I created a WebGL rendering implementation of a terrain generator
+                        that was based on a 3d-projected terrain map on a canvas element implementation. It uses the <a
+                                href="https://en.wikipedia.org/wiki/Diamond-square_algorithm">Diamond Square
+                            Algorithm</a> to procedurally generate terrain.</p>
+                    <div class="container text-center btn-container">
+                        <a class="btn btn-primary"
+                           href="https://lschlessinger1.github.io/fractalTerrainGeneration/main.html">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-5  bg-white mb-3">
+                    <div class="img-container">
+                        <picture>
+                            <source srcset="assets/img/image_quilting.webp" type="image/webp">
+                            <img alt="Image quilting synthesis results" class="border border-white"
+                                 src="assets/img/image_quilting.png"
+                                 title="Image quilting synthesis results. For each pair of images, the left is the original one, and the right is the synthesized one.">
+                        </picture>
+                    </div>
+                    <p class="text-muted"><span class="font-weight-bold">Image Quilting</span>&nbsp;&nbsp;An
+                        implementation of "Image Quilting for Texture Synthesis and Transfer" (Elfros & Freeman, 2001).
+                    </p>
+                    <div class="container text-center btn-container">
+                        <a class="btn btn-primary" href="https://github.com/lschlessinger1/image-quilting">View on
+                            GitHub</a>
                     </div>
                 </div>
             </div>
