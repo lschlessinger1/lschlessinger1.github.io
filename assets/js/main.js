@@ -2,7 +2,6 @@ $("#main-navbar ul li a[href^='#']").on('click', smoothScroll);
 $("#main-navbar a.navbar-brand[href^='#']").on('click', smoothScroll);
 
 function smoothScroll(e) {
-
     // prevent default anchor click behavior
     e.preventDefault();
 
@@ -18,5 +17,4 @@ function smoothScroll(e) {
         // (default click behaviour)
         window.location.hash = hash;
     });
-
 }
