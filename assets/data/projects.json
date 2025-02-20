@@ -1,5 +1,13 @@
 [
   {
+    "title": "Vesuvius Challenge Patch Aggregation Analysis",
+    "description": "A report on patch aggregation methods in ink detection for the Vesuvius Challenge. Awarded August, 2024 Progress Prize.",
+    "imgSrc": "assets/img/patch_agg.png",
+    "imgAlt": "Vesuvius Challenge patch aggregation analysis",
+    "link": "https://github.com/lschlessinger1/vesuvius-patch-agg-analysis",
+    "linkText": "View on GitHub"
+  },
+  {
     "title": "Math Problem Classification",
     "description": "A model to classify the category of a math problem. A fine-tuned version of bert-base-uncased on a subset of the MATH dataset.",
     "imgSrc": "assets/img/math_prob_classification.png",
