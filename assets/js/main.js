@@ -1,93 +1,85 @@
-async function fetchProjects(retries = 3) {
-    const projectsContainer = document.getElementById("projects-container");
+async function fetchData(type, retries = 3) {
+    const container = document.getElementById(`${type}-container`);
     try {
-        const response = await fetch(`assets/data/projects.json?t=${new Date().getTime()}`); // Cache busting
+        const response = await fetch(`assets/data/${type}.json?t=${new Date().getTime()}`); // Cache busting
         if (!response.ok) {
             console.error(`HTTP error! Status: ${response.status}`);
             if (retries > 0) {
                 console.warn(`Retrying... (${3 - retries + 1}/3)`);
-                setTimeout(() => fetchProjects(retries - 1), 2000); // Retry with delay
+                setTimeout(() => fetchData(type, retries - 1), 2000); // Retry with delay
                 return;
             } else {
-                projectsContainer.innerHTML = "<p class='text-danger'>Failed to load projects. Please try again later.</p>";
+                container.innerHTML = `<p class='text-danger'>Failed to load ${type}. Please try again later.</p>`;
                 return;
             }
         }
-        const projects = await response.json();
-        if (!Array.isArray(projects)) {
-            console.error("Invalid JSON format: Expected an array of projects");
-            projectsContainer.innerHTML = "<p class='text-danger'>Invalid project data format.</p>";
+        const data = await response.json();
+        if (!Array.isArray(data)) {
+            console.error(`Invalid JSON format: Expected an array for ${type}`);
+            container.innerHTML = `<p class='text-danger'>Invalid ${type} data format.</p>`;
             return;
         }
-        renderProjects(projects);
+        renderItems(data, type);
     } catch (error) {
-        console.error('Error loading projects:', error);
+        console.error(`Error loading ${type}:`, error);
         if (retries > 0) {
             console.warn(`Retrying... (${3 - retries + 1}/3)`);
-            setTimeout(() => fetchProjects(retries - 1), 2000); // Retry with delay
+            setTimeout(() => fetchData(type, retries - 1), 2000); // Retry with delay
         } else {
-            projectsContainer.innerHTML = "<p class='text-danger'>Failed to load projects. Please try again later.</p>";
+            container.innerHTML = `<p class='text-danger'>Failed to load ${type}. Please try again later.</p>`;
         }
     }
 }
 
-function renderProjects(projects) {
-    const projectsContainer = document.getElementById("projects-container");
-    projectsContainer.innerHTML = ""; // Clear existing content
+function renderItems(items, type) {
+    const container = document.getElementById(`${type}-container`);
+    container.innerHTML = ""; // Clear existing content
 
-    for (let i = 0; i < projects.length; i += 2) {
+    for (let i = 0; i < items.length; i += 2) {
         let rowHTML = '<div class="row">';
 
-        for (let j = 0; j < 2 && i + j < projects.length; j++) {
-            const project = projects[i + j];
-            if (!project.title || !project.description || !project.imgSrc || !project.link || !project.linkText) {
-                console.warn("Skipping invalid project entry:", project);
+        for (let j = 0; j < 2 && i + j < items.length; j++) {
+            const item = items[i + j];
+            if (!item.title || !item.description || !item.imgSrc || !item.link || !item.linkText) {
+                console.warn(`Skipping invalid ${type} entry:`, item);
                 continue;
             }
             rowHTML += `
                 <div class="col-md-5 ${j === 1 ? 'offset-md-2' : ''} bg-white mb-3">
                     <div class="img-container">
                         <picture>
-                            <img alt="${project.imgAlt || 'Project image'}" class="border border-white"
-                                 src="${project.imgSrc}" title="${project.title}" loading="lazy"/>
+                            <img alt="${item.imgAlt || 'Image'}" class="border border-white"
+                                 src="${item.imgSrc}" title="${item.title}" loading="lazy"/>
                         </picture>
                     </div>
-                    <p class="text-muted"><span class="font-weight-bold">${project.title}</span>&nbsp;&nbsp;
-                        ${project.description}</p>
+                    <p class="text-muted"><span class="font-weight-bold">${item.title}</span>&nbsp;&nbsp;
+                        ${item.description}</p>
                     <div class="container text-center btn-container">
-                        <a class="btn btn-primary" href="${project.link}" target="_blank">${project.linkText}</a>
+                        <a class="btn btn-primary" href="${item.link}" target="_blank">${item.linkText}</a>
                     </div>
                 </div>
             `;
         }
 
         rowHTML += '</div>';
-        projectsContainer.insertAdjacentHTML("beforeend", rowHTML);
+        container.insertAdjacentHTML("beforeend", rowHTML);
     }
 }
 
-document.addEventListener("DOMContentLoaded", () => fetchProjects().catch(
-    error => console.error('Failed to fetch projects:', error)
-));
+document.addEventListener("DOMContentLoaded", () => {
+    fetchData("projects").catch(error => console.error('Failed to fetch projects:', error));
+    fetchData("research").catch(error => console.error('Failed to fetch research:', error));
+});
 
 $("#main-navbar ul li a[href^='#']").on('click', smoothScroll);
 $("#main-navbar a.navbar-brand[href^='#']").on('click', smoothScroll);
 
 function smoothScroll(e) {
-    // prevent default anchor click behavior
     e.preventDefault();
-
-    // store hash
     const hash = this.hash;
-
-    // animate
     $('html, body').animate({
         scrollTop: $(hash).offset().top
     }, 1000, function () {
-
-        // when done, add hash to url
-        // (default click behaviour)
         window.location.hash = hash;
     });
 }
-

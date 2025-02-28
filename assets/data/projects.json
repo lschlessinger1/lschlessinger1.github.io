@@ -1,35 +1,11 @@
 [
   {
-    "title": "Vesuvius Challenge Patch Aggregation Analysis",
-    "description": "A report on patch aggregation methods in ink detection for the Vesuvius Challenge. Awarded August, 2024 Progress Prize.",
-    "imgSrc": "assets/img/patch_agg.png",
-    "imgAlt": "Vesuvius Challenge patch aggregation analysis",
-    "link": "https://github.com/lschlessinger1/vesuvius-patch-agg-analysis",
-    "linkText": "View on GitHub"
-  },
-  {
     "title": "Math Problem Classification",
     "description": "A model to classify the category of a math problem. A fine-tuned version of bert-base-uncased on a subset of the MATH dataset.",
     "imgSrc": "assets/img/math_prob_classification.png",
     "imgAlt": "Math problem classification",
     "link": "https://huggingface.co/lschlessinger/bert-finetuned-math-prob-classification",
     "linkText": "View on Hugging Face"
-  },
-  {
-    "title": "Vesuvius Challenge Grand Prize (runner-up)",
-    "description": "A method to detect ink in carbonized micro-CT scans of the Herculaneum Papyri. Awarded runner-up in the 2023 Grand Prize.",
-    "imgSrc": "assets/img/scroll.png",
-    "imgAlt": "Scroll ink prediction",
-    "link": "https://github.com/lschlessinger1/vesuvius-grand-prize-submission",
-    "linkText": "View on GitHub"
-  },
-  {
-    "title": "Vesuvius topogeo",
-    "description": "A topological and geometric analysis comparing and contrasting scrolls and fragments from the Vesuvius Challenge to better understand domain differences.",
-    "imgSrc": "assets/img/curvature-preview.png",
-    "imgAlt": "Scroll curvature",
-    "link": "https://github.com/lschlessinger1/vesuvius-topogeo",
-    "linkText": "View on GitHub"
   },
   {
     "title": "Reddit Community Detection",
