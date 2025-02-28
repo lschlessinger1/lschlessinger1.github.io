@@ -8,14 +8,6 @@
     "linkText": "View on Hugging Face"
   },
   {
-    "title": "Reddit Community Detection",
-    "description": "A survey of community detection algorithms on Reddit data, based on the paper 'Detection and Analysis of Subreddit Communities'.",
-    "imgSrc": "assets/img/reddit_comm_detection.png",
-    "imgAlt": "Reddit communities",
-    "link": "https://github.com/lschlessinger1/reddit-community-detection",
-    "linkText": "View on GitHub"
-  },
-  {
     "title": "USATT Rating Analyzer",
     "description": "A Gradio web app that helps analyze USA Table Tennis (USATT) tournament and league results by providing basic statistics and performance visualizations over time.",
     "imgSrc": "assets/img/usatt_rating_analyzer_demo.png",
@@ -40,6 +32,22 @@
     "linkText": "View Project"
   },
   {
+    "title": "Artisanal Chocolate Exploration",
+    "description": "A D3 visualization of artisanal chocolate companies and ratings using expert review data from the Manhattan Chocolate Society.",
+    "imgSrc": "assets/img/choco_viz.png",
+    "imgAlt": "Artisanal chocolate ratings bar chart",
+    "link": "http://louschlessinger.com/Chocolate-Rating-Visualization/main.html",
+    "linkText": "View Project"
+  },
+  {
+    "title": "Reddit Community Detection",
+    "description": "A survey of community detection algorithms on Reddit data, based on the paper 'Detection and Analysis of Subreddit Communities'.",
+    "imgSrc": "assets/img/reddit_comm_detection.png",
+    "imgAlt": "Reddit communities",
+    "link": "https://github.com/lschlessinger1/reddit-community-detection",
+    "linkText": "View on GitHub"
+  },
+  {
     "title": "Algorithms",
     "description": "A collection of algorithms implemented in various languages, covering topics from machine learning to multi-agent systems, including AdaBoost, neural networks, and the auction algorithm.",
     "imgSrc": "assets/img/code.jpg",
@@ -54,14 +62,6 @@
     "imgAlt": "Generic image of stocks",
     "link": "https://github.com/lschlessinger1/Bayesian-Stock-Price-Prediction",
     "linkText": "View on GitHub"
-  },
-  {
-    "title": "Artisanal Chocolate Exploration",
-    "description": "A D3 visualization of artisanal chocolate companies and ratings using expert review data from the Manhattan Chocolate Society.",
-    "imgSrc": "assets/img/choco_viz.png",
-    "imgAlt": "Artisanal chocolate ratings bar chart",
-    "link": "http://louschlessinger.com/Chocolate-Rating-Visualization/main.html",
-    "linkText": "View Project"
   },
   {
     "title": "Electoral Map",
