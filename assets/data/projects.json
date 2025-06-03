@@ -1,5 +1,13 @@
 [
   {
+    "title": "Occlusion evaluation",
+    "description": "Simple experiments for creating occlusions in PyBullet and testing video prediction models like PredRNN.",
+    "imgSrc": "assets/img/occlusion_eval.png",
+    "imgAlt": "Occlusion evaluation",
+    "link": "https://github.com/lschlessinger1/occlusion-eval",
+    "linkText": "View on GitHub"
+  },
+  {
     "title": "Math Problem Classification",
     "description": "A model to classify the category of a math problem. A fine-tuned version of bert-base-uncased on a subset of the MATH dataset.",
     "imgSrc": "assets/img/math_prob_classification.png",
