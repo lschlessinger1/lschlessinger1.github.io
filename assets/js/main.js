@@ -52,7 +52,7 @@ function renderItems(items, type) {
                                  src="${item.imgSrc}" title="${item.title}" loading="lazy"/>
                         </picture>
                     </div>
-                    <p class="text-muted"><span class="font-weight-bold">${item.title}</span>&nbsp;&nbsp;
+                    <p class="text-muted"><span class="fw-bold">${item.title}</span>&nbsp;&nbsp;
                         ${item.description}</p>
                     <div class="container text-center btn-container">
                         <a class="btn btn-primary" href="${item.link}" target="_blank" rel="noopener noreferrer">${item.linkText}</a>
