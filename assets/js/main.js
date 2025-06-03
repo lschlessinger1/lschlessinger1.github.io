@@ -55,7 +55,7 @@ function renderItems(items, type) {
                     <p class="text-muted"><span class="font-weight-bold">${item.title}</span>&nbsp;&nbsp;
                         ${item.description}</p>
                     <div class="container text-center btn-container">
-                        <a class="btn btn-primary" href="${item.link}" target="_blank">${item.linkText}</a>
+                        <a class="btn btn-primary" href="${item.link}" target="_blank" rel="noopener noreferrer">${item.linkText}</a>
                     </div>
                 </div>
             `;
