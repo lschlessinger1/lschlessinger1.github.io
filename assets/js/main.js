@@ -79,8 +79,8 @@ async function renderItems(items, type) {
                     <div class="img-container">
                         <picture>
                             ${webpSource}
-                            <img alt="${item.imgAlt || 'Image'}" class="border border-white"
-                                 src="${item.imgSrc}" title="${item.title}" loading="lazy"/>
+                       <img alt="${item.imgAlt || 'Image'}" class="border border-white"
+                           src="${item.imgSrc}" title="${item.title}" loading="lazy" width="600" height="300"/>
                         </picture>
                     </div>
                     <p class="text-muted"><span class="fw-bold">${item.title}</span>&nbsp;&nbsp;
