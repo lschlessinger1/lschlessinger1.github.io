@@ -1,0 +1,67 @@
+###############################################
+# GitHub Pages Portfolio .gitignore
+# Focus: keep only versioned source assets (HTML, CSS, JS, images, data JSON)
+# Safe to expand later if you add a build toolchain.
+###############################################
+
+# OS / Editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*.tmp
+~$*
+.idea/
+.vscode/
+
+# Logs / diagnostics
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Node / JS tooling (if you later introduce a build step)
+node_modules/
+dist/
+build/
+out/
+.cache/
+.parcel-cache/
+.eslintcache
+coverage/
+
+# Package managers
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Python virtual envs (in case you experiment locally)
+.env
+.env.*
+venv/
+.venv/
+env/
+
+# Static site generators (future-proofing)
+_site/
+.jekyll-cache/
+.sass-cache/
+.hugo_build.lock
+
+# Deployment / platform artifacts
+.vercel/
+.netlify/
+
+# Archives & backups
+*.bak
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+
+# Misc
+*.orig
+*.rej
+*.coverage
