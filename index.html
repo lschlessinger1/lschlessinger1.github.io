@@ -54,7 +54,8 @@
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#main-navbar" data-bs-offset="50" tabindex="0">
-<main>
+<a href="#about-section" class="skip-link">Skip to main content</a>
+<main id="main-content">
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" id="main-navbar">
         <a class="navbar-brand" href="#intro-section">Lou Schlessinger</a>
         <button aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
@@ -79,10 +80,10 @@
             </ul>
         </div>
     </nav>
-    <section class="text-center" id="intro-section">
+    <section class="text-center" id="intro-section" aria-labelledby="full-name">
         <h1 class="display-4" id="full-name">Lou Schlessinger</h1>
     </section>
-    <section id="about-section">
+    <section id="about-section" aria-labelledby="about">
         <div class="container">
             <h2 class="display-4" id="about">About</h2>
             <p class="lead">
@@ -98,21 +99,21 @@
         </div>
     </section>
 
-    <section id="research-section">
+    <section id="research-section" aria-labelledby="research">
         <div class="container">
             <h2 class="display-4" id="research">Research</h2>
             <div id="research-container"></div> <!-- Research will be inserted here -->
         </div>
     </section>
 
-    <section id="projects-section">
+    <section id="projects-section" aria-labelledby="projects">
         <div class="container">
             <h2 class="display-4" id="projects">Projects</h2>
             <div id="projects-container"></div> <!-- Projects will be inserted here -->
         </div>
     </section>
 
-    <section id="contact-section">
+    <section id="contact-section" aria-labelledby="contact">
         <div class="container">
             <h2 class="display-4" id="contact">Contact</h2>
             <div class="social-btn-group text-center">

@@ -82,6 +82,28 @@ body {
     margin-bottom: 60px;
 }
 
+/* Skip link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #112D4E;
+    color: #fff;
+    padding: 8px 16px;
+    z-index: 1000;
+    border-radius: 0 0 4px 0;
+}
+.skip-link:focus {
+    top: 0;
+    outline: 3px solid #F9F7F7;
+}
+
+/* Focus styles */
+a:focus-visible, button:focus-visible, .btn:focus-visible, [role="button"]:focus-visible {
+    outline: 2px solid #3F72AF;
+    outline-offset: 2px;
+}
+
 .footer {
     position: absolute;
     bottom: 0;
