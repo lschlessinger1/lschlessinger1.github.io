@@ -74,13 +74,18 @@ async function renderItems(items, type) {
                 const candidateWebp = item.imgSrc.replace(/\.(png|jpg|jpeg)$/i, '.webp');
                 webpSource = `<source srcset="${candidateWebp}" type="image/webp">`;
             }
+            // Performance hints: first row gets higher priority; others remain lazy & low priority
+            const isAboveFoldLikely = i === 0; // heuristic: first rendered row
+            const loadingAttr = 'loading="lazy"';
+            const fetchPriority = isAboveFoldLikely ? 'high' : 'low';
+            const sizesAttr = '(max-width: 768px) 100vw, 600px';
             rowHTML += `
                 <div class="col-md-5 ${j === 1 ? 'offset-md-2' : ''} bg-white mb-3">
                     <div class="img-container">
                         <picture>
                             ${webpSource}
                        <img alt="${item.imgAlt || 'Image'}" class="border border-white"
-                           src="${item.imgSrc}" title="${item.title}" loading="lazy" width="600" height="300"/>
+                           src="${item.imgSrc}" title="${item.title}" ${loadingAttr} width="600" height="300" decoding="async" fetchpriority="${fetchPriority}" sizes="${sizesAttr}"/>
                         </picture>
                     </div>
                     <p class="text-muted"><span class="fw-bold">${item.title}</span>&nbsp;&nbsp;
