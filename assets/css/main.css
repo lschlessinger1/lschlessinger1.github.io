@@ -70,6 +70,11 @@
 html {
     position: relative;
     min-height: 100%;
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
 }
 
 body {
@@ -113,19 +118,12 @@ body {
 }
 
 .social-btn-group a i:hover {
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -o-transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .social-btn-group a i {
-    -webkit-transform: scale(0.8);
-    /* Browser Variations: */
-    -moz-transform: scale(0.8);
-    -o-transform: scale(0.8);
-    -webkit-transition-duration: 0.5s;
-    -moz-transition-duration: 0.5s;
-    -o-transition-duration: 0.5s;
+    transform: scale(0.8);
+    transition-duration: 0.5s;
 }
 
 

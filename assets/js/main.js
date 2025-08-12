@@ -100,17 +100,30 @@ async function renderItems(items, type) {
 document.addEventListener("DOMContentLoaded", () => {
     fetchData("projects").catch(error => console.error('Failed to fetch projects:', error));
     fetchData("research").catch(error => console.error('Failed to fetch research:', error));
-});
 
-$("#main-navbar ul li a[href^='#']").on('click', smoothScroll);
-$("#main-navbar a.navbar-brand[href^='#']").on('click', smoothScroll);
-
-function smoothScroll(e) {
-    e.preventDefault();
-    const hash = this.hash;
-    $('html, body').animate({
-        scrollTop: $(hash).offset().top
-    }, 1000, function () {
-        window.location.hash = hash;
+    // Native smooth scrolling handled via CSS (scroll-behavior: smooth)
+    // Add click delegation for in-page anchors to respect reduced motion preference
+    document.getElementById('main-navbar')?.addEventListener('click', (ev) => {
+        const target = ev.target;
+        if (target && target.closest) {
+            const link = target.closest('a[href^="#"]');
+            if (link) {
+                const id = link.getAttribute('href');
+                if (id && id.startsWith('#')) {
+                    const el = document.querySelector(id);
+                    if (el) {
+                        ev.preventDefault();
+                        // If user prefers reduced motion, jump instantly
+                        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                        if (prefersReduced) {
+                            el.scrollIntoView();
+                        } else {
+                            el.scrollIntoView({ behavior: 'smooth' });
+                        }
+                        history.replaceState(null, '', id);
+                    }
+                }
+            }
+        }
     });
-}
+});
