@@ -31,9 +31,32 @@ async function fetchData(type, retries = 3) {
     }
 }
 
-function renderItems(items, type) {
+// Cache for webp availability checks to avoid repeated network calls
+const webpAvailabilityCache = new Map();
+
+async function isWebpAvailable(originalSrc) {
+    if (!/\.(png|jpg|jpeg)$/i.test(originalSrc)) return false; // Already webp or unsupported
+    const candidate = originalSrc.replace(/\.(png|jpg|jpeg)$/i, '.webp');
+    if (webpAvailabilityCache.has(candidate)) {
+        return webpAvailabilityCache.get(candidate);
+    }
+    try {
+        const resp = await fetch(candidate, { method: 'HEAD' });
+        const ok = resp.ok;
+        webpAvailabilityCache.set(candidate, ok);
+        return ok;
+    } catch (e) {
+        webpAvailabilityCache.set(candidate, false);
+        return false;
+    }
+}
+
+async function renderItems(items, type) {
     const container = document.getElementById(`${type}-container`);
     container.innerHTML = ""; // Clear existing content
+
+    // Precompute webp availability in parallel for all items
+    const availability = await Promise.all(items.map(it => isWebpAvailable(it.imgSrc)));
 
     for (let i = 0; i < items.length; i += 2) {
         let rowHTML = '<div class="row">';
@@ -44,10 +67,18 @@ function renderItems(items, type) {
                 console.warn(`Skipping invalid ${type} entry:`, item);
                 continue;
             }
+            // Derive a potential WebP variant path (assumes same basename with .webp present in repo)
+            // If the original already ends with .webp, we won't insert an extra source.
+            let webpSource = '';
+            if (availability[i + j]) {
+                const candidateWebp = item.imgSrc.replace(/\.(png|jpg|jpeg)$/i, '.webp');
+                webpSource = `<source srcset="${candidateWebp}" type="image/webp">`;
+            }
             rowHTML += `
                 <div class="col-md-5 ${j === 1 ? 'offset-md-2' : ''} bg-white mb-3">
                     <div class="img-container">
                         <picture>
+                            ${webpSource}
                             <img alt="${item.imgAlt || 'Image'}" class="border border-white"
                                  src="${item.imgSrc}" title="${item.title}" loading="lazy"/>
                         </picture>
