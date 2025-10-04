@@ -29,3 +29,6 @@ npm run lint
 
 GitHub Actions workflow (`.github/workflows/ci.yml`) runs on every push to `master` and on pull requests. It installs
 Node.js 20, performs `npm ci`, and executes the lint suite to keep the static site healthy.
+
+> **Note:** `npm ci` requires a committed `package-lock.json`. Include lockfile changes in commits when adjusting
+> dependencies so the workflow can run successfully.
