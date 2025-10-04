@@ -1,0 +1,114 @@
+[
+  {
+    "title": "Occlusion evaluation",
+    "description": "Simple experiments for creating occlusions in PyBullet and testing video prediction models like PredRNN.",
+    "imgSrc": "assets/img/occlusion_eval.png",
+    "imgAlt": "Occlusion evaluation",
+    "link": "https://github.com/lschlessinger1/occlusion-eval",
+    "linkText": "View on GitHub"
+  },
+  {
+    "title": "Math Problem Classification",
+    "description": "A model to classify the category of a math problem. A fine-tuned version of bert-base-uncased on a subset of the MATH dataset.",
+    "imgSrc": "assets/img/math_prob_classification.png",
+    "imgAlt": "Math problem classification",
+    "link": "https://huggingface.co/lschlessinger/bert-finetuned-math-prob-classification",
+    "linkText": "View on Hugging Face"
+  },
+  {
+    "title": "USATT Rating Analyzer",
+    "description": "A Gradio web app that helps analyze USA Table Tennis (USATT) tournament and league results by providing basic statistics and performance visualizations over time.",
+    "imgSrc": "assets/img/usatt_rating_analyzer_demo.png",
+    "imgAlt": "USATT rating analyzer demo",
+    "link": "https://lschlessinger-usatt-rating-analyzer.hf.space",
+    "linkText": "View Project"
+  },
+  {
+    "title": "TraffickCam Android App",
+    "description": "An app to help combat sex trafficking by allowing users to upload photos of hotel rooms they stay in. Developed for the Media and Machines Lab at Washington University in St. Louis.",
+    "imgSrc": "assets/img/traffickcam_main_activity.png",
+    "imgAlt": "Traffickcam main activity screenshot",
+    "link": "https://play.google.com/store/apps/details?id=com.exchangeinitiative.traffickcam",
+    "linkText": "View on Google Play Store"
+  },
+  {
+    "title": "SnackHack",
+    "description": "A web service and Android app that leverages Twitter's Geolocation API and WashU network data to provide real-time information on restaurant crowd levels on campus.",
+    "imgSrc": "assets/img/snackhack.jpg",
+    "imgAlt": "Snackhack dashboard",
+    "link": "https://devpost.com/software/snackhack",
+    "linkText": "View Project"
+  },
+  {
+    "title": "Artisanal Chocolate Exploration",
+    "description": "A D3 visualization of artisanal chocolate companies and ratings using expert review data from the Manhattan Chocolate Society.",
+    "imgSrc": "assets/img/choco_viz.png",
+    "imgAlt": "Artisanal chocolate ratings bar chart",
+    "link": "http://louschlessinger.com/Chocolate-Rating-Visualization/main.html",
+    "linkText": "View Project"
+  },
+  {
+    "title": "Reddit Community Detection",
+    "description": "A survey of community detection algorithms on Reddit data, based on the paper 'Detection and Analysis of Subreddit Communities'.",
+    "imgSrc": "assets/img/reddit_comm_detection.png",
+    "imgAlt": "Reddit communities",
+    "link": "https://github.com/lschlessinger1/reddit-community-detection",
+    "linkText": "View on GitHub"
+  },
+  {
+    "title": "Algorithms",
+    "description": "A collection of algorithms implemented in various languages, covering topics from machine learning to multi-agent systems, including AdaBoost, neural networks, and the auction algorithm.",
+    "imgSrc": "assets/img/code.jpg",
+    "imgAlt": "Generic image of code",
+    "link": "https://github.com/lschlessinger1/Algorithms",
+    "linkText": "View on GitHub"
+  },
+  {
+    "title": "Bayesian Stock Price Prediction",
+    "description": "An evaluation of stock price prediction algorithms using analyst ratings.",
+    "imgSrc": "assets/img/stocks.png",
+    "imgAlt": "Generic image of stocks",
+    "link": "https://github.com/lschlessinger1/Bayesian-Stock-Price-Prediction",
+    "linkText": "View on GitHub"
+  },
+  {
+    "title": "Electoral Map",
+    "description": "A D3 cartogram of U.S. presidential elections ranging from 1940 to 2016.",
+    "imgSrc": "assets/img/electoral_map.png",
+    "imgAlt": "Electoral map cartogram",
+    "link": "https://lschlessinger1.github.io/electoral-map/main.html",
+    "linkText": "View Project"
+  },
+  {
+    "title": "Income Prediction",
+    "description": "An evaluation of several machine learning methods applied to the Adult Data Set to predict income.",
+    "imgSrc": "assets/img/income.png",
+    "imgAlt": "Correlation matrix of adult dataset",
+    "link": "https://github.com/lschlessinger1/Income-Prediction",
+    "linkText": "View on GitHub"
+  },
+  {
+    "title": "Global Terrorism Geo-Clustering in Spark",
+    "description": "A visualization of k-means clustering on terrorist attack locations using PySpark. Dataset contains 170,000+ terrorist attacks worldwide from 1970 to 2016.",
+    "imgSrc": "assets/img/gtd_img.png",
+    "imgAlt": "Global Terrorism Database clustering",
+    "link": "https://github.com/lschlessinger1/Global-Terrorism-Database-K-Means",
+    "linkText": "View on GitHub"
+  },
+  {
+    "title": "Procedural Terrain Generation",
+    "description": "A WebGL rendering implementation of a terrain generator based on a 3D-projected terrain map. Uses the Diamond Square Algorithm to procedurally generate terrain.",
+    "imgSrc": "assets/img/fractal_terrain_img.png",
+    "imgAlt": "Procedurally generated terrain",
+    "link": "https://lschlessinger1.github.io/fractalTerrainGeneration/main.html",
+    "linkText": "View Project"
+  },
+  {
+    "title": "Image Quilting",
+    "description": "An implementation of 'Image Quilting for Texture Synthesis and Transfer' (Elfros & Freeman, 2001).",
+    "imgSrc": "assets/img/image_quilting.png",
+    "imgAlt": "Image quilting synthesis results",
+    "link": "https://github.com/lschlessinger1/image-quilting",
+    "linkText": "View on GitHub"
+  }
+]

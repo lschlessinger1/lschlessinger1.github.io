@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Vesuvius Challenge Patch Aggregation Analysis",
+    "description": "A report on patch aggregation methods in ink detection for the Vesuvius Challenge. Awarded August, 2024 Progress Prize.",
+    "imgSrc": "assets/img/patch_agg.png",
+    "imgAlt": "Vesuvius Challenge patch aggregation analysis",
+    "link": "https://github.com/lschlessinger1/vesuvius-patch-agg-analysis",
+    "linkText": "View on GitHub"
+  },
+  {
+    "title": "Vesuvius Challenge Grand Prize (runner-up)",
+    "description": "A method to detect ink in carbonized micro-CT scans of the Herculaneum Papyri. Awarded runner-up in the 2023 Grand Prize.",
+    "imgSrc": "assets/img/scroll.png",
+    "imgAlt": "Scroll ink prediction",
+    "link": "https://github.com/lschlessinger1/vesuvius-grand-prize-submission",
+    "linkText": "View on GitHub"
+  },
+  {
+    "title": "Vesuvius topogeo",
+    "description": "A topological and geometric analysis comparing and contrasting scrolls and fragments from the Vesuvius Challenge to better understand domain differences.",
+    "imgSrc": "assets/img/curvature-preview.png",
+    "imgAlt": "Scroll curvature",
+    "link": "https://github.com/lschlessinger1/vesuvius-topogeo",
+    "linkText": "View on GitHub"
+  },
+  {
+    "title": "Automated Model Search Using Bayesian Optimization and Genetic Programming",
+    "description": "Presented at the 3rd Workshop on Meta-Learning at NeurIPS 2019, Vancouver, Canada.",
+    "imgSrc": "assets/img/kernel_encoding_example.png",
+    "imgAlt": "Compositional kernel encoding",
+    "link": "http://metalearning.ml/2019/papers/metalearn2019-schlessinger.pdf",
+    "linkText": "View paper"
+  },
+  {
+    "title": "Automated Kernel Search using Evolutionary Algorithms",
+    "description": "Master's Project, Washington University in St. Louis, May 2019.",
+    "imgSrc": "assets/img/kernel_tree.png",
+    "imgAlt": "Kernel tree",
+    "link": "https://github.com/lschlessinger1/MS-project/blob/master/reports/defense/report/project_report.pdf",
+    "linkText": "View paper"
+  }
+]
