@@ -1,0 +1,45 @@
+name: Preview Pages
+
+on:
+  pull_request:
+  push:
+    branches-ignore:
+      - master
+      - gh-pages
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: preview-pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Prepare preview bundle
+        shell: bash
+        run: |
+          rsync -av --delete \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            --exclude='node_modules/' \
+            --exclude='tools/' \
+            --exclude='package-lock.json' \
+            --exclude='package.json' \
+            --exclude='README.md' \
+            --exclude='LICENSE' \
+            --exclude='CNAME' \
+            ./ preview-dist
+
+      - name: Preview Pages
+        uses: rajyan/preview-pages@v1.3.28
+        with:
+          source-dir: preview-dist
+          target-dir: preview-pages
+          pr-comment: sticky
