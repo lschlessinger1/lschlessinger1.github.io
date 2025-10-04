@@ -23,7 +23,7 @@ npm run lint
 ```
 
 - `npm run lint:html` — Validate HTML files with HTMLHint.
-- `npm run lint:js` — Lint `assets/js/` with ESLint (recommended ruleset, browser + ES2021).
+- `npm run lint:js` — Lint `assets/js/` with ESLint (recommended ruleset, browser + latest ECMAScript).
 
 ## CI
 
