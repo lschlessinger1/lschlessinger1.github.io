@@ -12,3 +12,20 @@ Key features include:
 - Smooth scrolling for navigation.
 - Dynamic content loading for projects and research.
 - Integration with Google Analytics and Microsoft Clarity for usage insights.
+
+## Tooling
+
+Install dev dependencies and run lint checks locally:
+
+```bash
+npm install
+npm run lint
+```
+
+- `npm run lint:html` — Validate HTML files with HTMLHint.
+- `npm run lint:js` — Lint `assets/js/` with ESLint (`eslint:recommended`, browser + ES2021).
+
+## CI
+
+GitHub Actions workflow (`.github/workflows/ci.yml`) runs on every push to `master` and on pull requests. It installs
+Node.js 20, performs `npm ci`, and executes the lint suite to keep the static site healthy.
