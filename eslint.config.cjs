@@ -14,5 +14,16 @@ module.exports = [
     rules: {
       "no-console": "off"
     }
+  },
+  {
+    files: ["tools/**/*.js"],
+    languageOptions: {
+      ecmaVersion: "latest",
+      sourceType: "script",
+      globals: globals.node
+    },
+    rules: {
+      "no-console": "off"
+    }
   }
 ];

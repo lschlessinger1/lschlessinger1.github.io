@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 /* eslint-env node */
-/* eslint-disable no-undef */
 const fs = require('fs');
 const path = require('path');
 const sharp = require('sharp');
@@ -29,6 +28,9 @@ if (inputs.length === 0) {
 
         const outputPath = path.join(path.dirname(absoluteInput), `${path.basename(absoluteInput, ext)}.webp`);
         try {
+            if (fs.existsSync(outputPath)) {
+                console.warn(`Overwriting existing file: ${path.relative(process.cwd(), outputPath)}`);
+            }
             await sharp(absoluteInput).webp({ quality: 85 }).toFile(outputPath);
             console.log(`Generated ${path.relative(process.cwd(), outputPath)}`);
         } catch (error) {
