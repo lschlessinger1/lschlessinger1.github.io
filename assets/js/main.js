@@ -76,7 +76,7 @@ async function renderItems(items, type) {
             }
             // Performance hints: first row gets higher priority; others remain lazy & low priority
             const isAboveFoldLikely = i === 0; // heuristic: first rendered row
-            const loadingAttr = 'loading="lazy"';
+            const loadingAttr = isAboveFoldLikely ? 'loading="eager"' : 'loading="lazy"';
             const fetchPriority = isAboveFoldLikely ? 'high' : 'low';
             const sizesAttr = '(max-width: 768px) 100vw, 600px';
             rowHTML += `
