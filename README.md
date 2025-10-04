@@ -15,15 +15,15 @@ Key features include:
 
 ## Tooling
 
-Install dev dependencies and run lint checks locally:
+Install dev dependencies and run lint checks locally (lockfile included):
 
 ```bash
-npm install
+npm ci
 npm run lint
 ```
 
 - `npm run lint:html` — Validate HTML files with HTMLHint.
-- `npm run lint:js` — Lint `assets/js/` with ESLint (`eslint:recommended`, browser + ES2021).
+- `npm run lint:js` — Lint `assets/js/` with ESLint (recommended ruleset, browser + ES2021).
 
 ## CI
 

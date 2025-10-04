@@ -1,6 +1,7 @@
 {
   "name": "lschlessinger1.github.io",
   "version": "1.0.0",
+  "private": true,
   "description": "Personal portfolio static site.",
   "scripts": {
     "lint:html": "htmlhint \"**/*.html\" --ignore node_modules",
@@ -11,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@eslint/js": "^9.4.0",
     "eslint": "^9.37.0",
     "htmlhint": "^1.7.1"
   }

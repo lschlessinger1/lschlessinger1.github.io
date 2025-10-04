@@ -1,4 +1,7 @@
+const js = require("@eslint/js");
+
 module.exports = [
+  js.configs.recommended,
   {
     files: ["assets/js/**/*.js"],
     languageOptions: {
@@ -9,7 +12,8 @@ module.exports = [
         window: "readonly",
         fetch: "readonly",
         history: "readonly",
-        console: "readonly"
+        console: "readonly",
+        setTimeout: "readonly"
       }
     },
     rules: {

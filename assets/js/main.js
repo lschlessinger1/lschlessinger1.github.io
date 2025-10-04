@@ -45,7 +45,7 @@ async function isWebpAvailable(originalSrc) {
         const ok = resp.ok;
         webpAvailabilityCache.set(candidate, ok);
         return ok;
-    } catch (e) {
+    } catch {
         webpAvailabilityCache.set(candidate, false);
         return false;
     }
