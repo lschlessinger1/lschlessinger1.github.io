@@ -15,10 +15,10 @@ Key features include:
 
 ## Tooling
 
-Install dev dependencies and run lint checks locally (lockfile included):
+Install dev dependencies and run lint checks locally:
 
 ```bash
-npm ci
+npm install
 npm run lint
 ```
 
