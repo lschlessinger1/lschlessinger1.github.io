@@ -45,10 +45,9 @@ async function isWebpAvailable(originalSrc) {
         const ok = resp.ok;
         webpAvailabilityCache.set(candidate, ok);
         return ok;
-    } catch (err) {
+    } catch {
         // Optional WebP support: treat network failures as a miss but surface details in dev.
-        // console.debug('WebP availability check failed for', candidate, err);
-        void err; // appease lint: documentation-only binding
+        // console.debug('WebP availability check failed for', candidate);
         webpAvailabilityCache.set(candidate, false);
         return false;
     }
