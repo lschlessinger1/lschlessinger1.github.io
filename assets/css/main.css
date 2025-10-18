@@ -1,3 +1,26 @@
+/* Navbar styles */
+.navbar {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.navbar-brand {
+    padding-left: 0.5rem;
+}
+
+/* Add padding to collapsed navbar menu items on small screens */
+@media (max-width: 767px) {
+    .navbar-collapse {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .navbar-nav .nav-link {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+}
+
 #intro-section {
     background-color: #3F72AF;
     color: white;
