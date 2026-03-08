@@ -151,4 +151,17 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     });
+
+    // Keep aria-current in sync with Bootstrap scrollspy active state
+    document.addEventListener('activate.bs.scrollspy', () => {
+        const navbar = document.getElementById('main-navbar');
+        if (!navbar) return;
+        for (const link of navbar.querySelectorAll('.nav-link')) {
+            if (link.classList.contains('active')) {
+                link.setAttribute('aria-current', 'true');
+            } else {
+                link.removeAttribute('aria-current');
+            }
+        }
+    });
 });
