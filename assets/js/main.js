@@ -1,34 +1,54 @@
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+
 async function fetchData(type, retries = 3) {
     const container = document.getElementById(`${type}-container`);
-    try {
-        const response = await fetch(`assets/data/${type}.json?t=${new Date().getTime()}`); // Cache busting
-        if (!response.ok) {
-            console.error(`HTTP error! Status: ${response.status}`);
-            if (retries > 0) {
-                console.warn(`Retrying... (${3 - retries + 1}/3)`);
-                setTimeout(() => fetchData(type, retries - 1), 2000); // Retry with delay
-                return;
-            } else {
-                container.innerHTML = `<p class='text-danger'>Failed to load ${type}. Please try again later.</p>`;
+    for (let attempt = 1; attempt <= retries; attempt++) {
+        try {
+            const response = await fetch(`assets/data/${type}.json?t=${new Date().getTime()}`);
+            if (!response.ok) {
+                console.error(`HTTP error! Status: ${response.status}`);
+                if (attempt < retries) {
+                    console.warn(`Retrying... (${attempt}/${retries})`);
+                    await delay(2000);
+                    continue;
+                }
+                showRetryError(container, type);
                 return;
             }
-        }
-        const data = await response.json();
-        if (!Array.isArray(data)) {
-            console.error(`Invalid JSON format: Expected an array for ${type}`);
-            container.innerHTML = `<p class='text-danger'>Invalid ${type} data format.</p>`;
+            const data = await response.json();
+            if (!Array.isArray(data)) {
+                console.error(`Invalid JSON format: Expected an array for ${type}`);
+                container.innerHTML = `<p class='text-danger'>Invalid ${type} data format.</p>`;
+                return;
+            }
+            renderItems(data, type);
             return;
-        }
-        renderItems(data, type);
-    } catch (error) {
-        console.error(`Error loading ${type}:`, error);
-        if (retries > 0) {
-            console.warn(`Retrying... (${3 - retries + 1}/3)`);
-            setTimeout(() => fetchData(type, retries - 1), 2000); // Retry with delay
-        } else {
-            container.innerHTML = `<p class='text-danger'>Failed to load ${type}. Please try again later.</p>`;
+        } catch (error) {
+            console.error(`Error loading ${type}:`, error);
+            if (attempt < retries) {
+                console.warn(`Retrying... (${attempt}/${retries})`);
+                await delay(2000);
+            } else {
+                showRetryError(container, type);
+            }
         }
     }
+}
+
+function showRetryError(container, type) {
+    container.innerHTML = '';
+    const wrapper = document.createElement('div');
+    wrapper.className = 'text-center';
+    const msg = document.createElement('p');
+    msg.className = 'text-danger';
+    msg.textContent = `Failed to load ${type}. Please try again later.`;
+    const btn = document.createElement('button');
+    btn.className = 'btn btn-outline-primary btn-sm mt-2';
+    btn.textContent = 'Retry';
+    btn.addEventListener('click', () => fetchData(type));
+    wrapper.appendChild(msg);
+    wrapper.appendChild(btn);
+    container.appendChild(wrapper);
 }
 
 // Cache for webp availability checks to avoid repeated network calls
