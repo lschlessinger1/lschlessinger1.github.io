@@ -1,3 +1,46 @@
+/* Theme custom properties */
+:root {
+    --color-hero-bg: #2D5F9A;
+    --color-hero-text: #fff;
+    --color-section-bg: #F9F7F7;
+    --color-section-text: #000;
+    --color-research-bg: #ddd;
+    --color-contact-bg: #DBE2EF;
+    --color-footer-bg: #112D4E;
+    --color-footer-text: #ddd;
+    --color-skip-bg: #112D4E;
+    --color-skip-text: #fff;
+    --color-skip-focus-outline: #F9F7F7;
+    --color-focus-outline: #3F72AF;
+    --color-card-bg: #fff;
+    --color-card-border: #fff;
+    --color-card-text: #6c757d;
+    --color-social-icon: #333;
+    --color-link: #0d6efd;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-hero-bg: #1e3a5f;
+        --color-hero-text: #f0f0f0;
+        --color-section-bg: #1a1a2e;
+        --color-section-text: #e5e7eb;
+        --color-research-bg: #1f2937;
+        --color-contact-bg: #1e293b;
+        --color-footer-bg: #0f172a;
+        --color-footer-text: #9ca3af;
+        --color-skip-bg: #0f172a;
+        --color-skip-text: #e5e7eb;
+        --color-skip-focus-outline: #3b82f6;
+        --color-focus-outline: #60a5fa;
+        --color-card-bg: #374151;
+        --color-card-border: #4b5563;
+        --color-card-text: #d1d5db;
+        --color-social-icon: #d1d5db;
+        --color-link: #60a5fa;
+    }
+}
+
 /* Navbar styles */
 .navbar {
     padding-left: 1rem;
@@ -22,8 +65,8 @@
 }
 
 #intro-section {
-    background-color: #2D5F9A;
-    color: white;
+    background-color: var(--color-hero-bg);
+    color: var(--color-hero-text);
     min-width: 100%;
     padding: 20% 25px;
 }
@@ -38,15 +81,15 @@
 }
 
 #about-section {
-    background: #F9F7F7;
-    color: black;
+    background: var(--color-section-bg);
+    color: var(--color-section-text);
     padding-top: 60px;
     padding-bottom: 60px;
 }
 
 #projects-section {
-    background: #F9F7F7;
-    color: black;
+    background: var(--color-section-bg);
+    color: var(--color-section-text);
     padding-top: 60px;
     padding-bottom: 60px;
 }
@@ -63,8 +106,8 @@
 }
 
 #research-section {
-    background: #ddd;
-    color: black;
+    background: var(--color-research-bg);
+    color: var(--color-section-text);
     padding-top: 60px;
     padding-bottom: 60px;
 }
@@ -74,7 +117,7 @@
 }
 
 #contact-section {
-    background: #DBE2EF;
+    background: var(--color-contact-bg);
     padding-top: 60px;
     padding-bottom: 60px;
 }
@@ -110,20 +153,20 @@ body {
     position: absolute;
     top: -40px;
     left: 0;
-    background: #112D4E;
-    color: #fff;
+    background: var(--color-skip-bg);
+    color: var(--color-skip-text);
     padding: 8px 16px;
     z-index: 1000;
     border-radius: 0 0 4px 0;
 }
 .skip-link:focus {
     top: 0;
-    outline: 3px solid #F9F7F7;
+    outline: 3px solid var(--color-skip-focus-outline);
 }
 
 /* Focus styles */
 a:focus-visible, button:focus-visible, .btn:focus-visible, [role="button"]:focus-visible {
-    outline: 2px solid #3F72AF;
+    outline: 2px solid var(--color-focus-outline);
     outline-offset: 2px;
 }
 
@@ -134,8 +177,8 @@ a:focus-visible, button:focus-visible, .btn:focus-visible, [role="button"]:focus
     /* Set the fixed height of the footer here */
     line-height: 60px;
     /* Vertically center the text there */
-    background-color: #112D4E;
-    color: #ddd;
+    background-color: var(--color-footer-bg);
+    color: var(--color-footer-text);
 }
 
 
@@ -159,7 +202,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible, [role="button"]:focus
 }
 
 .social-btn-group a {
-    color: #333;
+    color: var(--color-social-icon);
 }
 
 .social-btn-group a i:hover {
@@ -187,4 +230,41 @@ a:focus-visible, button:focus-visible, .btn:focus-visible, [role="button"]:focus
 
 #social-em:hover {
     color: #f39c12;
+}
+
+/* Dark mode overrides for Bootstrap utility classes and dynamic content */
+@media (prefers-color-scheme: dark) {
+    /* Cards rendered by main.js use bg-white and border-white */
+    .bg-white {
+        background-color: var(--color-card-bg) !important;
+    }
+    .border-white {
+        border-color: var(--color-card-border) !important;
+    }
+    .text-muted {
+        color: var(--color-card-text) !important;
+    }
+
+    /* Links */
+    a {
+        color: var(--color-link);
+    }
+    #about-section a {
+        color: var(--color-link);
+    }
+
+    /* GitHub hover needs lighter color in dark mode */
+    #social-gh:hover {
+        color: #e5e7eb;
+    }
+
+    /* Project/research card images: soften borders */
+    #projects-section img, #research-section img {
+        background-color: var(--color-card-bg);
+    }
+
+    /* Footer text-muted override */
+    .footer .text-muted {
+        color: var(--color-footer-text) !important;
+    }
 }
