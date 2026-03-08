@@ -181,6 +181,10 @@ a:focus-visible, button:focus-visible, .btn:focus-visible, [role="button"]:focus
     color: var(--color-footer-text);
 }
 
+.footer .text-muted {
+    color: var(--color-footer-text) !important;
+}
+
 
 
 /* Style all font awesome icons */
@@ -266,5 +270,34 @@ a:focus-visible, button:focus-visible, .btn:focus-visible, [role="button"]:focus
     /* Footer text-muted override */
     .footer .text-muted {
         color: var(--color-footer-text) !important;
+    }
+}
+
+/* Card entrance animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#projects-section .col-md-5,
+#research-section .col-md-5 {
+    animation: fadeInUp 0.5s ease-out both;
+}
+
+#projects-section .col-md-5:nth-child(2),
+#research-section .col-md-5:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #projects-section .col-md-5,
+    #research-section .col-md-5 {
+        animation: none;
     }
 }
