@@ -40,6 +40,11 @@
     <link href="assets/ico/favicon.ico" rel="icon" type="image/x-icon">
     <title>Lou Schlessinger</title>
 
+    <!-- Preconnect to CDN origins for faster resource loading -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+
     <!-- Bootstrap core CSS -->
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
           integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" rel="stylesheet">
@@ -47,6 +52,7 @@
           integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
+    <link rel="preload" href="assets/css/main.css" as="style">
     <link href="assets/css/main.css" rel="stylesheet">
     <link href="assets/ico/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
     <link href="assets/ico/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
@@ -146,11 +152,7 @@
 <footer class="footer">
     <div class="container text-center">
         <p class="text-muted">
-            &copy;
-            <script type="text/javascript">
-                document.write(new Date().getFullYear().toString());
-            </script>
-            Louis Schlessinger
+            &copy; <span id="copyright-year"></span> Louis Schlessinger
         </p>
     </div>
 </footer>

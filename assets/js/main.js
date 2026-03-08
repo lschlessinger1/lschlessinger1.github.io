@@ -122,6 +122,10 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchData("projects").catch(error => console.error('Failed to fetch projects:', error));
     fetchData("research").catch(error => console.error('Failed to fetch research:', error));
 
+    // Set copyright year without document.write()
+    const yearEl = document.getElementById('copyright-year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
     // Native smooth scrolling handled via CSS (scroll-behavior: smooth)
     // Add click delegation for in-page anchors to respect reduced motion preference
     document.getElementById('main-navbar')?.addEventListener('click', (ev) => {
