@@ -55,6 +55,12 @@ async function isWebpAvailable(originalSrc) {
     }
 }
 
+function escapeHTML(str) {
+    const div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+}
+
 async function renderItems(items, type) {
     const container = document.getElementById(`${type}-container`);
     container.innerHTML = ""; // Clear existing content
@@ -76,26 +82,32 @@ async function renderItems(items, type) {
             let webpSource = '';
             if (availability[i + j]) {
                 const candidateWebp = item.imgSrc.replace(/\.(png|jpg|jpeg)$/i, '.webp');
-                webpSource = `<source srcset="${candidateWebp}" type="image/webp">`;
+                webpSource = `<source srcset="${encodeURI(candidateWebp)}" type="image/webp">`;
             }
             // Performance hints: first row gets higher priority; others remain lazy & low priority
             const isAboveFoldLikely = i === 0; // heuristic: first rendered row
             const loadingAttr = isAboveFoldLikely ? 'loading="eager"' : 'loading="lazy"';
             const fetchPriority = isAboveFoldLikely ? 'high' : 'low';
             const sizesAttr = '(max-width: 768px) 100vw, 600px';
+            const safeTitle = escapeHTML(item.title);
+            const safeDesc = escapeHTML(item.description);
+            const safeAlt = escapeHTML(item.imgAlt || 'Image');
+            const safeSrc = encodeURI(item.imgSrc);
+            const safeLink = encodeURI(item.link);
+            const safeLinkText = escapeHTML(item.linkText);
             rowHTML += `
                 <div class="col-md-5 ${j === 1 ? 'offset-md-2' : ''} bg-white mb-3">
                     <div class="img-container">
                         <picture>
                             ${webpSource}
-                       <img alt="${item.imgAlt || 'Image'}" class="border border-white"
-                           src="${item.imgSrc}" title="${item.title}" ${loadingAttr} width="600" height="300" decoding="async" fetchpriority="${fetchPriority}" sizes="${sizesAttr}"/>
+                       <img alt="${safeAlt}" class="border border-white"
+                           src="${safeSrc}" title="${safeTitle}" ${loadingAttr} width="600" height="300" decoding="async" fetchpriority="${fetchPriority}" sizes="${sizesAttr}"/>
                         </picture>
                     </div>
-                    <p class="text-muted"><span class="fw-bold">${item.title}</span>&nbsp;&nbsp;
-                        ${item.description}</p>
+                    <p class="text-muted"><span class="fw-bold">${safeTitle}</span>&nbsp;&nbsp;
+                        ${safeDesc}</p>
                     <div class="container text-center btn-container">
-                        <a class="btn btn-primary" href="${item.link}" target="_blank" rel="noopener noreferrer">${item.linkText}</a>
+                        <a class="btn btn-primary" href="${safeLink}" target="_blank" rel="noopener noreferrer">${safeLinkText}</a>
                     </div>
                 </div>
             `;
