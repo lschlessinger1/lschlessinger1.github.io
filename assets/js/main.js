@@ -116,18 +116,22 @@ async function renderItems(items, type) {
             const safeLink = encodeURI(item.link);
             const safeLinkText = escapeHTML(item.linkText);
             rowHTML += `
-                <div class="col-md-5 ${j === 1 ? 'offset-md-2' : ''} bg-white mb-3">
-                    <div class="img-container">
-                        <picture>
-                            ${webpSource}
-                       <img alt="${safeAlt}" class="border border-white"
-                           src="${safeSrc}" title="${safeTitle}" ${loadingAttr} width="600" height="300" decoding="async" fetchpriority="${fetchPriority}" sizes="${sizesAttr}"/>
-                        </picture>
-                    </div>
-                    <p class="text-muted"><span class="fw-bold">${safeTitle}</span>&nbsp;&nbsp;
-                        ${safeDesc}</p>
-                    <div class="container text-center btn-container">
-                        <a class="btn btn-primary" href="${safeLink}" target="_blank" rel="noopener noreferrer">${safeLinkText}</a>
+                <div class="col-md-5 ${j === 1 ? 'offset-md-2' : ''} mb-3">
+                    <div class="project-card">
+                        <div class="img-container">
+                            <picture>
+                                ${webpSource}
+                           <img alt="${safeAlt}"
+                               src="${safeSrc}" title="${safeTitle}" ${loadingAttr} width="600" height="300" decoding="async" fetchpriority="${fetchPriority}" sizes="${sizesAttr}"/>
+                            </picture>
+                        </div>
+                        <div class="card-body-inner">
+                            <p class="text-muted"><span class="fw-bold">${safeTitle}</span>&nbsp;&nbsp;
+                                ${safeDesc}</p>
+                            <div class="container text-center btn-container">
+                                <a class="btn btn-primary" href="${safeLink}" target="_blank" rel="noopener noreferrer">${safeLinkText}</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             `;
