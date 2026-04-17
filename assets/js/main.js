@@ -2,9 +2,10 @@ const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 async function fetchData(type, retries = 3) {
     const container = document.getElementById(`${type}-container`);
+    container.setAttribute('aria-busy', 'true');
     for (let attempt = 1; attempt <= retries; attempt++) {
         try {
-            const response = await fetch(`assets/data/${type}.json?t=${new Date().getTime()}`);
+            const response = await fetch(`assets/data/${type}.json`);
             if (!response.ok) {
                 console.error(`HTTP error! Status: ${response.status}`);
                 if (attempt < retries) {
@@ -13,15 +14,18 @@ async function fetchData(type, retries = 3) {
                     continue;
                 }
                 showRetryError(container, type);
+                container.setAttribute('aria-busy', 'false');
                 return;
             }
             const data = await response.json();
             if (!Array.isArray(data)) {
                 console.error(`Invalid JSON format: Expected an array for ${type}`);
                 container.innerHTML = `<p class='text-danger'>Invalid ${type} data format.</p>`;
+                container.setAttribute('aria-busy', 'false');
                 return;
             }
             renderItems(data, type);
+            container.setAttribute('aria-busy', 'false');
             return;
         } catch (error) {
             console.error(`Error loading ${type}:`, error);
@@ -30,6 +34,7 @@ async function fetchData(type, retries = 3) {
                 await delay(2000);
             } else {
                 showRetryError(container, type);
+                container.setAttribute('aria-busy', 'false');
             }
         }
     }
@@ -51,28 +56,13 @@ function showRetryError(container, type) {
     container.appendChild(wrapper);
 }
 
-// Cache for webp availability checks to avoid repeated network calls
-const webpAvailabilityCache = new Map();
-
-async function isWebpAvailable(originalSrc) {
-    if (!/\.(png|jpg|jpeg)$/i.test(originalSrc)) return false; // Already webp or unsupported
-    const candidate = originalSrc.replace(/\.(png|jpg|jpeg)$/i, '.webp');
-    if (webpAvailabilityCache.has(candidate)) {
-        return webpAvailabilityCache.get(candidate);
-    }
-    try {
-        const resp = await fetch(candidate, { method: 'HEAD' });
-        const ok = resp.ok;
-        webpAvailabilityCache.set(candidate, ok);
-        return ok;
-    } catch {
-        // Optional WebP support: treat network failures as a miss but surface details in dev when enabled.
-        if (window?.DEBUG) {
-            console.debug('WebP availability check failed for', candidate);
-        }
-        webpAvailabilityCache.set(candidate, false);
-        return false;
-    }
+// Build a WebP variant path for PNG/JPG sources. Every raster image in
+// assets/img/ has a same-basename .webp sibling (see tools/generate-webp.js),
+// so we emit the <source> unconditionally and rely on <picture> fallback.
+function webpVariant(src) {
+    return /\.(png|jpg|jpeg)$/i.test(src)
+        ? src.replace(/\.(png|jpg|jpeg)$/i, '.webp')
+        : null;
 }
 
 function escapeHTML(str) {
@@ -81,15 +71,12 @@ function escapeHTML(str) {
     return div.innerHTML;
 }
 
-async function renderItems(items, type) {
+function renderItems(items, type) {
     const container = document.getElementById(`${type}-container`);
     container.innerHTML = ""; // Clear existing content
 
-    // Precompute webp availability in parallel for all items
-    const availability = await Promise.all(items.map(it => isWebpAvailable(it.imgSrc)));
-
     for (let i = 0; i < items.length; i += 2) {
-        let rowHTML = '<div class="row">';
+        let rowHTML = '<div class="row card-row">';
 
         for (let j = 0; j < 2 && i + j < items.length; j++) {
             const item = items[i + j];
@@ -97,13 +84,10 @@ async function renderItems(items, type) {
                 console.warn(`Skipping invalid ${type} entry:`, item);
                 continue;
             }
-            // Derive a potential WebP variant path (assumes same basename with .webp present in repo)
-            // If the original already ends with .webp, we won't insert an extra source.
-            let webpSource = '';
-            if (availability[i + j]) {
-                const candidateWebp = item.imgSrc.replace(/\.(png|jpg|jpeg)$/i, '.webp');
-                webpSource = `<source srcset="${encodeURI(candidateWebp)}" type="image/webp">`;
-            }
+            const webp = webpVariant(item.imgSrc);
+            const webpSource = webp
+                ? `<source srcset="${encodeURI(webp)}" type="image/webp">`
+                : '';
             // Performance hints: first row gets higher priority; others remain lazy & low priority
             const isAboveFoldLikely = i === 0; // heuristic: first rendered row
             const loadingAttr = isAboveFoldLikely ? 'loading="eager"' : 'loading="lazy"';
