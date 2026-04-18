@@ -80,18 +80,22 @@
     font-weight: bolder;
 }
 
+#about-section,
+#projects-section,
+#research-section,
+#contact-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
 #about-section {
     background: var(--color-section-bg);
     color: var(--color-section-text);
-    padding-top: 60px;
-    padding-bottom: 60px;
 }
 
 #projects-section {
     background: var(--color-section-bg);
     color: var(--color-section-text);
-    padding-top: 60px;
-    padding-bottom: 60px;
 }
 
 #projects-section img, #research-section img {
@@ -108,8 +112,6 @@
 #research-section {
     background: var(--color-research-bg);
     color: var(--color-section-text);
-    padding-top: 60px;
-    padding-bottom: 60px;
 }
 
 #research-section .row {
@@ -118,8 +120,12 @@
 
 #contact-section {
     background: var(--color-contact-bg);
-    padding-top: 60px;
-    padding-bottom: 60px;
+}
+
+/* Defer rendering cost of offscreen card rows */
+.card-row {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 500px;
 }
 
 #projects,

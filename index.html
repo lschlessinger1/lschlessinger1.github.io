@@ -54,6 +54,13 @@
     <!-- Custom styles for this template -->
     <link rel="preload" href="assets/css/main.css" as="style">
     <link href="assets/css/main.css" rel="stylesheet">
+
+    <!-- Preload LCP image (first research card) -->
+    <link rel="preload" as="image" href="assets/img/patch_agg.webp" type="image/webp" fetchpriority="high">
+
+    <!-- Preload dynamic content JSON -->
+    <link rel="preload" as="fetch" href="assets/data/research.json" type="application/json" crossorigin>
+    <link rel="preload" as="fetch" href="assets/data/projects.json" type="application/json" crossorigin>
     <link href="assets/ico/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
     <link href="assets/ico/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
     <link href="assets/ico/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
@@ -114,12 +121,10 @@
     <section id="about-section" aria-labelledby="about">
         <div class="container">
             <h2 class="display-4" id="about">About</h2>
+            <p class="lead">Hello!</p>
+            <p class="lead">My name is Lou Schlessinger.</p>
             <p class="lead">
-                Hello!
-                <br>
-                <br> My name is Lou Schlessinger.
-                <br>
-                <br> I was a student at <a href="https://wustl.edu">Washington University in St. Louis</a> studying
+                I was a student at <a href="https://wustl.edu">Washington University in St. Louis</a> studying
                 computer science and physics. I graduated in December 2018 with a B.S. and M.S. in computer science.
                 My primary research interests are in <strong>automated machine learning</strong>,
                 <strong>meta-learning</strong>, and the intersection of <strong>AI and quantitative reasoning</strong>.
@@ -130,14 +135,14 @@
     <section id="research-section" aria-labelledby="research">
         <div class="container">
             <h2 class="display-4" id="research">Research</h2>
-            <div id="research-container"></div> <!-- Research will be inserted here -->
+            <div id="research-container" aria-busy="true" aria-live="polite"></div> <!-- Research will be inserted here -->
         </div>
     </section>
 
     <section id="projects-section" aria-labelledby="projects">
         <div class="container">
             <h2 class="display-4" id="projects">Projects</h2>
-            <div id="projects-container"></div> <!-- Projects will be inserted here -->
+            <div id="projects-container" aria-busy="true" aria-live="polite"></div> <!-- Projects will be inserted here -->
         </div>
     </section>
 
