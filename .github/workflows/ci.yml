@@ -24,3 +24,8 @@ jobs:
 
       - name: Run linters
         run: npm run lint
+
+      - name: Verify rendered cards are in sync with data
+        run: |
+          npm run build
+          git diff --exit-code -- index.html

@@ -57,10 +57,6 @@
 
     <!-- Preload LCP image (first research card) -->
     <link rel="preload" as="image" href="assets/img/patch_agg.webp" type="image/webp" fetchpriority="high">
-
-    <!-- Preload dynamic content JSON -->
-    <link rel="preload" as="fetch" href="assets/data/research.json" type="application/json" crossorigin>
-    <link rel="preload" as="fetch" href="assets/data/projects.json" type="application/json" crossorigin>
     <link href="assets/ico/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
     <link href="assets/ico/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
     <link href="assets/ico/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
@@ -137,14 +133,344 @@
     <section id="research-section" aria-labelledby="research">
         <div class="container">
             <h2 class="display-4" id="research">Research</h2>
-            <div id="research-container" aria-busy="true" aria-live="polite"></div> <!-- Research will be inserted here -->
+            <div id="research-container">
+                <!-- build:research:start -->
+                <div class="row card-row">
+                    <div class="col-md-5 mb-3">
+                        <div class="project-card">
+                            <div class="img-container">
+                                <picture>
+                                    <source srcset="assets/img/patch_agg.webp" type="image/webp">
+                                    <img alt="Vesuvius Challenge patch aggregation analysis" src="assets/img/patch_agg.png" title="Vesuvius Challenge Patch Aggregation Analysis" loading="eager" width="600" height="300" decoding="async" fetchpriority="high" sizes="(max-width: 768px) 100vw, 600px"/>
+                                </picture>
+                            </div>
+                            <div class="card-body-inner">
+                                <p class="text-muted"><span class="fw-bold">Vesuvius Challenge Patch Aggregation Analysis</span>&nbsp;&nbsp; A report on patch aggregation methods in ink detection for the Vesuvius Challenge. Awarded August, 2024 Progress Prize.</p>
+                                <div class="container text-center btn-container">
+                                    <a class="btn btn-primary" href="https://github.com/lschlessinger1/vesuvius-patch-agg-analysis" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 offset-md-2 mb-3">
+                        <div class="project-card">
+                            <div class="img-container">
+                                <picture>
+                                    <source srcset="assets/img/scroll.webp" type="image/webp">
+                                    <img alt="Scroll ink prediction" src="assets/img/scroll.png" title="Vesuvius Challenge Grand Prize (runner-up)" loading="eager" width="600" height="300" decoding="async" fetchpriority="high" sizes="(max-width: 768px) 100vw, 600px"/>
+                                </picture>
+                            </div>
+                            <div class="card-body-inner">
+                                <p class="text-muted"><span class="fw-bold">Vesuvius Challenge Grand Prize (runner-up)</span>&nbsp;&nbsp; A method to detect ink in carbonized micro-CT scans of the Herculaneum Papyri. Awarded runner-up in the 2023 Grand Prize.</p>
+                                <div class="container text-center btn-container">
+                                    <a class="btn btn-primary" href="https://github.com/lschlessinger1/vesuvius-grand-prize-submission" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row card-row">
+                    <div class="col-md-5 mb-3">
+                        <div class="project-card">
+                            <div class="img-container">
+                                <picture>
+                                    <source srcset="assets/img/curvature-preview.webp" type="image/webp">
+                                    <img alt="Scroll curvature" src="assets/img/curvature-preview.png" title="Vesuvius topogeo" loading="lazy" width="600" height="300" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, 600px"/>
+                                </picture>
+                            </div>
+                            <div class="card-body-inner">
+                                <p class="text-muted"><span class="fw-bold">Vesuvius topogeo</span>&nbsp;&nbsp; A topological and geometric analysis comparing and contrasting scrolls and fragments from the Vesuvius Challenge to better understand domain differences.</p>
+                                <div class="container text-center btn-container">
+                                    <a class="btn btn-primary" href="https://github.com/lschlessinger1/vesuvius-topogeo" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 offset-md-2 mb-3">
+                        <div class="project-card">
+                            <div class="img-container">
+                                <picture>
+                                    <source srcset="assets/img/kernel_encoding_example.webp" type="image/webp">
+                                    <img alt="Compositional kernel encoding" src="assets/img/kernel_encoding_example.png" title="Automated Model Search Using Bayesian Optimization and Genetic Programming" loading="lazy" width="600" height="300" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, 600px"/>
+                                </picture>
+                            </div>
+                            <div class="card-body-inner">
+                                <p class="text-muted"><span class="fw-bold">Automated Model Search Using Bayesian Optimization and Genetic Programming</span>&nbsp;&nbsp; Presented at the 3rd Workshop on Meta-Learning at NeurIPS 2019, Vancouver, Canada.</p>
+                                <div class="container text-center btn-container">
+                                    <a class="btn btn-primary" href="http://metalearning.ml/2019/papers/metalearn2019-schlessinger.pdf" target="_blank" rel="noopener noreferrer">View paper</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row card-row">
+                    <div class="col-md-5 mb-3">
+                        <div class="project-card">
+                            <div class="img-container">
+                                <picture>
+                                    <source srcset="assets/img/kernel_tree.webp" type="image/webp">
+                                    <img alt="Kernel tree" src="assets/img/kernel_tree.png" title="Automated Kernel Search using Evolutionary Algorithms" loading="lazy" width="600" height="300" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, 600px"/>
+                                </picture>
+                            </div>
+                            <div class="card-body-inner">
+                                <p class="text-muted"><span class="fw-bold">Automated Kernel Search using Evolutionary Algorithms</span>&nbsp;&nbsp; Master&#39;s Project, Washington University in St. Louis, May 2019.</p>
+                                <div class="container text-center btn-container">
+                                    <a class="btn btn-primary" href="https://github.com/lschlessinger1/MS-project/blob/master/reports/defense/report/project_report.pdf" target="_blank" rel="noopener noreferrer">View paper</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- build:research:end -->
+            </div>
         </div>
     </section>
 
     <section id="projects-section" aria-labelledby="projects">
         <div class="container">
             <h2 class="display-4" id="projects">Projects</h2>
-            <div id="projects-container" aria-busy="true" aria-live="polite"></div> <!-- Projects will be inserted here -->
+            <div id="projects-container">
+                <!-- build:projects:start -->
+                <div class="row card-row">
+                    <div class="col-md-5 mb-3">
+                        <div class="project-card">
+                            <div class="img-container">
+                                <picture>
+                                    <source srcset="assets/img/occlusion_eval.webp" type="image/webp">
+                                    <img alt="Occlusion evaluation" src="assets/img/occlusion_eval.png" title="Occlusion evaluation" loading="eager" width="600" height="300" decoding="async" fetchpriority="high" sizes="(max-width: 768px) 100vw, 600px"/>
+                                </picture>
+                            </div>
+                            <div class="card-body-inner">
+                                <p class="text-muted"><span class="fw-bold">Occlusion evaluation</span>&nbsp;&nbsp; Simple experiments for creating occlusions in PyBullet and testing video prediction models like PredRNN.</p>
+                                <div class="container text-center btn-container">
+                                    <a class="btn btn-primary" href="https://github.com/lschlessinger1/occlusion-eval" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 offset-md-2 mb-3">
+                        <div class="project-card">
+                            <div class="img-container">
+                                <picture>
+                                    <source srcset="assets/img/math_prob_classification.webp" type="image/webp">
+                                    <img alt="Math problem classification" src="assets/img/math_prob_classification.png" title="Math Problem Classification" loading="eager" width="600" height="300" decoding="async" fetchpriority="high" sizes="(max-width: 768px) 100vw, 600px"/>
+                                </picture>
+                            </div>
+                            <div class="card-body-inner">
+                                <p class="text-muted"><span class="fw-bold">Math Problem Classification</span>&nbsp;&nbsp; A model to classify the category of a math problem. A fine-tuned version of bert-base-uncased on a subset of the MATH dataset.</p>
+                                <div class="container text-center btn-container">
+                                    <a class="btn btn-primary" href="https://huggingface.co/lschlessinger/bert-finetuned-math-prob-classification" target="_blank" rel="noopener noreferrer">View on Hugging Face</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row card-row">
+                    <div class="col-md-5 mb-3">
+                        <div class="project-card">
+                            <div class="img-container">
+                                <picture>
+                                    <source srcset="assets/img/usatt_rating_analyzer_demo.webp" type="image/webp">
+                                    <img alt="USATT rating analyzer demo" src="assets/img/usatt_rating_analyzer_demo.png" title="USATT Rating Analyzer" loading="lazy" width="600" height="300" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, 600px"/>
+                                </picture>
+                            </div>
+                            <div class="card-body-inner">
+                                <p class="text-muted"><span class="fw-bold">USATT Rating Analyzer</span>&nbsp;&nbsp; A Gradio web app that helps analyze USA Table Tennis (USATT) tournament and league results by providing basic statistics and performance visualizations over time.</p>
+                                <div class="container text-center btn-container">
+                                    <a class="btn btn-primary" href="https://lschlessinger-usatt-rating-analyzer.hf.space" target="_blank" rel="noopener noreferrer">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 offset-md-2 mb-3">
+                        <div class="project-card">
+                            <div class="img-container">
+                                <picture>
+                                    <source srcset="assets/img/traffickcam_main_activity.webp" type="image/webp">
+                                    <img alt="Traffickcam main activity screenshot" src="assets/img/traffickcam_main_activity.png" title="TraffickCam Android App" loading="lazy" width="600" height="300" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, 600px"/>
+                                </picture>
+                            </div>
+                            <div class="card-body-inner">
+                                <p class="text-muted"><span class="fw-bold">TraffickCam Android App</span>&nbsp;&nbsp; An app to help combat sex trafficking by allowing users to upload photos of hotel rooms they stay in. Developed for the Media and Machines Lab at Washington University in St. Louis.</p>
+                                <div class="container text-center btn-container">
+                                    <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.exchangeinitiative.traffickcam" target="_blank" rel="noopener noreferrer">View on Google Play Store</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row card-row">
+                    <div class="col-md-5 mb-3">
+                        <div class="project-card">
+                            <div class="img-container">
+                                <picture>
+                                    <source srcset="assets/img/snackhack.webp" type="image/webp">
+                                    <img alt="Snackhack dashboard" src="assets/img/snackhack.jpg" title="SnackHack" loading="lazy" width="600" height="300" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, 600px"/>
+                                </picture>
+                            </div>
+                            <div class="card-body-inner">
+                                <p class="text-muted"><span class="fw-bold">SnackHack</span>&nbsp;&nbsp; A web service and Android app that leverages Twitter&#39;s Geolocation API and WashU network data to provide real-time information on restaurant crowd levels on campus.</p>
+                                <div class="container text-center btn-container">
+                                    <a class="btn btn-primary" href="https://devpost.com/software/snackhack" target="_blank" rel="noopener noreferrer">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 offset-md-2 mb-3">
+                        <div class="project-card">
+                            <div class="img-container">
+                                <picture>
+                                    <source srcset="assets/img/choco_viz.webp" type="image/webp">
+                                    <img alt="Artisanal chocolate ratings bar chart" src="assets/img/choco_viz.png" title="Artisanal Chocolate Exploration" loading="lazy" width="600" height="300" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, 600px"/>
+                                </picture>
+                            </div>
+                            <div class="card-body-inner">
+                                <p class="text-muted"><span class="fw-bold">Artisanal Chocolate Exploration</span>&nbsp;&nbsp; A D3 visualization of artisanal chocolate companies and ratings using expert review data from the Manhattan Chocolate Society.</p>
+                                <div class="container text-center btn-container">
+                                    <a class="btn btn-primary" href="http://louschlessinger.com/Chocolate-Rating-Visualization/main.html" target="_blank" rel="noopener noreferrer">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row card-row">
+                    <div class="col-md-5 mb-3">
+                        <div class="project-card">
+                            <div class="img-container">
+                                <picture>
+                                    <source srcset="assets/img/reddit_comm_detection.webp" type="image/webp">
+                                    <img alt="Reddit communities" src="assets/img/reddit_comm_detection.png" title="Reddit Community Detection" loading="lazy" width="600" height="300" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, 600px"/>
+                                </picture>
+                            </div>
+                            <div class="card-body-inner">
+                                <p class="text-muted"><span class="fw-bold">Reddit Community Detection</span>&nbsp;&nbsp; A survey of community detection algorithms on Reddit data, based on the paper &#39;Detection and Analysis of Subreddit Communities&#39;.</p>
+                                <div class="container text-center btn-container">
+                                    <a class="btn btn-primary" href="https://github.com/lschlessinger1/reddit-community-detection" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 offset-md-2 mb-3">
+                        <div class="project-card">
+                            <div class="img-container">
+                                <picture>
+                                    <source srcset="assets/img/code.webp" type="image/webp">
+                                    <img alt="Generic image of code" src="assets/img/code.jpg" title="Algorithms" loading="lazy" width="600" height="300" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, 600px"/>
+                                </picture>
+                            </div>
+                            <div class="card-body-inner">
+                                <p class="text-muted"><span class="fw-bold">Algorithms</span>&nbsp;&nbsp; A collection of algorithms implemented in various languages, covering topics from machine learning to multi-agent systems, including AdaBoost, neural networks, and the auction algorithm.</p>
+                                <div class="container text-center btn-container">
+                                    <a class="btn btn-primary" href="https://github.com/lschlessinger1/Algorithms" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row card-row">
+                    <div class="col-md-5 mb-3">
+                        <div class="project-card">
+                            <div class="img-container">
+                                <picture>
+                                    <source srcset="assets/img/stocks.webp" type="image/webp">
+                                    <img alt="Generic image of stocks" src="assets/img/stocks.png" title="Bayesian Stock Price Prediction" loading="lazy" width="600" height="300" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, 600px"/>
+                                </picture>
+                            </div>
+                            <div class="card-body-inner">
+                                <p class="text-muted"><span class="fw-bold">Bayesian Stock Price Prediction</span>&nbsp;&nbsp; An evaluation of stock price prediction algorithms using analyst ratings.</p>
+                                <div class="container text-center btn-container">
+                                    <a class="btn btn-primary" href="https://github.com/lschlessinger1/Bayesian-Stock-Price-Prediction" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 offset-md-2 mb-3">
+                        <div class="project-card">
+                            <div class="img-container">
+                                <picture>
+                                    <source srcset="assets/img/electoral_map.webp" type="image/webp">
+                                    <img alt="Electoral map cartogram" src="assets/img/electoral_map.png" title="Electoral Map" loading="lazy" width="600" height="300" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, 600px"/>
+                                </picture>
+                            </div>
+                            <div class="card-body-inner">
+                                <p class="text-muted"><span class="fw-bold">Electoral Map</span>&nbsp;&nbsp; A D3 cartogram of U.S. presidential elections ranging from 1940 to 2016.</p>
+                                <div class="container text-center btn-container">
+                                    <a class="btn btn-primary" href="https://lschlessinger1.github.io/electoral-map/main.html" target="_blank" rel="noopener noreferrer">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row card-row">
+                    <div class="col-md-5 mb-3">
+                        <div class="project-card">
+                            <div class="img-container">
+                                <picture>
+                                    <source srcset="assets/img/income.webp" type="image/webp">
+                                    <img alt="Correlation matrix of adult dataset" src="assets/img/income.png" title="Income Prediction" loading="lazy" width="600" height="300" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, 600px"/>
+                                </picture>
+                            </div>
+                            <div class="card-body-inner">
+                                <p class="text-muted"><span class="fw-bold">Income Prediction</span>&nbsp;&nbsp; An evaluation of several machine learning methods applied to the Adult Data Set to predict income.</p>
+                                <div class="container text-center btn-container">
+                                    <a class="btn btn-primary" href="https://github.com/lschlessinger1/Income-Prediction" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 offset-md-2 mb-3">
+                        <div class="project-card">
+                            <div class="img-container">
+                                <picture>
+                                    <source srcset="assets/img/gtd_img.webp" type="image/webp">
+                                    <img alt="Global Terrorism Database clustering" src="assets/img/gtd_img.png" title="Global Terrorism Geo-Clustering in Spark" loading="lazy" width="600" height="300" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, 600px"/>
+                                </picture>
+                            </div>
+                            <div class="card-body-inner">
+                                <p class="text-muted"><span class="fw-bold">Global Terrorism Geo-Clustering in Spark</span>&nbsp;&nbsp; A visualization of k-means clustering on terrorist attack locations using PySpark. Dataset contains 170,000+ terrorist attacks worldwide from 1970 to 2016.</p>
+                                <div class="container text-center btn-container">
+                                    <a class="btn btn-primary" href="https://github.com/lschlessinger1/Global-Terrorism-Database-K-Means" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row card-row">
+                    <div class="col-md-5 mb-3">
+                        <div class="project-card">
+                            <div class="img-container">
+                                <picture>
+                                    <source srcset="assets/img/fractal_terrain_img.webp" type="image/webp">
+                                    <img alt="Procedurally generated terrain" src="assets/img/fractal_terrain_img.png" title="Procedural Terrain Generation" loading="lazy" width="600" height="300" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, 600px"/>
+                                </picture>
+                            </div>
+                            <div class="card-body-inner">
+                                <p class="text-muted"><span class="fw-bold">Procedural Terrain Generation</span>&nbsp;&nbsp; A WebGL rendering implementation of a terrain generator based on a 3D-projected terrain map. Uses the Diamond Square Algorithm to procedurally generate terrain.</p>
+                                <div class="container text-center btn-container">
+                                    <a class="btn btn-primary" href="https://lschlessinger1.github.io/fractalTerrainGeneration/main.html" target="_blank" rel="noopener noreferrer">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 offset-md-2 mb-3">
+                        <div class="project-card">
+                            <div class="img-container">
+                                <picture>
+                                    <source srcset="assets/img/image_quilting.webp" type="image/webp">
+                                    <img alt="Image quilting synthesis results" src="assets/img/image_quilting.png" title="Image Quilting" loading="lazy" width="600" height="300" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, 600px"/>
+                                </picture>
+                            </div>
+                            <div class="card-body-inner">
+                                <p class="text-muted"><span class="fw-bold">Image Quilting</span>&nbsp;&nbsp; An implementation of &#39;Image Quilting for Texture Synthesis and Transfer&#39; (Elfros &amp; Freeman, 2001).</p>
+                                <div class="container text-center btn-container">
+                                    <a class="btn btn-primary" href="https://github.com/lschlessinger1/image-quilting" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- build:projects:end -->
+            </div>
         </div>
     </section>
 
