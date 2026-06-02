@@ -2,7 +2,8 @@
 /* eslint-env node */
 /*
  * Pre-render the project and research cards from their JSON sources into
- * static HTML inside index.html. The cards live between marker comments
+ * static HTML inside index.html, and emit JSON-LD structured data for each
+ * work. Generated content lives between marker comments
  * (<!-- build:<type>:start --> ... <!-- build:<type>:end -->) so the script
  * is idempotent: re-running replaces the content between the markers.
  *
@@ -15,6 +16,8 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const INDEX = path.join(ROOT, 'index.html');
 const SIZES = '(max-width: 768px) 100vw, 600px';
+const SITE = 'https://louschlessinger.com/';
+const PERSON_ID = 'https://louschlessinger.com/#person';
 
 const SOURCES = [
     { type: 'research', json: path.join(ROOT, 'assets', 'data', 'research.json') },
@@ -96,21 +99,49 @@ function renderRows(items) {
     return rows.join('\n');
 }
 
-function inject(html, type, rendered, eol) {
+// Map a work's link to a schema.org type: papers (.pdf) -> ScholarlyArticle,
+// code hosts -> SoftwareSourceCode, everything else -> CreativeWork.
+function workType(link) {
+    if (/\.pdf(?:$|[?#])/i.test(link)) return 'ScholarlyArticle';
+    if (/^https?:\/\/(www\.)?github\.com\//i.test(link) || /^https?:\/\/huggingface\.co\//i.test(link)) {
+        return 'SoftwareSourceCode';
+    }
+    return 'CreativeWork';
+}
+
+// JSON-LD @graph of every work, each authored by the Person entity (#person).
+function renderWorksJsonLd(items) {
+    const graph = items.filter(isValid).map(item => ({
+        '@type': workType(item.link),
+        name: item.title,
+        description: item.description,
+        url: item.link,
+        image: SITE + item.imgSrc,
+        author: { '@id': PERSON_ID }
+    }));
+    // Escape "<" so nothing in the data can break out of the <script> element.
+    const json = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }, null, 4)
+        .replace(/</g, '\\u003c');
+    return `<script type="application/ld+json">\n${json}\n</script>`;
+}
+
+function inject(html, type, rendered, eol, indentSpaces = 16) {
     const start = `<!-- build:${type}:start -->`;
     const end = `<!-- build:${type}:end -->`;
     const re = new RegExp(`(${start})[\\s\\S]*?(${end})`);
     if (!re.test(html)) {
         throw new Error(`Missing "${start} ... ${end}" markers in index.html`);
     }
-    const body = indent(rendered, 16).split('\n').join(eol);
-    // Function replacement avoids `$` in card content being treated as a token.
-    return html.replace(re, (match, openMarker) => `${openMarker}${eol}${body}${eol}                ${end}`);
+    const pad = ' '.repeat(indentSpaces);
+    const body = indent(rendered, indentSpaces).split('\n').join(eol);
+    // Function replacement avoids `$` in content being treated as a token.
+    return html.replace(re, (match, openMarker) => `${openMarker}${eol}${body}${eol}${pad}${end}`);
 }
 
 function main() {
     let html = fs.readFileSync(INDEX, 'utf8');
     const eol = html.includes('\r\n') ? '\r\n' : '\n';
+    const allWorks = [];
 
     for (const { type, json } of SOURCES) {
         const data = JSON.parse(fs.readFileSync(json, 'utf8'));
@@ -122,10 +153,13 @@ function main() {
             console.warn(`Skipped ${skipped} invalid ${type} entr${skipped === 1 ? 'y' : 'ies'} (missing required fields)`);
         }
         html = inject(html, type, renderRows(data), eol);
+        allWorks.push(...data);
     }
 
+    html = inject(html, 'works-jsonld', renderWorksJsonLd(allWorks), eol, 8);
+
     fs.writeFileSync(INDEX, html);
-    console.log('Rendered research + projects cards into index.html');
+    console.log('Rendered cards + structured data into index.html');
 }
 
 main();

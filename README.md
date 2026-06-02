@@ -3,7 +3,7 @@ lschlessinger1.github.io
 My personal website.
 
 This project is a static portfolio website built with HTML, CSS, and JavaScript, utilizing Bootstrap for styling and
-Font Awesome for icons. Project and research information lives in local JSON files (`projects.json` and
+inline SVG icons. Project and research information lives in local JSON files (`projects.json` and
 `research.json`) and is rendered into static HTML in `index.html` at build time via `npm run build`.
 
 Key features include:

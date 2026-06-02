@@ -8,7 +8,7 @@ Personal portfolio website (louschlessinger.com) hosted on GitHub Pages. Static 
 
 - HTML5, CSS3, vanilla JavaScript (ES2020+)
 - Bootstrap 5.3.6 (CDN)
-- Font Awesome 4.7.0 (CDN)
+- Inline SVG icons
 - Node.js tooling for linting and image optimization
 
 ## Commands
