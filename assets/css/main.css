@@ -200,18 +200,6 @@ a:focus-visible, button:focus-visible, .btn:focus-visible, [role="button"]:focus
 
 
 
-/* Style all font awesome icons */
-
-.fa {
-    margin: 5px;
-    font-size: 30px;
-    width: 50px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 50%;
-}
-
-
 /* Contact buttons */
 
 .social-btn-group {
@@ -220,15 +208,25 @@ a:focus-visible, button:focus-visible, .btn:focus-visible, [role="button"]:focus
 
 .social-btn-group a {
     color: var(--color-social-icon);
+    display: inline-block;
+    margin: 0 10px;
 }
 
-.social-btn-group a i:hover {
+.social-btn-group a svg {
+    width: 44px;
+    height: 44px;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+.social-btn-group a:hover svg {
     transform: scale(1.1);
 }
 
-.social-btn-group a i {
-    transform: scale(0.8);
-    transition-duration: 0.5s;
+@media (prefers-reduced-motion: reduce) {
+    .social-btn-group a svg {
+        transition: none;
+    }
 }
 
 

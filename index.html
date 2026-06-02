@@ -42,14 +42,11 @@
 
     <!-- Preconnect to CDN origins for faster resource loading -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
 
     <!-- Bootstrap core CSS -->
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
           integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
     <link rel="preload" href="assets/css/main.css" as="style">
@@ -65,6 +62,7 @@
         {
             "@context": "https://schema.org",
             "@type": "Person",
+            "@id": "https://louschlessinger.com/#person",
             "name": "Louis Schlessinger",
             "alternateName": ["Lou Schlessinger", "Louie Schlessinger"],
             "url": "https://louschlessinger.com/",
@@ -79,10 +77,210 @@
             "sameAs": [
                 "https://github.com/lschlessinger1",
                 "https://www.linkedin.com/in/louschlessinger/",
-                "https://huggingface.co/lschlessinger"
+                "https://huggingface.co/lschlessinger",
+                "https://scholar.google.com/citations?user=32RdLlAAAAAJ"
             ]
         }
         </script>
+        <!-- build:works-jsonld:start -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "SoftwareSourceCode",
+                    "name": "Vesuvius Challenge Patch Aggregation Analysis",
+                    "description": "A report on patch aggregation methods in ink detection for the Vesuvius Challenge. Awarded August, 2024 Progress Prize.",
+                    "url": "https://github.com/lschlessinger1/vesuvius-patch-agg-analysis",
+                    "image": "https://louschlessinger.com/assets/img/patch_agg.png",
+                    "author": {
+                        "@id": "https://louschlessinger.com/#person"
+                    }
+                },
+                {
+                    "@type": "SoftwareSourceCode",
+                    "name": "Vesuvius Challenge Grand Prize (runner-up)",
+                    "description": "A method to detect ink in carbonized micro-CT scans of the Herculaneum Papyri. Awarded runner-up in the 2023 Grand Prize.",
+                    "url": "https://github.com/lschlessinger1/vesuvius-grand-prize-submission",
+                    "image": "https://louschlessinger.com/assets/img/scroll.png",
+                    "author": {
+                        "@id": "https://louschlessinger.com/#person"
+                    }
+                },
+                {
+                    "@type": "SoftwareSourceCode",
+                    "name": "Vesuvius topogeo",
+                    "description": "A topological and geometric analysis comparing and contrasting scrolls and fragments from the Vesuvius Challenge to better understand domain differences.",
+                    "url": "https://github.com/lschlessinger1/vesuvius-topogeo",
+                    "image": "https://louschlessinger.com/assets/img/curvature-preview.png",
+                    "author": {
+                        "@id": "https://louschlessinger.com/#person"
+                    }
+                },
+                {
+                    "@type": "ScholarlyArticle",
+                    "name": "Automated Model Search Using Bayesian Optimization and Genetic Programming",
+                    "description": "Presented at the 3rd Workshop on Meta-Learning at NeurIPS 2019, Vancouver, Canada.",
+                    "url": "http://metalearning.ml/2019/papers/metalearn2019-schlessinger.pdf",
+                    "image": "https://louschlessinger.com/assets/img/kernel_encoding_example.png",
+                    "author": {
+                        "@id": "https://louschlessinger.com/#person"
+                    }
+                },
+                {
+                    "@type": "ScholarlyArticle",
+                    "name": "Automated Kernel Search using Evolutionary Algorithms",
+                    "description": "Master's Project, Washington University in St. Louis, May 2019.",
+                    "url": "https://github.com/lschlessinger1/MS-project/blob/master/reports/defense/report/project_report.pdf",
+                    "image": "https://louschlessinger.com/assets/img/kernel_tree.png",
+                    "author": {
+                        "@id": "https://louschlessinger.com/#person"
+                    }
+                },
+                {
+                    "@type": "SoftwareSourceCode",
+                    "name": "Occlusion evaluation",
+                    "description": "Simple experiments for creating occlusions in PyBullet and testing video prediction models like PredRNN.",
+                    "url": "https://github.com/lschlessinger1/occlusion-eval",
+                    "image": "https://louschlessinger.com/assets/img/occlusion_eval.png",
+                    "author": {
+                        "@id": "https://louschlessinger.com/#person"
+                    }
+                },
+                {
+                    "@type": "SoftwareSourceCode",
+                    "name": "Math Problem Classification",
+                    "description": "A model to classify the category of a math problem. A fine-tuned version of bert-base-uncased on a subset of the MATH dataset.",
+                    "url": "https://huggingface.co/lschlessinger/bert-finetuned-math-prob-classification",
+                    "image": "https://louschlessinger.com/assets/img/math_prob_classification.png",
+                    "author": {
+                        "@id": "https://louschlessinger.com/#person"
+                    }
+                },
+                {
+                    "@type": "CreativeWork",
+                    "name": "USATT Rating Analyzer",
+                    "description": "A Gradio web app that helps analyze USA Table Tennis (USATT) tournament and league results by providing basic statistics and performance visualizations over time.",
+                    "url": "https://lschlessinger-usatt-rating-analyzer.hf.space",
+                    "image": "https://louschlessinger.com/assets/img/usatt_rating_analyzer_demo.png",
+                    "author": {
+                        "@id": "https://louschlessinger.com/#person"
+                    }
+                },
+                {
+                    "@type": "CreativeWork",
+                    "name": "TraffickCam Android App",
+                    "description": "An app to help combat sex trafficking by allowing users to upload photos of hotel rooms they stay in. Developed for the Media and Machines Lab at Washington University in St. Louis.",
+                    "url": "https://play.google.com/store/apps/details?id=com.exchangeinitiative.traffickcam",
+                    "image": "https://louschlessinger.com/assets/img/traffickcam_main_activity.png",
+                    "author": {
+                        "@id": "https://louschlessinger.com/#person"
+                    }
+                },
+                {
+                    "@type": "CreativeWork",
+                    "name": "SnackHack",
+                    "description": "A web service and Android app that leverages Twitter's Geolocation API and WashU network data to provide real-time information on restaurant crowd levels on campus.",
+                    "url": "https://devpost.com/software/snackhack",
+                    "image": "https://louschlessinger.com/assets/img/snackhack.jpg",
+                    "author": {
+                        "@id": "https://louschlessinger.com/#person"
+                    }
+                },
+                {
+                    "@type": "CreativeWork",
+                    "name": "Artisanal Chocolate Exploration",
+                    "description": "A D3 visualization of artisanal chocolate companies and ratings using expert review data from the Manhattan Chocolate Society.",
+                    "url": "http://louschlessinger.com/Chocolate-Rating-Visualization/main.html",
+                    "image": "https://louschlessinger.com/assets/img/choco_viz.png",
+                    "author": {
+                        "@id": "https://louschlessinger.com/#person"
+                    }
+                },
+                {
+                    "@type": "SoftwareSourceCode",
+                    "name": "Reddit Community Detection",
+                    "description": "A survey of community detection algorithms on Reddit data, based on the paper 'Detection and Analysis of Subreddit Communities'.",
+                    "url": "https://github.com/lschlessinger1/reddit-community-detection",
+                    "image": "https://louschlessinger.com/assets/img/reddit_comm_detection.png",
+                    "author": {
+                        "@id": "https://louschlessinger.com/#person"
+                    }
+                },
+                {
+                    "@type": "SoftwareSourceCode",
+                    "name": "Algorithms",
+                    "description": "A collection of algorithms implemented in various languages, covering topics from machine learning to multi-agent systems, including AdaBoost, neural networks, and the auction algorithm.",
+                    "url": "https://github.com/lschlessinger1/Algorithms",
+                    "image": "https://louschlessinger.com/assets/img/code.jpg",
+                    "author": {
+                        "@id": "https://louschlessinger.com/#person"
+                    }
+                },
+                {
+                    "@type": "SoftwareSourceCode",
+                    "name": "Bayesian Stock Price Prediction",
+                    "description": "An evaluation of stock price prediction algorithms using analyst ratings.",
+                    "url": "https://github.com/lschlessinger1/Bayesian-Stock-Price-Prediction",
+                    "image": "https://louschlessinger.com/assets/img/stocks.png",
+                    "author": {
+                        "@id": "https://louschlessinger.com/#person"
+                    }
+                },
+                {
+                    "@type": "CreativeWork",
+                    "name": "Electoral Map",
+                    "description": "A D3 cartogram of U.S. presidential elections ranging from 1940 to 2016.",
+                    "url": "https://lschlessinger1.github.io/electoral-map/main.html",
+                    "image": "https://louschlessinger.com/assets/img/electoral_map.png",
+                    "author": {
+                        "@id": "https://louschlessinger.com/#person"
+                    }
+                },
+                {
+                    "@type": "SoftwareSourceCode",
+                    "name": "Income Prediction",
+                    "description": "An evaluation of several machine learning methods applied to the Adult Data Set to predict income.",
+                    "url": "https://github.com/lschlessinger1/Income-Prediction",
+                    "image": "https://louschlessinger.com/assets/img/income.png",
+                    "author": {
+                        "@id": "https://louschlessinger.com/#person"
+                    }
+                },
+                {
+                    "@type": "SoftwareSourceCode",
+                    "name": "Global Terrorism Geo-Clustering in Spark",
+                    "description": "A visualization of k-means clustering on terrorist attack locations using PySpark. Dataset contains 170,000+ terrorist attacks worldwide from 1970 to 2016.",
+                    "url": "https://github.com/lschlessinger1/Global-Terrorism-Database-K-Means",
+                    "image": "https://louschlessinger.com/assets/img/gtd_img.png",
+                    "author": {
+                        "@id": "https://louschlessinger.com/#person"
+                    }
+                },
+                {
+                    "@type": "CreativeWork",
+                    "name": "Procedural Terrain Generation",
+                    "description": "A WebGL rendering implementation of a terrain generator based on a 3D-projected terrain map. Uses the Diamond Square Algorithm to procedurally generate terrain.",
+                    "url": "https://lschlessinger1.github.io/fractalTerrainGeneration/main.html",
+                    "image": "https://louschlessinger.com/assets/img/fractal_terrain_img.png",
+                    "author": {
+                        "@id": "https://louschlessinger.com/#person"
+                    }
+                },
+                {
+                    "@type": "SoftwareSourceCode",
+                    "name": "Image Quilting",
+                    "description": "An implementation of 'Image Quilting for Texture Synthesis and Transfer' (Elfros & Freeman, 2001).",
+                    "url": "https://github.com/lschlessinger1/image-quilting",
+                    "image": "https://louschlessinger.com/assets/img/image_quilting.png",
+                    "author": {
+                        "@id": "https://louschlessinger.com/#person"
+                    }
+                }
+            ]
+        }
+        </script>
+        <!-- build:works-jsonld:end -->
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#main-navbar" data-bs-offset="50" tabindex="0">
@@ -483,13 +681,15 @@
         <div class="container">
             <h2 class="display-4" id="contact">Contact</h2>
             <div class="social-btn-group text-center">
-                <a aria-label="GitHub profile" href="https://github.com/lschlessinger1" target="_blank" rel="noopener noreferrer"><i
-                        class="fa fa-github-square fa-3x" id="social-gh"></i></a>
-                <a aria-label="LinkedIn profile" href="https://www.linkedin.com/in/louschlessinger/" target="_blank" rel="noopener noreferrer"><i
-                        class="fa fa-linkedin-square fa-3x"
-                        id="social-li"></i></a>
-                <a aria-label="Email Lou Schlessinger" href="mailto:louschlessinger96@gmail.com"><i
-                        class="fa fa-envelope-square fa-3x" id="social-em"></i></a>
+                <a id="social-gh" aria-label="GitHub profile" href="https://github.com/lschlessinger1" target="_blank" rel="noopener noreferrer">
+                    <svg viewbox="0 0 24 24" width="44" height="44" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23a11.52 11.52 0 0 1 6.003 0c2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.896-.015 3.293 0 .322.218.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                </a>
+                <a id="social-li" aria-label="LinkedIn profile" href="https://www.linkedin.com/in/louschlessinger/" target="_blank" rel="noopener noreferrer">
+                    <svg viewbox="0 0 24 24" width="44" height="44" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                </a>
+                <a id="social-em" aria-label="Email Lou Schlessinger" href="mailto:louschlessinger96@gmail.com">
+                    <svg viewbox="0 0 24 24" width="44" height="44" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                </a>
             </div>
         </div>
     </section>
