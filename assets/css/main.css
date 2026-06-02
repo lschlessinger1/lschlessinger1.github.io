@@ -17,6 +17,7 @@
     --color-card-text: #6c757d;
     --color-social-icon: #333;
     --color-link: #0d6efd;
+    --color-name-muted: #5c636a;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -38,6 +39,7 @@
         --color-card-text: #d1d5db;
         --color-social-icon: #d1d5db;
         --color-link: #60a5fa;
+        --color-name-muted: #9ca3af;
     }
 }
 
@@ -78,6 +80,11 @@
 
 #tagline {
     font-weight: bolder;
+}
+
+/* Muted "(is)" in the Lou(is) wordplay (About section) */
+.name-muted {
+    color: var(--color-name-muted);
 }
 
 #about-section,
