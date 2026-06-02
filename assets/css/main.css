@@ -82,7 +82,7 @@
     font-weight: bolder;
 }
 
-/* Muted "(is)" in the Lou(is) wordplay (About section) */
+/* Muted nickname aside, e.g. ("Lou"), in the About section */
 .name-muted {
     color: var(--color-name-muted);
 }
