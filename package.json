@@ -4,6 +4,7 @@
   "private": true,
   "description": "Personal portfolio static site.",
   "scripts": {
+    "build": "node tools/build-content.js",
     "lint:html": "htmlhint \"**/*.html\" --ignore node_modules",
     "lint:js": "eslint assets/js --max-warnings=0",
     "lint": "npm run lint:html && npm run lint:js"
