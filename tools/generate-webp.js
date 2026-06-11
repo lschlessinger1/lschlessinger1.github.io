@@ -5,6 +5,8 @@ const path = require('path');
 const sharp = require('sharp');
 
 const supported = new Set(['.png', '.jpg', '.jpeg']);
+// Cards render at 600px wide; 1200px covers 2x DPR displays.
+const MAX_WIDTH = 1200;
 const inputs = process.argv.slice(2);
 
 if (inputs.length === 0) {
@@ -31,7 +33,10 @@ if (inputs.length === 0) {
             if (fs.existsSync(outputPath)) {
                 console.warn(`Overwriting existing file: ${path.relative(process.cwd(), outputPath)}`);
             }
-            await sharp(absoluteInput).webp({ quality: 85 }).toFile(outputPath);
+            await sharp(absoluteInput)
+                .resize({ width: MAX_WIDTH, withoutEnlargement: true })
+                .webp({ quality: 85 })
+                .toFile(outputPath);
             console.log(`Generated ${path.relative(process.cwd(), outputPath)}`);
         } catch (error) {
             console.error(`Failed to convert ${input}:`, error.message);
