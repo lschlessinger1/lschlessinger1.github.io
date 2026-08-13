@@ -157,6 +157,7 @@ h2 {
     font-weight: bolder;
 }
 
+#about,
 #projects,
 #contact {
     font-family: inherit;
@@ -164,11 +165,11 @@ h2 {
 }
 
 /* Sections */
-#about-section,
 #research-section {
     padding-block: clamp(4.5rem, 8vw, 7rem);
 }
 
+#about-section,
 #projects-section,
 #contact-section {
     padding-block: 60px;
@@ -203,6 +204,7 @@ h2 {
     margin-bottom: 3.25rem;
 }
 
+#about,
 #projects,
 #contact {
     padding-bottom: 40px;
@@ -229,31 +231,6 @@ h2 {
     color: var(--color-muted);
     font-size: 1.1rem;
     line-height: 1.65;
-}
-
-.about-layout {
-    display: grid;
-    grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.2fr);
-    gap: clamp(2.5rem, 8vw, 7rem);
-    align-items: start;
-}
-
-.about-copy {
-    max-width: 760px;
-}
-
-.about-copy .lead {
-    margin-bottom: 1.25rem;
-    color: var(--color-section-text);
-    font-size: clamp(1.15rem, 2vw, 1.35rem);
-    font-weight: 400;
-    line-height: 1.75;
-}
-
-.about-copy p:not(.lead) {
-    color: var(--color-muted);
-    font-size: 1.05rem;
-    line-height: 1.7;
 }
 
 .name-muted {
@@ -521,14 +498,6 @@ summary:focus-visible,
 
     .navbar-nav .nav-link {
         min-height: 44px;
-    }
-
-    .about-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .about-layout {
-        gap: 2rem;
     }
 
     .section-heading-wide {
