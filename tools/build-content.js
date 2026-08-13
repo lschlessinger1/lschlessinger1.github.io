@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-/* eslint-env node */
 /*
  * Pre-render the project and research cards from their JSON sources into
  * static HTML inside index.html, and emit JSON-LD structured data for each
@@ -52,7 +51,7 @@ function isValid(item) {
     return Boolean(item && item.title && item.description && item.imgSrc && item.link && item.linkText);
 }
 
-// `eager` marks the first row so its image matches the LCP preload in index.html.
+// `eager` can explicitly prioritize a card image when the layout puts it above the fold.
 function renderCard(item, eager) {
     const webp = webpVariant(item.imgSrc);
     const loading = eager ? 'eager' : 'lazy';
@@ -61,7 +60,7 @@ function renderCard(item, eager) {
     const alt = escapeHtml(item.imgAlt || 'Image');
 
     const lines = [
-        '<div class="project-card">',
+        '<article class="project-card">',
         '    <div class="img-container">',
         '        <picture>'
     ];
@@ -69,34 +68,71 @@ function renderCard(item, eager) {
         lines.push(`            <source srcset="${attrUrl(webp)}" type="image/webp">`);
     }
     lines.push(
-        `            <img alt="${alt}" src="${attrUrl(item.imgSrc)}" title="${title}" loading="${loading}" width="600" height="300" decoding="async" fetchpriority="${fetchPriority}" sizes="${SIZES}"/>`,
+        `            <img alt="${alt}" src="${attrUrl(item.imgSrc)}" loading="${loading}" width="600" height="300" decoding="async" fetchpriority="${fetchPriority}" sizes="${SIZES}"/>`,
         '        </picture>',
         '    </div>',
-        '    <div class="card-body-inner">',
-        `        <p class="text-muted"><span class="fw-bold">${title}</span>&nbsp;&nbsp; ${escapeHtml(item.description)}</p>`,
-        '        <div class="container text-center btn-container">',
-        `            <a class="btn btn-primary" href="${attrUrl(item.link)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.linkText)}</a>`,
+        '    <div class="card-body-inner">'
+    );
+    if (item.meta) {
+        lines.push(`        <p class="project-meta">${escapeHtml(item.meta)}</p>`);
+    }
+    lines.push(
+        `        <h3 class="project-title">${title}</h3>`,
+        `        <p class="project-description">${escapeHtml(item.description)}</p>`,
+        '        <div class="btn-container">',
+        `            <a class="btn btn-primary" href="${attrUrl(item.link)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(`${item.linkText}: ${item.title} (opens in a new tab)`)}">${escapeHtml(item.linkText)} <span aria-hidden="true">&nearr;</span></a>`,
         '        </div>',
         '    </div>',
-        '</div>'
+        '</article>'
     );
     return lines.join('\n');
 }
 
-function renderRows(items) {
+function renderRows(items, { eagerFirst = false } = {}) {
     const valid = items.filter(isValid);
     const rows = [];
     for (let i = 0; i < valid.length; i += 2) {
-        const eager = i === 0;
         const cols = [];
         for (let j = 0; j < 2 && i + j < valid.length; j++) {
             const offset = j === 1 ? ' offset-md-2' : '';
-            const card = indent(renderCard(valid[i + j], eager), 4);
+            const card = indent(renderCard(valid[i + j], eagerFirst && i + j === 0), 4);
             cols.push(`<div class="col-md-5${offset} mb-3">\n${card}\n</div>`);
         }
         rows.push(`<div class="row card-row">\n${indent(cols.join('\n'), 4)}\n</div>`);
     }
     return rows.join('\n');
+}
+
+function renderArchive(items) {
+    if (items.length === 0) return '';
+
+    const entries = items.map(item => {
+        const title = escapeHtml(item.title);
+        const meta = item.meta ? `<p class="project-meta">${escapeHtml(item.meta)}</p>\n` : '';
+        return [
+            '<li class="project-archive-item">',
+            indent(meta + `<h3>${title}</h3>\n<p>${escapeHtml(item.description)}</p>\n<a href="${attrUrl(item.link)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(`${item.linkText}: ${item.title} (opens in a new tab)`)}">${escapeHtml(item.linkText)} <span aria-hidden="true">&nearr;</span></a>`, 4),
+            '</li>'
+        ].join('\n');
+    });
+
+    return [
+        '<details class="project-archive">',
+        `    <summary>Earlier projects <span aria-hidden="true">· ${items.length} items</span></summary>`,
+        '    <ul class="project-archive-list">',
+        indent(entries.join('\n'), 8),
+        '    </ul>',
+        '</details>'
+    ].join('\n');
+}
+
+function renderProjectCollection(items) {
+    const valid = items.filter(isValid);
+    const featured = valid.filter(item => item.featured === true);
+    const selected = featured.length > 0 ? featured : valid;
+    const archived = featured.length > 0 ? valid.filter(item => item.featured !== true) : [];
+
+    return [renderRows(selected), renderArchive(archived)].filter(Boolean).join('\n');
 }
 
 // Map a work's link to a schema.org type: papers (.pdf) -> ScholarlyArticle,
@@ -152,7 +188,10 @@ function main() {
         if (skipped > 0) {
             console.warn(`Skipped ${skipped} invalid ${type} entr${skipped === 1 ? 'y' : 'ies'} (missing required fields)`);
         }
-        html = inject(html, type, renderRows(data), eol);
+        const rendered = type === 'projects'
+            ? renderProjectCollection(data)
+            : renderRows(data);
+        html = inject(html, type, rendered, eol);
         allWorks.push(...data);
     }
 
