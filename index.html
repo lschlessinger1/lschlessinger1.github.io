@@ -55,8 +55,8 @@
     <link rel="preload" href="assets/css/main.css" as="style">
     <link href="assets/css/main.css" rel="stylesheet">
 
-    <!-- Preload the hero artifact image -->
-    <link rel="preload" as="image" href="assets/img/scroll.webp" type="image/webp" fetchpriority="high">
+    <!-- Preload the first research image -->
+    <link rel="preload" as="image" href="assets/img/patch_agg.webp" type="image/webp" fetchpriority="high">
     <link href="assets/ico/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
     <link href="assets/ico/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
     <link href="assets/ico/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
@@ -142,7 +142,7 @@
                 },
                 {
                     "@type": "SoftwareSourceCode",
-                    "name": "Occlusion Evaluation",
+                    "name": "Occlusion evaluation",
                     "description": "Simple experiments for creating occlusions in PyBullet and testing video prediction models like PredRNN.",
                     "url": "https://github.com/lschlessinger1/occlusion-eval",
                     "image": "https://louschlessinger.com/assets/img/occlusion_eval.png",
@@ -153,7 +153,7 @@
                 {
                     "@type": "SoftwareSourceCode",
                     "name": "Math Problem Classification",
-                    "description": "A BERT model fine-tuned on a subset of the MATH dataset to classify math problems by category.",
+                    "description": "A model to classify the category of a math problem. A fine-tuned version of bert-base-uncased on a subset of the MATH dataset.",
                     "url": "https://huggingface.co/lschlessinger/bert-finetuned-math-prob-classification",
                     "image": "https://louschlessinger.com/assets/img/math_prob_classification.png",
                     "author": {
@@ -315,40 +315,9 @@
     </nav>
 </header>
 <main id="main-content" tabindex="-1">
-    <section id="intro-section" aria-labelledby="full-name">
-        <div class="container hero-layout">
-            <div class="hero-copy">
-                <p class="hero-kicker">Machine Learning Engineer &amp; Researcher</p>
-                <h1 id="full-name">Lou Schlessinger</h1>
-                <p id="tagline" class="hero-positioning">
-                    I build and study intelligent systems that learn, reason, and represent the world.
-                </p>
-                <p class="hero-summary">
-                    My work spans mathematical reasoning, spatial cognition, computer vision, and neuro-inspired AI—from
-                    Vesuvius Challenge ink detection to multimodal ML systems in production.
-                </p>
-                <div class="hero-actions">
-                    <a class="btn hero-primary" href="#research-section">Explore my work</a>
-                    <a class="btn hero-secondary" href="#contact-section">Get in touch</a>
-                </div>
-            </div>
-            <figure class="hero-visual">
-                <div class="artifact-heading" aria-hidden="true">
-                    <span>Ink detection</span>
-                    <span>Herculaneum Papyri</span>
-                </div>
-                <picture>
-                    <source srcset="assets/img/scroll.webp" type="image/webp">
-                    <img src="assets/img/scroll.png"
-                         alt="Predicted ink characters across a carbonized Herculaneum scroll"
-                         width="1200" height="124" decoding="async" fetchpriority="high">
-                </picture>
-                <figcaption>
-                    <strong>2023 Vesuvius Challenge Grand Prize</strong>
-                    <span>Runner-up team</span>
-                </figcaption>
-            </figure>
-        </div>
+    <section class="text-center" id="intro-section" aria-labelledby="full-name">
+        <h1 class="display-4" id="full-name">Lou Schlessinger</h1>
+        <p class="lead" id="tagline">Machine Learning Engineer &amp; Researcher</p>
     </section>
     <section id="about-section" aria-labelledby="about">
         <div class="container about-layout">
@@ -386,7 +355,7 @@
                             <div class="img-container">
                                 <picture>
                                     <source srcset="assets/img/patch_agg.webp" type="image/webp">
-                                    <img alt="Vesuvius Challenge patch aggregation analysis" src="assets/img/patch_agg.png" loading="lazy" width="600" height="300" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, 600px"/>
+                                    <img alt="Vesuvius Challenge patch aggregation analysis" src="assets/img/patch_agg.png" loading="eager" width="600" height="300" decoding="async" fetchpriority="high" sizes="(max-width: 768px) 100vw, 600px"/>
                                 </picture>
                             </div>
                             <div class="card-body-inner">
@@ -483,11 +452,7 @@
 
     <section id="projects-section" aria-labelledby="projects">
         <div class="container">
-            <div class="section-heading section-heading-wide">
-                <p class="section-kicker">Projects</p>
-                <h2 id="projects">Selected projects</h2>
-                <p class="section-intro">Applied machine learning, data products, and interactive systems.</p>
-            </div>
+            <h2 class="display-4" id="projects">Projects</h2>
             <div id="projects-container">
                 <!-- build:projects:start -->
                 <div class="row card-row">
@@ -500,11 +465,11 @@
                                 </picture>
                             </div>
                             <div class="card-body-inner">
-                                <p class="project-meta">Computer vision · PyBullet</p>
-                                <h3 class="project-title">Occlusion Evaluation</h3>
-                                <p class="project-description">Simple experiments for creating occlusions in PyBullet and testing video prediction models like PredRNN.</p>
+                                <div class="text-muted project-summary">
+                                    <h3 class="legacy-project-title">Occlusion evaluation</h3>&nbsp;&nbsp; <span>Simple experiments for creating occlusions in PyBullet and testing video prediction models like PredRNN.</span>
+                                </div>
                                 <div class="btn-container">
-                                    <a class="btn btn-primary" href="https://github.com/lschlessinger1/occlusion-eval" target="_blank" rel="noopener noreferrer" aria-label="View on GitHub: Occlusion Evaluation (opens in a new tab)">View on GitHub <span aria-hidden="true">&nearr;</span></a>
+                                    <a class="btn btn-primary" href="https://github.com/lschlessinger1/occlusion-eval" target="_blank" rel="noopener noreferrer" aria-label="View on GitHub: Occlusion evaluation (opens in a new tab)">View on GitHub</a>
                                 </div>
                             </div>
                         </article>
@@ -518,11 +483,11 @@
                                 </picture>
                             </div>
                             <div class="card-body-inner">
-                                <p class="project-meta">NLP · Hugging Face</p>
-                                <h3 class="project-title">Math Problem Classification</h3>
-                                <p class="project-description">A BERT model fine-tuned on a subset of the MATH dataset to classify math problems by category.</p>
+                                <div class="text-muted project-summary">
+                                    <h3 class="legacy-project-title">Math Problem Classification</h3>&nbsp;&nbsp; <span>A model to classify the category of a math problem. A fine-tuned version of bert-base-uncased on a subset of the MATH dataset.</span>
+                                </div>
                                 <div class="btn-container">
-                                    <a class="btn btn-primary" href="https://huggingface.co/lschlessinger/bert-finetuned-math-prob-classification" target="_blank" rel="noopener noreferrer" aria-label="View on Hugging Face: Math Problem Classification (opens in a new tab)">View on Hugging Face <span aria-hidden="true">&nearr;</span></a>
+                                    <a class="btn btn-primary" href="https://huggingface.co/lschlessinger/bert-finetuned-math-prob-classification" target="_blank" rel="noopener noreferrer" aria-label="View on Hugging Face: Math Problem Classification (opens in a new tab)">View on Hugging Face</a>
                                 </div>
                             </div>
                         </article>
@@ -538,11 +503,11 @@
                                 </picture>
                             </div>
                             <div class="card-body-inner">
-                                <p class="project-meta">Data product · Gradio</p>
-                                <h3 class="project-title">USATT Rating Analyzer</h3>
-                                <p class="project-description">A Gradio web app that helps analyze USA Table Tennis (USATT) tournament and league results by providing basic statistics and performance visualizations over time.</p>
+                                <div class="text-muted project-summary">
+                                    <h3 class="legacy-project-title">USATT Rating Analyzer</h3>&nbsp;&nbsp; <span>A Gradio web app that helps analyze USA Table Tennis (USATT) tournament and league results by providing basic statistics and performance visualizations over time.</span>
+                                </div>
                                 <div class="btn-container">
-                                    <a class="btn btn-primary" href="https://lschlessinger-usatt-rating-analyzer.hf.space" target="_blank" rel="noopener noreferrer" aria-label="View Project: USATT Rating Analyzer (opens in a new tab)">View Project <span aria-hidden="true">&nearr;</span></a>
+                                    <a class="btn btn-primary" href="https://lschlessinger-usatt-rating-analyzer.hf.space" target="_blank" rel="noopener noreferrer" aria-label="View Project: USATT Rating Analyzer (opens in a new tab)">View Project</a>
                                 </div>
                             </div>
                         </article>
@@ -556,11 +521,11 @@
                                 </picture>
                             </div>
                             <div class="card-body-inner">
-                                <p class="project-meta">Android · Social impact</p>
-                                <h3 class="project-title">TraffickCam Android App</h3>
-                                <p class="project-description">An app to help combat sex trafficking by allowing users to upload photos of hotel rooms they stay in. Developed for the Media and Machines Lab at Washington University in St. Louis.</p>
+                                <div class="text-muted project-summary">
+                                    <h3 class="legacy-project-title">TraffickCam Android App</h3>&nbsp;&nbsp; <span>An app to help combat sex trafficking by allowing users to upload photos of hotel rooms they stay in. Developed for the Media and Machines Lab at Washington University in St. Louis.</span>
+                                </div>
                                 <div class="btn-container">
-                                    <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.exchangeinitiative.traffickcam" target="_blank" rel="noopener noreferrer" aria-label="View on Google Play Store: TraffickCam Android App (opens in a new tab)">View on Google Play Store <span aria-hidden="true">&nearr;</span></a>
+                                    <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.exchangeinitiative.traffickcam" target="_blank" rel="noopener noreferrer" aria-label="View on Google Play Store: TraffickCam Android App (opens in a new tab)">View on Google Play Store</a>
                                 </div>
                             </div>
                         </article>
@@ -576,11 +541,11 @@
                                 </picture>
                             </div>
                             <div class="card-body-inner">
-                                <p class="project-meta">Web + Android · Real-time data</p>
-                                <h3 class="project-title">SnackHack</h3>
-                                <p class="project-description">A web service and Android app that leverages Twitter&#39;s Geolocation API and WashU network data to provide real-time information on restaurant crowd levels on campus.</p>
+                                <div class="text-muted project-summary">
+                                    <h3 class="legacy-project-title">SnackHack</h3>&nbsp;&nbsp; <span>A web service and Android app that leverages Twitter&#39;s Geolocation API and WashU network data to provide real-time information on restaurant crowd levels on campus.</span>
+                                </div>
                                 <div class="btn-container">
-                                    <a class="btn btn-primary" href="https://devpost.com/software/snackhack" target="_blank" rel="noopener noreferrer" aria-label="View Project: SnackHack (opens in a new tab)">View Project <span aria-hidden="true">&nearr;</span></a>
+                                    <a class="btn btn-primary" href="https://devpost.com/software/snackhack" target="_blank" rel="noopener noreferrer" aria-label="View Project: SnackHack (opens in a new tab)">View Project</a>
                                 </div>
                             </div>
                         </article>
@@ -594,87 +559,185 @@
                                 </picture>
                             </div>
                             <div class="card-body-inner">
-                                <p class="project-meta">Data visualization · D3</p>
-                                <h3 class="project-title">Artisanal Chocolate Exploration</h3>
-                                <p class="project-description">A D3 visualization of artisanal chocolate companies and ratings using expert review data from the Manhattan Chocolate Society.</p>
+                                <div class="text-muted project-summary">
+                                    <h3 class="legacy-project-title">Artisanal Chocolate Exploration</h3>&nbsp;&nbsp; <span>A D3 visualization of artisanal chocolate companies and ratings using expert review data from the Manhattan Chocolate Society.</span>
+                                </div>
                                 <div class="btn-container">
-                                    <a class="btn btn-primary" href="https://louschlessinger.com/Chocolate-Rating-Visualization/main.html" target="_blank" rel="noopener noreferrer" aria-label="View Project: Artisanal Chocolate Exploration (opens in a new tab)">View Project <span aria-hidden="true">&nearr;</span></a>
+                                    <a class="btn btn-primary" href="https://louschlessinger.com/Chocolate-Rating-Visualization/main.html" target="_blank" rel="noopener noreferrer" aria-label="View Project: Artisanal Chocolate Exploration (opens in a new tab)">View Project</a>
                                 </div>
                             </div>
                         </article>
                     </div>
                 </div>
-                <details class="project-archive">
-                    <summary>Earlier projects <span aria-hidden="true">· 8 items</span></summary>
-                    <ul class="project-archive-list">
-                        <li class="project-archive-item">
-                            <h3>Reddit Community Detection</h3>
-                            <p>A survey of community detection algorithms on Reddit data, based on the paper &#39;Detection and Analysis of Subreddit Communities&#39;.</p>
-                            <a href="https://github.com/lschlessinger1/reddit-community-detection" target="_blank" rel="noopener noreferrer" aria-label="View on GitHub: Reddit Community Detection (opens in a new tab)">View on GitHub <span aria-hidden="true">&nearr;</span></a>
-                        </li>
-                        <li class="project-archive-item">
-                            <h3>Algorithms</h3>
-                            <p>A collection of algorithms implemented in various languages, covering topics from machine learning to multi-agent systems, including AdaBoost, neural networks, and the auction algorithm.</p>
-                            <a href="https://github.com/lschlessinger1/Algorithms" target="_blank" rel="noopener noreferrer" aria-label="View on GitHub: Algorithms (opens in a new tab)">View on GitHub <span aria-hidden="true">&nearr;</span></a>
-                        </li>
-                        <li class="project-archive-item">
-                            <h3>Bayesian Stock Price Prediction</h3>
-                            <p>An evaluation of stock price prediction algorithms using analyst ratings.</p>
-                            <a href="https://github.com/lschlessinger1/Bayesian-Stock-Price-Prediction" target="_blank" rel="noopener noreferrer" aria-label="View on GitHub: Bayesian Stock Price Prediction (opens in a new tab)">View on GitHub <span aria-hidden="true">&nearr;</span></a>
-                        </li>
-                        <li class="project-archive-item">
-                            <h3>Electoral Map</h3>
-                            <p>A D3 cartogram of U.S. presidential elections ranging from 1940 to 2016.</p>
-                            <a href="https://louschlessinger.com/electoral-map/main.html" target="_blank" rel="noopener noreferrer" aria-label="View Project: Electoral Map (opens in a new tab)">View Project <span aria-hidden="true">&nearr;</span></a>
-                        </li>
-                        <li class="project-archive-item">
-                            <h3>Income Prediction</h3>
-                            <p>An evaluation of several machine learning methods applied to the Adult Data Set to predict income.</p>
-                            <a href="https://github.com/lschlessinger1/Income-Prediction" target="_blank" rel="noopener noreferrer" aria-label="View on GitHub: Income Prediction (opens in a new tab)">View on GitHub <span aria-hidden="true">&nearr;</span></a>
-                        </li>
-                        <li class="project-archive-item">
-                            <h3>Global Terrorism Geo-Clustering in Spark</h3>
-                            <p>A visualization of k-means clustering on terrorist attack locations using PySpark. Dataset contains 170,000+ terrorist attacks worldwide from 1970 to 2016.</p>
-                            <a href="https://github.com/lschlessinger1/Global-Terrorism-Database-K-Means" target="_blank" rel="noopener noreferrer" aria-label="View on GitHub: Global Terrorism Geo-Clustering in Spark (opens in a new tab)">View on GitHub <span aria-hidden="true">&nearr;</span></a>
-                        </li>
-                        <li class="project-archive-item">
-                            <h3>Procedural Terrain Generation</h3>
-                            <p>A WebGL rendering implementation of a terrain generator based on a 3D-projected terrain map. Uses the Diamond Square Algorithm to procedurally generate terrain.</p>
-                            <a href="https://louschlessinger.com/fractalTerrainGeneration/main.html" target="_blank" rel="noopener noreferrer" aria-label="View Project: Procedural Terrain Generation (opens in a new tab)">View Project <span aria-hidden="true">&nearr;</span></a>
-                        </li>
-                        <li class="project-archive-item">
-                            <h3>Image Quilting</h3>
-                            <p>An implementation of &#39;Image Quilting for Texture Synthesis and Transfer&#39; (Elfros &amp; Freeman, 2001).</p>
-                            <a href="https://github.com/lschlessinger1/image-quilting" target="_blank" rel="noopener noreferrer" aria-label="View on GitHub: Image Quilting (opens in a new tab)">View on GitHub <span aria-hidden="true">&nearr;</span></a>
-                        </li>
-                    </ul>
-                </details>
+                <div class="row card-row">
+                    <div class="col-md-5 mb-3">
+                        <article class="project-card">
+                            <div class="img-container">
+                                <picture>
+                                    <source srcset="assets/img/reddit_comm_detection.webp" type="image/webp">
+                                    <img alt="Reddit communities" src="assets/img/reddit_comm_detection.png" loading="lazy" width="600" height="300" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, 600px"/>
+                                </picture>
+                            </div>
+                            <div class="card-body-inner">
+                                <div class="text-muted project-summary">
+                                    <h3 class="legacy-project-title">Reddit Community Detection</h3>&nbsp;&nbsp; <span>A survey of community detection algorithms on Reddit data, based on the paper &#39;Detection and Analysis of Subreddit Communities&#39;.</span>
+                                </div>
+                                <div class="btn-container">
+                                    <a class="btn btn-primary" href="https://github.com/lschlessinger1/reddit-community-detection" target="_blank" rel="noopener noreferrer" aria-label="View on GitHub: Reddit Community Detection (opens in a new tab)">View on GitHub</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-5 offset-md-2 mb-3">
+                        <article class="project-card">
+                            <div class="img-container">
+                                <picture>
+                                    <source srcset="assets/img/code.webp" type="image/webp">
+                                    <img alt="Generic image of code" src="assets/img/code.jpg" loading="lazy" width="600" height="300" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, 600px"/>
+                                </picture>
+                            </div>
+                            <div class="card-body-inner">
+                                <div class="text-muted project-summary">
+                                    <h3 class="legacy-project-title">Algorithms</h3>&nbsp;&nbsp; <span>A collection of algorithms implemented in various languages, covering topics from machine learning to multi-agent systems, including AdaBoost, neural networks, and the auction algorithm.</span>
+                                </div>
+                                <div class="btn-container">
+                                    <a class="btn btn-primary" href="https://github.com/lschlessinger1/Algorithms" target="_blank" rel="noopener noreferrer" aria-label="View on GitHub: Algorithms (opens in a new tab)">View on GitHub</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="row card-row">
+                    <div class="col-md-5 mb-3">
+                        <article class="project-card">
+                            <div class="img-container">
+                                <picture>
+                                    <source srcset="assets/img/stocks.webp" type="image/webp">
+                                    <img alt="Generic image of stocks" src="assets/img/stocks.png" loading="lazy" width="600" height="300" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, 600px"/>
+                                </picture>
+                            </div>
+                            <div class="card-body-inner">
+                                <div class="text-muted project-summary">
+                                    <h3 class="legacy-project-title">Bayesian Stock Price Prediction</h3>&nbsp;&nbsp; <span>An evaluation of stock price prediction algorithms using analyst ratings.</span>
+                                </div>
+                                <div class="btn-container">
+                                    <a class="btn btn-primary" href="https://github.com/lschlessinger1/Bayesian-Stock-Price-Prediction" target="_blank" rel="noopener noreferrer" aria-label="View on GitHub: Bayesian Stock Price Prediction (opens in a new tab)">View on GitHub</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-5 offset-md-2 mb-3">
+                        <article class="project-card">
+                            <div class="img-container">
+                                <picture>
+                                    <source srcset="assets/img/electoral_map.webp" type="image/webp">
+                                    <img alt="Electoral map cartogram" src="assets/img/electoral_map.png" loading="lazy" width="600" height="300" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, 600px"/>
+                                </picture>
+                            </div>
+                            <div class="card-body-inner">
+                                <div class="text-muted project-summary">
+                                    <h3 class="legacy-project-title">Electoral Map</h3>&nbsp;&nbsp; <span>A D3 cartogram of U.S. presidential elections ranging from 1940 to 2016.</span>
+                                </div>
+                                <div class="btn-container">
+                                    <a class="btn btn-primary" href="https://louschlessinger.com/electoral-map/main.html" target="_blank" rel="noopener noreferrer" aria-label="View Project: Electoral Map (opens in a new tab)">View Project</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="row card-row">
+                    <div class="col-md-5 mb-3">
+                        <article class="project-card">
+                            <div class="img-container">
+                                <picture>
+                                    <source srcset="assets/img/income.webp" type="image/webp">
+                                    <img alt="Correlation matrix of adult dataset" src="assets/img/income.png" loading="lazy" width="600" height="300" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, 600px"/>
+                                </picture>
+                            </div>
+                            <div class="card-body-inner">
+                                <div class="text-muted project-summary">
+                                    <h3 class="legacy-project-title">Income Prediction</h3>&nbsp;&nbsp; <span>An evaluation of several machine learning methods applied to the Adult Data Set to predict income.</span>
+                                </div>
+                                <div class="btn-container">
+                                    <a class="btn btn-primary" href="https://github.com/lschlessinger1/Income-Prediction" target="_blank" rel="noopener noreferrer" aria-label="View on GitHub: Income Prediction (opens in a new tab)">View on GitHub</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-5 offset-md-2 mb-3">
+                        <article class="project-card">
+                            <div class="img-container">
+                                <picture>
+                                    <source srcset="assets/img/gtd_img.webp" type="image/webp">
+                                    <img alt="Global Terrorism Database clustering" src="assets/img/gtd_img.png" loading="lazy" width="600" height="300" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, 600px"/>
+                                </picture>
+                            </div>
+                            <div class="card-body-inner">
+                                <div class="text-muted project-summary">
+                                    <h3 class="legacy-project-title">Global Terrorism Geo-Clustering in Spark</h3>&nbsp;&nbsp; <span>A visualization of k-means clustering on terrorist attack locations using PySpark. Dataset contains 170,000+ terrorist attacks worldwide from 1970 to 2016.</span>
+                                </div>
+                                <div class="btn-container">
+                                    <a class="btn btn-primary" href="https://github.com/lschlessinger1/Global-Terrorism-Database-K-Means" target="_blank" rel="noopener noreferrer" aria-label="View on GitHub: Global Terrorism Geo-Clustering in Spark (opens in a new tab)">View on GitHub</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="row card-row">
+                    <div class="col-md-5 mb-3">
+                        <article class="project-card">
+                            <div class="img-container">
+                                <picture>
+                                    <source srcset="assets/img/fractal_terrain_img.webp" type="image/webp">
+                                    <img alt="Procedurally generated terrain" src="assets/img/fractal_terrain_img.png" loading="lazy" width="600" height="300" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, 600px"/>
+                                </picture>
+                            </div>
+                            <div class="card-body-inner">
+                                <div class="text-muted project-summary">
+                                    <h3 class="legacy-project-title">Procedural Terrain Generation</h3>&nbsp;&nbsp; <span>A WebGL rendering implementation of a terrain generator based on a 3D-projected terrain map. Uses the Diamond Square Algorithm to procedurally generate terrain.</span>
+                                </div>
+                                <div class="btn-container">
+                                    <a class="btn btn-primary" href="https://louschlessinger.com/fractalTerrainGeneration/main.html" target="_blank" rel="noopener noreferrer" aria-label="View Project: Procedural Terrain Generation (opens in a new tab)">View Project</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-5 offset-md-2 mb-3">
+                        <article class="project-card">
+                            <div class="img-container">
+                                <picture>
+                                    <source srcset="assets/img/image_quilting.webp" type="image/webp">
+                                    <img alt="Image quilting synthesis results" src="assets/img/image_quilting.png" loading="lazy" width="600" height="300" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, 600px"/>
+                                </picture>
+                            </div>
+                            <div class="card-body-inner">
+                                <div class="text-muted project-summary">
+                                    <h3 class="legacy-project-title">Image Quilting</h3>&nbsp;&nbsp; <span>An implementation of &#39;Image Quilting for Texture Synthesis and Transfer&#39; (Elfros &amp; Freeman, 2001).</span>
+                                </div>
+                                <div class="btn-container">
+                                    <a class="btn btn-primary" href="https://github.com/lschlessinger1/image-quilting" target="_blank" rel="noopener noreferrer" aria-label="View on GitHub: Image Quilting (opens in a new tab)">View on GitHub</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
                 <!-- build:projects:end -->
             </div>
         </div>
     </section>
 
     <section id="contact-section" aria-labelledby="contact">
-        <div class="container contact-layout">
-            <div class="section-heading">
-                <p class="section-kicker">Contact</p>
-                <h2 id="contact">Let's compare notes.</h2>
-                <p class="section-intro">
-                    Interested in research, machine learning systems, or an unusual technical problem? I'd be glad to hear from you.
-                </p>
-            </div>
-            <nav class="social-btn-group" aria-label="Contact links">
+        <div class="container">
+            <h2 class="display-4" id="contact">Contact</h2>
+            <nav class="social-btn-group text-center" aria-label="Contact links">
                 <a class="social-link" aria-label="GitHub profile (opens in a new tab)" href="https://github.com/lschlessinger1" target="_blank" rel="noopener noreferrer">
-                    <svg viewbox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23a11.52 11.52 0 0 1 6.003 0c2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.896-.015 3.293 0 .322.218.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-                    <span>GitHub</span>
+                    <svg viewbox="0 0 24 24" width="44" height="44" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23a11.52 11.52 0 0 1 6.003 0c2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.896-.015 3.293 0 .322.218.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
                 </a>
                 <a class="social-link" aria-label="LinkedIn profile (opens in a new tab)" href="https://www.linkedin.com/in/louschlessinger/" target="_blank" rel="noopener noreferrer">
-                    <svg viewbox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
-                    <span>LinkedIn</span>
+                    <svg viewbox="0 0 24 24" width="44" height="44" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
                 </a>
                 <a class="social-link" aria-label="Email Lou Schlessinger" href="mailto:louschlessinger96@gmail.com">
-                    <svg viewbox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                    <span>Email</span>
+                    <svg viewbox="0 0 24 24" width="44" height="44" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                 </a>
             </nav>
         </div>

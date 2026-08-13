@@ -88,6 +88,36 @@ function renderCard(item, eager) {
     return lines.join('\n');
 }
 
+function renderLegacyProjectCard(item) {
+    const webp = webpVariant(item.imgSrc);
+    const title = escapeHtml(item.title);
+    const alt = escapeHtml(item.imgAlt || 'Image');
+
+    const lines = [
+        '<article class="project-card">',
+        '    <div class="img-container">',
+        '        <picture>'
+    ];
+    if (webp) {
+        lines.push(`            <source srcset="${attrUrl(webp)}" type="image/webp">`);
+    }
+    lines.push(
+        `            <img alt="${alt}" src="${attrUrl(item.imgSrc)}" loading="lazy" width="600" height="300" decoding="async" fetchpriority="low" sizes="${SIZES}"/>`,
+        '        </picture>',
+        '    </div>',
+        '    <div class="card-body-inner">',
+        '        <div class="text-muted project-summary">',
+        `            <h3 class="legacy-project-title">${title}</h3>&nbsp;&nbsp; <span>${escapeHtml(item.description)}</span>`,
+        '        </div>',
+        '        <div class="btn-container">',
+        `            <a class="btn btn-primary" href="${attrUrl(item.link)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(`${item.linkText}: ${item.title} (opens in a new tab)`)}">${escapeHtml(item.linkText)}</a>`,
+        '        </div>',
+        '    </div>',
+        '</article>'
+    );
+    return lines.join('\n');
+}
+
 function renderRows(items, { eagerFirst = false } = {}) {
     const valid = items.filter(isValid);
     const rows = [];
@@ -103,36 +133,19 @@ function renderRows(items, { eagerFirst = false } = {}) {
     return rows.join('\n');
 }
 
-function renderArchive(items) {
-    if (items.length === 0) return '';
-
-    const entries = items.map(item => {
-        const title = escapeHtml(item.title);
-        const meta = item.meta ? `<p class="project-meta">${escapeHtml(item.meta)}</p>\n` : '';
-        return [
-            '<li class="project-archive-item">',
-            indent(meta + `<h3>${title}</h3>\n<p>${escapeHtml(item.description)}</p>\n<a href="${attrUrl(item.link)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(`${item.linkText}: ${item.title} (opens in a new tab)`)}">${escapeHtml(item.linkText)} <span aria-hidden="true">&nearr;</span></a>`, 4),
-            '</li>'
-        ].join('\n');
-    });
-
-    return [
-        '<details class="project-archive">',
-        `    <summary>Earlier projects <span aria-hidden="true">· ${items.length} items</span></summary>`,
-        '    <ul class="project-archive-list">',
-        indent(entries.join('\n'), 8),
-        '    </ul>',
-        '</details>'
-    ].join('\n');
-}
-
-function renderProjectCollection(items) {
+function renderLegacyProjectRows(items) {
     const valid = items.filter(isValid);
-    const featured = valid.filter(item => item.featured === true);
-    const selected = featured.length > 0 ? featured : valid;
-    const archived = featured.length > 0 ? valid.filter(item => item.featured !== true) : [];
-
-    return [renderRows(selected), renderArchive(archived)].filter(Boolean).join('\n');
+    const rows = [];
+    for (let i = 0; i < valid.length; i += 2) {
+        const cols = [];
+        for (let j = 0; j < 2 && i + j < valid.length; j++) {
+            const offset = j === 1 ? ' offset-md-2' : '';
+            const card = indent(renderLegacyProjectCard(valid[i + j]), 4);
+            cols.push(`<div class="col-md-5${offset} mb-3">\n${card}\n</div>`);
+        }
+        rows.push(`<div class="row card-row">\n${indent(cols.join('\n'), 4)}\n</div>`);
+    }
+    return rows.join('\n');
 }
 
 // Map a work's link to a schema.org type: papers (.pdf) -> ScholarlyArticle,
@@ -189,8 +202,8 @@ function main() {
             console.warn(`Skipped ${skipped} invalid ${type} entr${skipped === 1 ? 'y' : 'ies'} (missing required fields)`);
         }
         const rendered = type === 'projects'
-            ? renderProjectCollection(data)
-            : renderRows(data);
+            ? renderLegacyProjectRows(data)
+            : renderRows(data, { eagerFirst: true });
         html = inject(html, type, rendered, eol);
         allWorks.push(...data);
     }

@@ -1,9 +1,7 @@
 [
   {
-    "title": "Occlusion Evaluation",
+    "title": "Occlusion evaluation",
     "description": "Simple experiments for creating occlusions in PyBullet and testing video prediction models like PredRNN.",
-    "meta": "Computer vision · PyBullet",
-    "featured": true,
     "imgSrc": "assets/img/occlusion_eval.png",
     "imgAlt": "Occlusion evaluation",
     "link": "https://github.com/lschlessinger1/occlusion-eval",
@@ -11,9 +9,7 @@
   },
   {
     "title": "Math Problem Classification",
-    "description": "A BERT model fine-tuned on a subset of the MATH dataset to classify math problems by category.",
-    "meta": "NLP · Hugging Face",
-    "featured": true,
+    "description": "A model to classify the category of a math problem. A fine-tuned version of bert-base-uncased on a subset of the MATH dataset.",
     "imgSrc": "assets/img/math_prob_classification.png",
     "imgAlt": "Math problem classification",
     "link": "https://huggingface.co/lschlessinger/bert-finetuned-math-prob-classification",
@@ -22,8 +18,6 @@
   {
     "title": "USATT Rating Analyzer",
     "description": "A Gradio web app that helps analyze USA Table Tennis (USATT) tournament and league results by providing basic statistics and performance visualizations over time.",
-    "meta": "Data product · Gradio",
-    "featured": true,
     "imgSrc": "assets/img/usatt_rating_analyzer_demo.png",
     "imgAlt": "USATT rating analyzer demo",
     "link": "https://lschlessinger-usatt-rating-analyzer.hf.space",
@@ -32,8 +26,6 @@
   {
     "title": "TraffickCam Android App",
     "description": "An app to help combat sex trafficking by allowing users to upload photos of hotel rooms they stay in. Developed for the Media and Machines Lab at Washington University in St. Louis.",
-    "meta": "Android · Social impact",
-    "featured": true,
     "imgSrc": "assets/img/traffickcam_main_activity.png",
     "imgAlt": "Traffickcam main activity screenshot",
     "link": "https://play.google.com/store/apps/details?id=com.exchangeinitiative.traffickcam",
@@ -42,8 +34,6 @@
   {
     "title": "SnackHack",
     "description": "A web service and Android app that leverages Twitter's Geolocation API and WashU network data to provide real-time information on restaurant crowd levels on campus.",
-    "meta": "Web + Android · Real-time data",
-    "featured": true,
     "imgSrc": "assets/img/snackhack.jpg",
     "imgAlt": "Snackhack dashboard",
     "link": "https://devpost.com/software/snackhack",
@@ -52,8 +42,6 @@
   {
     "title": "Artisanal Chocolate Exploration",
     "description": "A D3 visualization of artisanal chocolate companies and ratings using expert review data from the Manhattan Chocolate Society.",
-    "meta": "Data visualization · D3",
-    "featured": true,
     "imgSrc": "assets/img/choco_viz.png",
     "imgAlt": "Artisanal chocolate ratings bar chart",
     "link": "https://louschlessinger.com/Chocolate-Rating-Visualization/main.html",
