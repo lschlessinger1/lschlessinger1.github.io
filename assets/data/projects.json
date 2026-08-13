@@ -44,7 +44,7 @@
     "description": "A D3 visualization of artisanal chocolate companies and ratings using expert review data from the Manhattan Chocolate Society.",
     "imgSrc": "assets/img/choco_viz.png",
     "imgAlt": "Artisanal chocolate ratings bar chart",
-    "link": "http://louschlessinger.com/Chocolate-Rating-Visualization/main.html",
+    "link": "https://louschlessinger.com/Chocolate-Rating-Visualization/main.html",
     "linkText": "View Project"
   },
   {
@@ -76,7 +76,7 @@
     "description": "A D3 cartogram of U.S. presidential elections ranging from 1940 to 2016.",
     "imgSrc": "assets/img/electoral_map.png",
     "imgAlt": "Electoral map cartogram",
-    "link": "https://lschlessinger1.github.io/electoral-map/main.html",
+    "link": "https://louschlessinger.com/electoral-map/main.html",
     "linkText": "View Project"
   },
   {
@@ -100,7 +100,7 @@
     "description": "A WebGL rendering implementation of a terrain generator based on a 3D-projected terrain map. Uses the Diamond Square Algorithm to procedurally generate terrain.",
     "imgSrc": "assets/img/fractal_terrain_img.png",
     "imgAlt": "Procedurally generated terrain",
-    "link": "https://lschlessinger1.github.io/fractalTerrainGeneration/main.html",
+    "link": "https://louschlessinger.com/fractalTerrainGeneration/main.html",
     "linkText": "View Project"
   },
   {

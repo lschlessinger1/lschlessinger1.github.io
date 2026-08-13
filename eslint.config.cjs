@@ -1,4 +1,3 @@
-/* eslint-env node */
 const js = require("@eslint/js");
 const globals = require("globals");
 
@@ -16,7 +15,7 @@ module.exports = [
     }
   },
   {
-    files: ["tools/**/*.js"],
+    files: ["eslint.config.cjs", "tools/**/*.js", "tests/**/*.js"],
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "script",

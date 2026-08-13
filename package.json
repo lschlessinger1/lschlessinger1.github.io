@@ -5,18 +5,21 @@
   "description": "Personal portfolio static site.",
   "scripts": {
     "build": "node tools/build-content.js",
+    "build:social": "node tools/generate-social-card.js",
+    "validate:social": "node tools/validate-social-card.js",
     "lint:html": "htmlhint \"**/*.html\" --ignore node_modules",
-    "lint:js": "eslint assets/js --max-warnings=0",
-    "lint": "npm run lint:html && npm run lint:js"
+    "lint:js": "eslint assets/js tools tests eslint.config.cjs --max-warnings=0",
+    "lint": "npm run lint:html && npm run lint:js",
+    "test": "node --test"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@eslint/js": "^9.37.0",
-    "eslint": "^9.37.0",
-    "globals": "^15.8.0",
-    "htmlhint": "^1.7.1",
-    "sharp": "^0.34.4"
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.8.1",
+    "globals": "^17.11.0",
+    "htmlhint": "^1.9.2",
+    "sharp": "^0.35.3"
   }
 }

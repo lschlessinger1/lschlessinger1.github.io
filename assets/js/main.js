@@ -1,4 +1,4 @@
-// Set the copyright year and wire up in-page navigation behavior.
+// Set the copyright year and keep the responsive navigation in sync.
 // Project and research cards are pre-rendered into index.html at build time
 // (see tools/build-content.js), so there is no client-side data fetching here.
 
@@ -7,30 +7,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const yearEl = document.getElementById('copyright-year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    // Native smooth scrolling is handled via CSS (scroll-behavior: smooth).
-    // Delegate clicks on in-page anchors so we can respect reduced-motion.
-    document.getElementById('main-navbar')?.addEventListener('click', (ev) => {
-        const target = ev.target;
-        if (target && target.closest) {
-            const link = target.closest('a[href^="#"]');
-            if (link) {
-                const id = link.getAttribute('href');
-                if (id && id.startsWith('#')) {
-                    const el = document.querySelector(id);
-                    if (el) {
-                        ev.preventDefault();
-                        // If user prefers reduced motion, jump instantly
-                        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-                        if (prefersReduced) {
-                            el.scrollIntoView();
-                        } else {
-                            el.scrollIntoView({ behavior: 'smooth' });
-                        }
-                        history.replaceState(null, '', id);
-                    }
-                }
-            }
-        }
+    // Let native fragment navigation manage focus, history, and reduced motion.
+    // Bootstrap only needs help closing an expanded mobile menu after selection.
+    const collapseEl = document.getElementById('navbarCollapse');
+    collapseEl?.addEventListener('click', (event) => {
+        if (!(event.target instanceof Element)) return;
+        const link = event.target.closest('a[href^="#"]');
+        if (!link || !collapseEl.classList.contains('show')) return;
+
+        window.bootstrap?.Collapse.getOrCreateInstance(collapseEl, { toggle: false }).hide();
     });
 
     // Keep aria-current in sync with Bootstrap scrollspy active state
@@ -39,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!navbar) return;
         for (const link of navbar.querySelectorAll('.nav-link')) {
             if (link.classList.contains('active')) {
-                link.setAttribute('aria-current', 'true');
+                link.setAttribute('aria-current', 'location');
             } else {
                 link.removeAttribute('aria-current');
             }
