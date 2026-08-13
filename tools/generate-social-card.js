@@ -52,7 +52,7 @@ async function main() {
         .png({ compressionLevel: 9, adaptiveFiltering: true })
         .toFile(OUTPUT);
 
-    console.log(`Generated ${path.relative(ROOT, OUTPUT)} (1200×630)`);
+    console.log(`Generated ${path.relative(ROOT, OUTPUT)} (1200x630)`);
 }
 
 main().catch(error => {

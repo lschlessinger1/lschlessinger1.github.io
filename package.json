@@ -6,6 +6,7 @@
   "scripts": {
     "build": "node tools/build-content.js",
     "build:social": "node tools/generate-social-card.js",
+    "validate:social": "node tools/validate-social-card.js",
     "lint:html": "htmlhint \"**/*.html\" --ignore node_modules",
     "lint:js": "eslint assets/js tools tests eslint.config.cjs --max-warnings=0",
     "lint": "npm run lint:html && npm run lint:js",
