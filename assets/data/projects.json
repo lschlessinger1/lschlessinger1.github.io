@@ -1,6 +1,6 @@
 [
   {
-    "title": "Occlusion evaluation",
+    "title": "Occlusion and video prediction",
     "description": "Simple experiments for creating occlusions in PyBullet and testing video prediction models like PredRNN.",
     "imgSrc": "assets/img/occlusion_eval.png",
     "imgAlt": "Occlusion evaluation",
@@ -8,7 +8,7 @@
     "linkText": "View on GitHub"
   },
   {
-    "title": "Math Problem Classification",
+    "title": "Math problem classification",
     "description": "A model to classify the category of a math problem. A fine-tuned version of bert-base-uncased on a subset of the MATH dataset.",
     "imgSrc": "assets/img/math_prob_classification.png",
     "imgAlt": "Math problem classification",
@@ -21,10 +21,13 @@
     "imgSrc": "assets/img/usatt_rating_analyzer_demo.png",
     "imgAlt": "USATT rating analyzer demo",
     "link": "https://lschlessinger-usatt-rating-analyzer.hf.space",
-    "linkText": "View Project"
+    "linkText": "View Project",
+    "imageViewBox": "0 75 565 370",
+    "imageWidth": 1134,
+    "imageHeight": 1248
   },
   {
-    "title": "TraffickCam Android App",
+    "title": "TraffickCam for Android",
     "description": "An app to help combat sex trafficking by allowing users to upload photos of hotel rooms they stay in. Developed for the Media and Machines Lab at Washington University in St. Louis.",
     "imgSrc": "assets/img/traffickcam_main_activity.png",
     "imgAlt": "Traffickcam main activity screenshot",
@@ -40,7 +43,7 @@
     "linkText": "View Project"
   },
   {
-    "title": "Artisanal Chocolate Exploration",
+    "title": "Chocolate ratings visualization",
     "description": "A D3 visualization of artisanal chocolate companies and ratings using expert review data from the Manhattan Chocolate Society.",
     "imgSrc": "assets/img/choco_viz.png",
     "imgAlt": "Artisanal chocolate ratings bar chart",
@@ -48,7 +51,7 @@
     "linkText": "View Project"
   },
   {
-    "title": "Reddit Community Detection",
+    "title": "Reddit community detection",
     "description": "A survey of community detection algorithms on Reddit data, based on the paper 'Detection and Analysis of Subreddit Communities'.",
     "imgSrc": "assets/img/reddit_comm_detection.png",
     "imgAlt": "Reddit communities",
@@ -56,23 +59,24 @@
     "linkText": "View on GitHub"
   },
   {
-    "title": "Algorithms",
+    "title": "Algorithm implementations",
     "description": "A collection of algorithms implemented in various languages, covering topics from machine learning to multi-agent systems, including AdaBoost, neural networks, and the auction algorithm.",
-    "imgSrc": "assets/img/code.jpg",
-    "imgAlt": "Generic image of code",
+    "imgSrc": "assets/img/algorithms.svg",
+    "imgAlt": "Perceptron illustration: weighted inputs combined into an output",
     "link": "https://github.com/lschlessinger1/Algorithms",
-    "linkText": "View on GitHub"
+    "linkText": "View on GitHub",
+    "id": "algorithm-implementations"
   },
   {
-    "title": "Bayesian Stock Price Prediction",
+    "title": "Bayesian stock price prediction",
     "description": "An evaluation of stock price prediction algorithms using analyst ratings.",
-    "imgSrc": "assets/img/stocks.png",
-    "imgAlt": "Generic image of stocks",
+    "imgSrc": "assets/img/stocks-figure.jpg",
+    "imgAlt": "Model accuracy comparison from the stock prediction report",
     "link": "https://github.com/lschlessinger1/Bayesian-Stock-Price-Prediction",
     "linkText": "View on GitHub"
   },
   {
-    "title": "Electoral Map",
+    "title": "U.S. election cartogram",
     "description": "A D3 cartogram of U.S. presidential elections ranging from 1940 to 2016.",
     "imgSrc": "assets/img/electoral_map.png",
     "imgAlt": "Electoral map cartogram",
@@ -80,7 +84,7 @@
     "linkText": "View Project"
   },
   {
-    "title": "Income Prediction",
+    "title": "Income prediction",
     "description": "An evaluation of several machine learning methods applied to the Adult Data Set to predict income.",
     "imgSrc": "assets/img/income.png",
     "imgAlt": "Correlation matrix of adult dataset",
@@ -88,7 +92,7 @@
     "linkText": "View on GitHub"
   },
   {
-    "title": "Global Terrorism Geo-Clustering in Spark",
+    "title": "Global terrorism clustering with Spark",
     "description": "A visualization of k-means clustering on terrorist attack locations using PySpark. Dataset contains 170,000+ terrorist attacks worldwide from 1970 to 2016.",
     "imgSrc": "assets/img/gtd_img.png",
     "imgAlt": "Global Terrorism Database clustering",
@@ -96,7 +100,7 @@
     "linkText": "View on GitHub"
   },
   {
-    "title": "Procedural Terrain Generation",
+    "title": "Procedural terrain generation",
     "description": "A WebGL rendering implementation of a terrain generator based on a 3D-projected terrain map. Uses the Diamond Square Algorithm to procedurally generate terrain.",
     "imgSrc": "assets/img/fractal_terrain_img.png",
     "imgAlt": "Procedurally generated terrain",
@@ -104,11 +108,15 @@
     "linkText": "View Project"
   },
   {
-    "title": "Image Quilting",
+    "title": "Image quilting",
     "description": "An implementation of 'Image Quilting for Texture Synthesis and Transfer' (Elfros & Freeman, 2001).",
     "imgSrc": "assets/img/image_quilting.png",
     "imgAlt": "Image quilting synthesis results",
     "link": "https://github.com/lschlessinger1/image-quilting",
-    "linkText": "View on GitHub"
+    "linkText": "View on GitHub",
+    "imageViewBox": "0 0 520 320",
+    "imageWidth": 1817,
+    "imageHeight": 1416,
+    "imageClass": "result-quilting"
   }
 ]

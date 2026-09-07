@@ -51,101 +51,35 @@ function isValid(item) {
     return Boolean(item && item.title && item.description && item.imgSrc && item.link && item.linkText);
 }
 
-// `eager` can explicitly prioritize a card image when the layout puts it above the fold.
-function renderCard(item, eager) {
-    const webp = webpVariant(item.imgSrc);
-    const loading = eager ? 'eager' : 'lazy';
-    const fetchPriority = eager ? 'high' : 'low';
+function renderMedia(item, featured) {
     const title = escapeHtml(item.title);
-    const alt = escapeHtml(item.imgAlt || 'Image');
-
-    const lines = [
-        '<article class="project-card">',
-        '    <div class="img-container">',
-        '        <picture>'
-    ];
-    if (webp) {
-        lines.push(`            <source srcset="${attrUrl(webp)}" type="image/webp">`);
+    const alt = escapeHtml(item.imgAlt || item.title);
+    const src = attrUrl(item.imgSrc);
+    let visual;
+    if (item.imageViewBox) {
+        visual = `<svg viewBox="${escapeHtml(item.imageViewBox)}" role="img" aria-label="${alt}"><image href="${src}" width="${Number(item.imageWidth)}" height="${Number(item.imageHeight)}"/></svg>`;
+    } else {
+        // The panoramic scroll's existing WebP is too small for a detail crop.
+        const webp = item.imageClass === 'result-scroll' ? null : webpVariant(item.imgSrc);
+        const source = webp && fs.existsSync(path.join(ROOT, webp))
+            ? `<source srcset="${attrUrl(webp)}" type="image/webp">` : '';
+        visual = `<picture>${source}<img src="${src}" alt="${alt}" width="600" height="340" loading="lazy" decoding="async" sizes="${SIZES}"></picture>`;
     }
-    lines.push(
-        `            <img alt="${alt}" src="${attrUrl(item.imgSrc)}" loading="${loading}" width="600" height="300" decoding="async" fetchpriority="${fetchPriority}" sizes="${SIZES}"/>`,
-        '        </picture>',
-        '    </div>',
-        '    <div class="card-body-inner">'
-    );
-    if (item.meta) {
-        lines.push(`        <p class="project-meta">${escapeHtml(item.meta)}</p>`);
-    }
-    lines.push(
-        `        <h3 class="project-title">${title}</h3>`,
-        `        <p class="project-description">${escapeHtml(item.description)}</p>`,
-        '        <div class="btn-container">',
-        `            <a class="btn btn-primary" href="${attrUrl(item.link)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(`${item.linkText}: ${item.title} (opens in a new tab)`)}">${escapeHtml(item.linkText)} <span aria-hidden="true">&nearr;</span></a>`,
-        '        </div>',
-        '    </div>',
-        '</article>'
-    );
-    return lines.join('\n');
+    return `<a class="${featured ? 'featured' : 'collection'}-media result-image ${escapeHtml(item.imageClass || '')}" href="${src}" data-image data-title="${title}" data-alt="${alt}" aria-label="Enlarge image: ${title}">${visual}<span class="enlarge-image" aria-hidden="true">Enlarge</span></a>`;
 }
 
-function renderLegacyProjectCard(item) {
-    const webp = webpVariant(item.imgSrc);
-    const title = escapeHtml(item.title);
-    const alt = escapeHtml(item.imgAlt || 'Image');
-
-    const lines = [
-        '<article class="project-card">',
-        '    <div class="img-container">',
-        '        <picture>'
-    ];
-    if (webp) {
-        lines.push(`            <source srcset="${attrUrl(webp)}" type="image/webp">`);
-    }
-    lines.push(
-        `            <img alt="${alt}" src="${attrUrl(item.imgSrc)}" loading="lazy" width="600" height="300" decoding="async" fetchpriority="low" sizes="${SIZES}"/>`,
-        '        </picture>',
-        '    </div>',
-        '    <div class="card-body-inner">',
-        '        <div class="text-muted project-summary">',
-        `            <h3 class="legacy-project-title">${title}</h3>&nbsp;&nbsp; <span>${escapeHtml(item.description)}</span>`,
-        '        </div>',
-        '        <div class="btn-container">',
-        `            <a class="btn btn-primary" href="${attrUrl(item.link)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(`${item.linkText}: ${item.title} (opens in a new tab)`)}">${escapeHtml(item.linkText)}</a>`,
-        '        </div>',
-        '    </div>',
-        '</article>'
-    );
-    return lines.join('\n');
-}
-
-function renderRows(items, { eagerFirst = false } = {}) {
-    const valid = items.filter(isValid);
-    const rows = [];
-    for (let i = 0; i < valid.length; i += 2) {
-        const cols = [];
-        for (let j = 0; j < 2 && i + j < valid.length; j++) {
-            const offset = j === 1 ? ' offset-md-2' : '';
-            const card = indent(renderCard(valid[i + j], eagerFirst && i + j === 0), 4);
-            cols.push(`<div class="col-md-5${offset} mb-3">\n${card}\n</div>`);
-        }
-        rows.push(`<div class="row card-row">\n${indent(cols.join('\n'), 4)}\n</div>`);
-    }
-    return rows.join('\n');
-}
-
-function renderLegacyProjectRows(items) {
-    const valid = items.filter(isValid);
-    const rows = [];
-    for (let i = 0; i < valid.length; i += 2) {
-        const cols = [];
-        for (let j = 0; j < 2 && i + j < valid.length; j++) {
-            const offset = j === 1 ? ' offset-md-2' : '';
-            const card = indent(renderLegacyProjectCard(valid[i + j]), 4);
-            cols.push(`<div class="col-md-5${offset} mb-3">\n${card}\n</div>`);
-        }
-        rows.push(`<div class="row card-row">\n${indent(cols.join('\n'), 4)}\n</div>`);
-    }
-    return rows.join('\n');
+function renderCard(item, featured = false) {
+    const prefix = featured ? 'featured' : 'collection';
+    const content = featured ? item.featured : item;
+    const id = !featured && item.id ? ` id="${escapeHtml(item.id)}"` : '';
+    return `<article class="${prefix}-card"${id}>
+    ${renderMedia(item, featured)}
+    <div class="${prefix}-body">
+        <h3>${escapeHtml(item.title)}</h3>
+        <p class="${prefix}-description">${escapeHtml(content.description)}</p>
+        <a class="${prefix}-action" href="${attrUrl(item.link)}" target="_blank" rel="noopener noreferrer">${escapeHtml(content.linkText)}<span class="visually-hidden">: ${escapeHtml(item.title)} (opens in a new tab)</span></a>
+    </div>
+</article>`;
 }
 
 // Map a work's link to a schema.org type: papers (.pdf) -> ScholarlyArticle,
@@ -201,13 +135,12 @@ function main() {
         if (skipped > 0) {
             console.warn(`Skipped ${skipped} invalid ${type} entr${skipped === 1 ? 'y' : 'ies'} (missing required fields)`);
         }
-        const rendered = type === 'projects'
-            ? renderLegacyProjectRows(data)
-            : renderRows(data, { eagerFirst: true });
+        const rendered = data.filter(isValid).map(item => renderCard(item)).join('\n');
         html = inject(html, type, rendered, eol);
         allWorks.push(...data);
     }
 
+    html = inject(html, 'selected', allWorks.filter(item => item.featured).map(item => renderCard(item, true)).join('\n'), eol);
     html = inject(html, 'works-jsonld', renderWorksJsonLd(allWorks), eol, 8);
 
     fs.writeFileSync(INDEX, html);
