@@ -59,11 +59,13 @@ function renderMedia(item, featured) {
     if (item.imageViewBox) {
         visual = `<svg viewBox="${escapeHtml(item.imageViewBox)}" role="img" aria-label="${alt}"><image href="${src}" width="${Number(item.imageWidth)}" height="${Number(item.imageHeight)}"/></svg>`;
     } else {
-        // The panoramic scroll's existing WebP is too small for a detail crop.
-        const webp = item.imageClass === 'result-scroll' ? null : webpVariant(item.imgSrc);
+        // Thumbnail and enlargement may use different assets; keep the original
+        // out of image sources so it is fetched only when the visitor opens it.
+        const thumbnail = item.thumbnailSrc || item.imgSrc;
+        const webp = webpVariant(thumbnail);
         const source = webp && fs.existsSync(path.join(ROOT, webp))
             ? `<source srcset="${attrUrl(webp)}" type="image/webp">` : '';
-        visual = `<picture>${source}<img src="${src}" alt="${alt}" width="600" height="340" loading="lazy" decoding="async" sizes="${SIZES}"></picture>`;
+        visual = `<picture>${source}<img src="${attrUrl(thumbnail)}" alt="${alt}" width="600" height="340" loading="lazy" decoding="async" sizes="${SIZES}"></picture>`;
     }
     return `<a class="${featured ? 'featured' : 'collection'}-media result-image ${escapeHtml(item.imageClass || '')}" href="${src}" data-image data-title="${title}" data-alt="${alt}" aria-label="Enlarge image: ${title}">${visual}<span class="enlarge-image" aria-hidden="true">Enlarge</span></a>`;
 }

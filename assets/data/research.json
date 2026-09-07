@@ -11,6 +11,7 @@
     "title": "Vesuvius: ink detection",
     "description": "A method to detect ink in carbonized micro-CT scans of the Herculaneum Papyri. Awarded runner-up in the 2023 Grand Prize.",
     "imgSrc": "assets/img/scroll.png",
+    "thumbnailSrc": "assets/img/scroll-thumbnail.webp",
     "imgAlt": "Scroll ink prediction",
     "link": "https://github.com/lschlessinger1/vesuvius-grand-prize-submission",
     "linkText": "View on GitHub",
