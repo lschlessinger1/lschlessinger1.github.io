@@ -10,12 +10,23 @@ document.addEventListener("DOMContentLoaded", () => {
     // Let native fragment navigation manage focus, history, and reduced motion.
     // Bootstrap only needs help closing an expanded mobile menu after selection.
     const collapseEl = document.getElementById('navbarCollapse');
+    const collapseToggle = document.querySelector('[data-bs-target="#navbarCollapse"]');
+    const closeMenu = () => {
+        window.bootstrap?.Collapse.getOrCreateInstance(collapseEl, { toggle: false }).hide();
+    };
     collapseEl?.addEventListener('click', (event) => {
         if (!(event.target instanceof Element)) return;
         const link = event.target.closest('a[href^="#"]');
-        if (!link || !collapseEl.classList.contains('show')) return;
+        if (!link) return;
 
-        window.bootstrap?.Collapse.getOrCreateInstance(collapseEl, { toggle: false }).hide();
+        if (collapseEl.classList.contains('show')) {
+            closeMenu();
+        } else if (collapseEl.classList.contains('collapsing') &&
+                   collapseToggle?.getAttribute('aria-expanded') === 'true') {
+            // Bootstrap ignores hide() during a transition. Close once opening
+            // finishes; the same listener is deduplicated across repeated taps.
+            collapseEl.addEventListener('shown.bs.collapse', closeMenu, { once: true });
+        }
     });
 
     // Keep aria-current in sync with Bootstrap scrollspy active state
