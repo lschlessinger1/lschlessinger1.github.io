@@ -19,7 +19,7 @@ Personal portfolio website (louschlessinger.com) hosted on GitHub Pages. Static 
 - `npm run lint:html` — HTMLHint only
 - `npm run lint:js` — ESLint only
 - `npm test` — run navigation regression tests with `node:test`
-- `npm run build` — render project/research cards from JSON into `index.html`
+- `npm run build` — render project/research cards from JSON into `index.html` and regenerate `llms.txt`
 - `npm run build:social` — generate the 1200×630 social preview image
 - `npm run validate:social` — validate the committed social preview dimensions and format
 - `node tools/generate-webp.js <image-paths>` — generate WebP variants
@@ -30,6 +30,7 @@ Personal portfolio website (louschlessinger.com) hosted on GitHub Pages. Static 
 - `assets/css/main.css` — custom styles with CSS custom properties
 - `assets/js/main.js` — mobile-menu collapse, scrollspy `aria-current` sync, and copyright year
 - `assets/data/` — `projects.json` and `research.json`, rendered into `index.html` at build time
+- `llms.txt` — generated Markdown summary for AI agents (from the JSON data + ProfilePage/Person JSON-LD); do not edit by hand
 - `assets/img/` — portfolio images (PNG/JPG with WebP variants)
 - `tests/` — `node:test` navigation regression tests
 - `tools/` — content, WebP, social-card generation, and social-card validation scripts
@@ -41,7 +42,7 @@ Personal portfolio website (louschlessinger.com) hosted on GitHub Pages. Static 
 - ESLint 10.x flat config (`eslint.config.cjs`)
 - HTMLHint config (`.htmlhintrc`)
 - PRs target `master` branch
-- CI uses Node.js 24 and runs install, lint, tests, build-sync, and social-preview validation
+- CI uses Node.js 24 and runs install, lint, tests, build-sync (`index.html` + `llms.txt`), and social-preview validation
 
 ## Key Patterns
 
