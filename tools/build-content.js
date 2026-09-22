@@ -6,14 +6,19 @@
  * (<!-- build:<type>:start --> ... <!-- build:<type>:end -->) so the script
  * is idempotent: re-running replaces the content between the markers.
  *
+ * It also writes llms.txt (https://llmstxt.org/), a Markdown summary for
+ * language models built from the same JSON plus the Person JSON-LD in
+ * index.html.
+ *
  * Run `npm run build` after editing assets/data/*.json. CI fails if the
- * committed index.html is out of sync with the JSON (see ci.yml).
+ * committed index.html or llms.txt is out of sync with the JSON (see ci.yml).
  */
 const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
 const INDEX = path.join(ROOT, 'index.html');
+const LLMS = path.join(ROOT, 'llms.txt');
 const SIZES = '(max-width: 768px) 100vw, 600px';
 const SITE = 'https://louschlessinger.com/';
 const PERSON_ID = 'https://louschlessinger.com/#person';
@@ -110,6 +115,56 @@ function renderWorksJsonLd(items) {
     return `<script type="application/ld+json">\n${json}\n</script>`;
 }
 
+const PROFILE_LABELS = {
+    'github.com': 'GitHub',
+    'www.linkedin.com': 'LinkedIn',
+    'huggingface.co': 'Hugging Face',
+    'scholar.google.com': 'Google Scholar',
+    'www.kaggle.com': 'Kaggle',
+    'x.com': 'X'
+};
+
+// The hand-written ProfilePage JSON-LD in <head> (mainEntity: Person) is the
+// source for the bio and profiles.
+function readPerson(html) {
+    const blocks = html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g);
+    for (const [, json] of blocks) {
+        const data = JSON.parse(json);
+        if (data['@type'] === 'ProfilePage' && data.mainEntity?.['@type'] === 'Person') return data.mainEntity;
+    }
+    throw new Error('Missing Person JSON-LD in index.html');
+}
+
+function markdownLink(label, url) {
+    return `[${String(label).replace(/[[\]]/g, '\\$&')}](${encodeURI(String(url))})`;
+}
+
+function renderLlmsTxt(person, sections) {
+    const lines = [
+        `# ${person.name}`,
+        '',
+        `> ${person.description}`,
+        '',
+        `- Also known as: ${person.alternateName.join(', ')}`,
+        `- Role: ${person.jobTitle}`,
+        `- Education: ${person.alumniOf.name}`,
+        '',
+        `This file summarizes ${person.url} for language models and AI agents. ` +
+            'The home page carries the same information as schema.org JSON-LD.'
+    ];
+    for (const { heading, items } of sections) {
+        lines.push('', `## ${heading}`, '');
+        lines.push(...items.filter(isValid).map(item => `- ${markdownLink(item.title, item.link)}: ${item.description}`));
+    }
+    lines.push('', '## Profiles and contact', '');
+    lines.push(`- ${markdownLink('Website', person.url)}`);
+    for (const url of person.sameAs) {
+        lines.push(`- ${markdownLink(PROFILE_LABELS[new URL(url).hostname] || new URL(url).hostname, url)}`);
+    }
+    if (person.email) lines.push(`- ${markdownLink('Email', `mailto:${person.email}`)}`);
+    return lines.join('\n') + '\n';
+}
+
 function inject(html, type, rendered, eol, indentSpaces = 16) {
     const start = `<!-- build:${type}:start -->`;
     const end = `<!-- build:${type}:end -->`;
@@ -127,6 +182,7 @@ function main() {
     let html = fs.readFileSync(INDEX, 'utf8');
     const eol = html.includes('\r\n') ? '\r\n' : '\n';
     const allWorks = [];
+    const llmsSections = [];
 
     for (const { type, json } of SOURCES) {
         const data = JSON.parse(fs.readFileSync(json, 'utf8'));
@@ -140,13 +196,15 @@ function main() {
         const rendered = data.filter(isValid).map(item => renderCard(item)).join('\n');
         html = inject(html, type, rendered, eol);
         allWorks.push(...data);
+        llmsSections.push({ heading: type[0].toUpperCase() + type.slice(1), items: data });
     }
 
     html = inject(html, 'selected', allWorks.filter(item => item.featured).map(item => renderCard(item, true)).join('\n'), eol);
     html = inject(html, 'works-jsonld', renderWorksJsonLd(allWorks), eol, 8);
 
     fs.writeFileSync(INDEX, html);
-    console.log('Rendered cards + structured data into index.html');
+    fs.writeFileSync(LLMS, renderLlmsTxt(readPerson(html), llmsSections));
+    console.log('Rendered cards + structured data into index.html, and llms.txt');
 }
 
 main();

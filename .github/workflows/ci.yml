@@ -34,5 +34,5 @@ jobs:
       - name: Verify generated content and social preview
         run: |
           npm run build
-          git diff --exit-code -- index.html
+          git diff --exit-code -- index.html llms.txt
           npm run validate:social

@@ -1,0 +1,45 @@
+# Louis Schlessinger
+
+> Louis (Lou) Schlessinger is a machine learning engineer and researcher in mathematical reasoning, spatial cognition, computer vision, and neuro-inspired AI, exploring how intelligent systems learn, reason, and build internal representations of the world. Runner-up for the 2023 Vesuvius Challenge Grand Prize.
+
+- Also known as: Lou Schlessinger, Louie Schlessinger
+- Role: Machine Learning Engineer
+- Education: Washington University in St. Louis
+
+This file summarizes https://louschlessinger.com/ for language models and AI agents. The home page carries the same information as schema.org JSON-LD.
+
+## Research
+
+- [Vesuvius: patch aggregation](https://github.com/lschlessinger1/vesuvius-patch-agg-analysis): A report on patch aggregation methods in ink detection for the Vesuvius Challenge. Awarded August, 2024 Progress Prize.
+- [Vesuvius: ink detection](https://github.com/lschlessinger1/vesuvius-grand-prize-submission): A method to detect ink in carbonized micro-CT scans of the Herculaneum Papyri. Awarded runner-up in the 2023 Grand Prize.
+- [Vesuvius: scroll geometry](https://github.com/lschlessinger1/vesuvius-topogeo): A topological and geometric analysis comparing and contrasting scrolls and fragments from the Vesuvius Challenge to better understand domain differences.
+- [Automated model search](https://meta-learn.github.io/2019/papers/metalearn2019-schlessinger.pdf): Presented at the 3rd Workshop on Meta-Learning at NeurIPS 2019, Vancouver, Canada.
+- [Evolutionary kernel search](https://github.com/lschlessinger1/MS-project/blob/master/reports/defense/report/project_report.pdf): Master's Project, Washington University in St. Louis, May 2019.
+
+## Projects
+
+- [Occlusion and video prediction](https://github.com/lschlessinger1/occlusion-eval): Simple experiments for creating occlusions in PyBullet and testing video prediction models like PredRNN.
+- [Math problem classification](https://huggingface.co/lschlessinger/bert-finetuned-math-prob-classification): A model to classify the category of a math problem. A fine-tuned version of bert-base-uncased on a subset of the MATH dataset.
+- [USATT Rating Analyzer](https://lschlessinger-usatt-rating-analyzer.hf.space): A Gradio web app that helps analyze USA Table Tennis (USATT) tournament and league results by providing basic statistics and performance visualizations over time.
+- [TraffickCam for Android](https://play.google.com/store/apps/details?id=com.exchangeinitiative.traffickcam): An app to help combat sex trafficking by allowing users to upload photos of hotel rooms they stay in. Developed for the Media and Machines Lab at Washington University in St. Louis.
+- [SnackHack](https://devpost.com/software/snackhack): A web service and Android app that leverages Twitter's Geolocation API and WashU network data to provide real-time information on restaurant crowd levels on campus.
+- [Chocolate ratings visualization](https://louschlessinger.com/Chocolate-Rating-Visualization/main.html): A D3 visualization of artisanal chocolate companies and ratings using expert review data from the Manhattan Chocolate Society.
+- [Reddit community detection](https://github.com/lschlessinger1/reddit-community-detection): A survey of community detection algorithms on Reddit data, based on the paper 'Detection and Analysis of Subreddit Communities'.
+- [Algorithm implementations](https://github.com/lschlessinger1/Algorithms): A collection of algorithms implemented in various languages, covering topics from machine learning to multi-agent systems, including AdaBoost, neural networks, and the auction algorithm.
+- [Bayesian stock price prediction](https://github.com/lschlessinger1/Bayesian-Stock-Price-Prediction): An evaluation of stock price prediction algorithms using analyst ratings.
+- [U.S. election cartogram](https://louschlessinger.com/electoral-map/main.html): A D3 cartogram of U.S. presidential elections ranging from 1940 to 2016.
+- [Income prediction](https://github.com/lschlessinger1/Income-Prediction): An evaluation of several machine learning methods applied to the Adult Data Set to predict income.
+- [Global terrorism clustering with Spark](https://github.com/lschlessinger1/Global-Terrorism-Database-K-Means): A visualization of k-means clustering on terrorist attack locations using PySpark. Dataset contains 170,000+ terrorist attacks worldwide from 1970 to 2016.
+- [Procedural terrain generation](https://louschlessinger.com/fractalTerrainGeneration/main.html): A WebGL rendering implementation of a terrain generator based on a 3D-projected terrain map. Uses the Diamond Square Algorithm to procedurally generate terrain.
+- [Image quilting](https://github.com/lschlessinger1/image-quilting): An implementation of 'Image Quilting for Texture Synthesis and Transfer' (Elfros & Freeman, 2001).
+
+## Profiles and contact
+
+- [Website](https://louschlessinger.com/)
+- [GitHub](https://github.com/lschlessinger1)
+- [LinkedIn](https://www.linkedin.com/in/louschlessinger/)
+- [Hugging Face](https://huggingface.co/lschlessinger)
+- [Google Scholar](https://scholar.google.com/citations?user=32RdLlAAAAAJ)
+- [Kaggle](https://www.kaggle.com/lschlessinger)
+- [X](https://x.com/louschlessinger)
+- [Email](mailto:louschlessinger96@gmail.com)

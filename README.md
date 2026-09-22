@@ -10,7 +10,7 @@ Key features include:
 
 - Responsive design for various screen sizes.
 - Smooth scrolling for navigation.
-- Build-time rendering of project and research cards from JSON.
+- Build-time rendering of project and research cards from JSON, plus an [`llms.txt`](https://llmstxt.org/) summary for AI agents.
 - Integration with Google Analytics and Microsoft Clarity for usage insights.
 
 ## Tooling
@@ -23,7 +23,7 @@ npm run lint
 npm test
 ```
 
-- `npm run build` — Render project/research cards from JSON into `index.html` (run after editing `assets/data/*.json`).
+- `npm run build` — Render project/research cards from JSON into `index.html` and regenerate `llms.txt` (run after editing `assets/data/*.json`).
 - `npm run build:social` — Generate the 1200×630 social preview image.
 - `npm run validate:social` — Validate the committed social preview dimensions and format.
 - `npm run lint:html` — Validate HTML files with HTMLHint.
@@ -33,7 +33,7 @@ npm test
 ## CI
 
 GitHub Actions workflow (`.github/workflows/ci.yml`) runs on every push to `master` and on pull requests. It uses
-Node.js 24, performs `npm ci`, runs lint and tests, verifies `index.html` is in sync with the JSON data, and validates
+Node.js 24, performs `npm ci`, runs lint and tests, verifies `index.html` and `llms.txt` are in sync with the JSON data, and validates
 the committed social preview.
 
 > **Note:** `npm ci` requires a committed `package-lock.json`. Include lockfile changes in commits when adjusting
