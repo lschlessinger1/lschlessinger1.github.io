@@ -5,7 +5,8 @@
     "imgSrc": "assets/img/occlusion_eval.png",
     "imgAlt": "Occlusion evaluation",
     "link": "https://github.com/lschlessinger1/occlusion-eval",
-    "linkText": "View on GitHub"
+    "linkText": "View on GitHub",
+    "id": "occlusion-video-prediction"
   },
   {
     "title": "Math problem classification",
@@ -13,18 +14,24 @@
     "imgSrc": "assets/img/math_prob_classification.png",
     "imgAlt": "Math problem classification",
     "link": "https://huggingface.co/lschlessinger/bert-finetuned-math-prob-classification",
-    "linkText": "View on Hugging Face"
+    "linkText": "View on Hugging Face",
+    "id": "math-problem-classification"
   },
   {
     "title": "USATT Rating Analyzer",
     "description": "A Gradio web app that helps analyze USA Table Tennis (USATT) tournament and league results by providing basic statistics and performance visualizations over time.",
     "imgSrc": "assets/img/usatt_rating_analyzer_demo.png",
-    "imgAlt": "USATT rating analyzer demo",
+    "imgAlt": "USATT table tennis rating history chart",
     "link": "https://lschlessinger-usatt-rating-analyzer.hf.space",
     "linkText": "View Project",
-    "imageViewBox": "0 75 565 370",
-    "imageWidth": 1134,
-    "imageHeight": 1248
+    "id": "usatt-rating-analyzer",
+    "thumbnailCrop": [
+      0,
+      75,
+      565,
+      370
+    ],
+    "thumbnailSrc": "assets/img/usatt_rating_analyzer_demo-thumbnail.webp"
   },
   {
     "title": "TraffickCam for Android",
@@ -32,7 +39,8 @@
     "imgSrc": "assets/img/traffickcam_main_activity.png",
     "imgAlt": "Traffickcam main activity screenshot",
     "link": "https://play.google.com/store/apps/details?id=com.exchangeinitiative.traffickcam",
-    "linkText": "View on Google Play Store"
+    "linkText": "View on Google Play Store",
+    "id": "traffickcam-android"
   },
   {
     "title": "SnackHack",
@@ -40,7 +48,8 @@
     "imgSrc": "assets/img/snackhack.jpg",
     "imgAlt": "Snackhack dashboard",
     "link": "https://devpost.com/software/snackhack",
-    "linkText": "View Project"
+    "linkText": "View Project",
+    "id": "snackhack"
   },
   {
     "title": "Chocolate ratings visualization",
@@ -48,7 +57,8 @@
     "imgSrc": "assets/img/choco_viz.png",
     "imgAlt": "Artisanal chocolate ratings bar chart",
     "link": "https://louschlessinger.com/Chocolate-Rating-Visualization/main.html",
-    "linkText": "View Project"
+    "linkText": "View Project",
+    "id": "chocolate-ratings"
   },
   {
     "title": "Reddit community detection",
@@ -56,7 +66,8 @@
     "imgSrc": "assets/img/reddit_comm_detection.png",
     "imgAlt": "Reddit communities",
     "link": "https://github.com/lschlessinger1/reddit-community-detection",
-    "linkText": "View on GitHub"
+    "linkText": "View on GitHub",
+    "id": "reddit-community-detection"
   },
   {
     "title": "Algorithm implementations",
@@ -73,7 +84,8 @@
     "imgSrc": "assets/img/stocks-figure.jpg",
     "imgAlt": "Model accuracy comparison from the stock prediction report",
     "link": "https://github.com/lschlessinger1/Bayesian-Stock-Price-Prediction",
-    "linkText": "View on GitHub"
+    "linkText": "View on GitHub",
+    "id": "bayesian-stock-prediction"
   },
   {
     "title": "U.S. election cartogram",
@@ -81,7 +93,8 @@
     "imgSrc": "assets/img/electoral_map.png",
     "imgAlt": "Electoral map cartogram",
     "link": "https://louschlessinger.com/electoral-map/main.html",
-    "linkText": "View Project"
+    "linkText": "View Project",
+    "id": "election-cartogram"
   },
   {
     "title": "Income prediction",
@@ -89,7 +102,8 @@
     "imgSrc": "assets/img/income.png",
     "imgAlt": "Correlation matrix of adult dataset",
     "link": "https://github.com/lschlessinger1/Income-Prediction",
-    "linkText": "View on GitHub"
+    "linkText": "View on GitHub",
+    "id": "income-prediction"
   },
   {
     "title": "Global terrorism clustering with Spark",
@@ -97,7 +111,8 @@
     "imgSrc": "assets/img/gtd_img.png",
     "imgAlt": "Global Terrorism Database clustering",
     "link": "https://github.com/lschlessinger1/Global-Terrorism-Database-K-Means",
-    "linkText": "View on GitHub"
+    "linkText": "View on GitHub",
+    "id": "terrorism-clustering"
   },
   {
     "title": "Procedural terrain generation",
@@ -105,18 +120,24 @@
     "imgSrc": "assets/img/fractal_terrain_img.png",
     "imgAlt": "Procedurally generated terrain",
     "link": "https://louschlessinger.com/fractalTerrainGeneration/main.html",
-    "linkText": "View Project"
+    "linkText": "View Project",
+    "id": "procedural-terrain"
   },
   {
     "title": "Image quilting",
-    "description": "An implementation of 'Image Quilting for Texture Synthesis and Transfer' (Elfros & Freeman, 2001).",
+    "description": "An implementation of 'Image Quilting for Texture Synthesis and Transfer' (Efros & Freeman, 2001).",
     "imgSrc": "assets/img/image_quilting.png",
-    "imgAlt": "Image quilting synthesis results",
+    "imgAlt": "Source texture beside a larger texture synthesized with image quilting",
     "link": "https://github.com/lschlessinger1/image-quilting",
     "linkText": "View on GitHub",
-    "imageViewBox": "0 0 520 320",
-    "imageWidth": 1817,
-    "imageHeight": 1416,
-    "imageClass": "result-quilting"
+    "imageClass": "result-quilting",
+    "id": "image-quilting",
+    "thumbnailCrop": [
+      0,
+      0,
+      520,
+      320
+    ],
+    "thumbnailSrc": "assets/img/image_quilting-thumbnail.webp"
   }
 ]

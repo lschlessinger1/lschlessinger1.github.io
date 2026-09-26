@@ -5,7 +5,9 @@
     "imgSrc": "assets/img/patch-figure.png",
     "imgAlt": "Comparison of ink labels and four patch aggregation methods",
     "link": "https://github.com/lschlessinger1/vesuvius-patch-agg-analysis",
-    "linkText": "View on GitHub"
+    "linkText": "View on GitHub",
+    "id": "vesuvius-patch-aggregation",
+    "schemaType": "Report"
   },
   {
     "title": "Vesuvius: ink detection",
@@ -19,7 +21,8 @@
     "featured": {
       "description": "I led the runner-up team in the 2023 Vesuvius Challenge, detecting ink in micro-CT scans of carbonized papyri.",
       "linkText": "Explore the submission"
-    }
+    },
+    "id": "vesuvius-ink-detection"
   },
   {
     "title": "Vesuvius: scroll geometry",
@@ -27,11 +30,12 @@
     "imgSrc": "assets/img/curvature-preview.png",
     "imgAlt": "Scroll curvature",
     "link": "https://github.com/lschlessinger1/vesuvius-topogeo",
-    "linkText": "View on GitHub"
+    "linkText": "View on GitHub",
+    "id": "vesuvius-scroll-geometry"
   },
   {
     "title": "Automated model search",
-    "description": "Presented at the 3rd Workshop on Meta-Learning at NeurIPS 2019, Vancouver, Canada.",
+    "description": "Combines Bayesian optimization and genetic programming to search compositional kernels for Gaussian processes. Presented at the NeurIPS 2019 Meta-Learning workshop.",
     "imgSrc": "assets/img/kernel_encoding_example.png",
     "imgAlt": "Compositional kernel encoding",
     "link": "https://meta-learn.github.io/2019/papers/metalearn2019-schlessinger.pdf",
@@ -39,14 +43,16 @@
     "featured": {
       "description": "Combining Bayesian optimization and genetic programming to search for machine learning models. Presented at the NeurIPS 2019 Meta-Learning workshop.",
       "linkText": "Read the paper"
-    }
+    },
+    "id": "automated-model-search"
   },
   {
     "title": "Evolutionary kernel search",
-    "description": "Master's Project, Washington University in St. Louis, May 2019.",
+    "description": "Automated kernel search using evolutionary algorithms. Master's project, Washington University in St. Louis, May 2019.",
     "imgSrc": "assets/img/kernel_tree.png",
     "imgAlt": "Kernel tree",
     "link": "https://github.com/lschlessinger1/MS-project/blob/master/reports/defense/report/project_report.pdf",
-    "linkText": "View paper"
+    "linkText": "View paper",
+    "id": "evolutionary-kernel-search"
   }
 ]

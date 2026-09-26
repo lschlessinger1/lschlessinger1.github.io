@@ -23,17 +23,18 @@ npm run lint
 npm test
 ```
 
-- `npm run build` — Render project/research cards from JSON into `index.html` and regenerate `llms.txt` (run after editing `assets/data/*.json`).
+- `npm run build` — Render project/research cards into `index.html` and regenerate `llms.txt` and `sitemap.xml` (run after editing `assets/data/*.json`).
+- `node tools/generate-card-thumbnails.js` — Regenerate the rating-chart and image-quilting crops from their original images and `thumbnailCrop` coordinates.
 - `npm run build:social` — Generate the 1200×630 social preview image.
 - `npm run validate:social` — Validate the committed social preview dimensions and format.
 - `npm run lint:html` — Validate HTML files with HTMLHint.
 - `npm run lint:js` — Lint browser code, tools, tests, and the ESLint config.
-- `npm test` — Run navigation regression tests with Node's built-in test runner.
+- `npm test` — Run navigation and SEO regression tests with Node's built-in test runner.
 
 ## CI
 
 GitHub Actions workflow (`.github/workflows/ci.yml`) runs on every push to `master` and on pull requests. It uses
-Node.js 24, performs `npm ci`, runs lint and tests, verifies `index.html` and `llms.txt` are in sync with the JSON data, and validates
+Node.js 24, performs `npm ci`, runs lint and tests, verifies `index.html`, `llms.txt`, and `sitemap.xml` are in sync with the JSON data, and validates
 the committed social preview.
 
 > **Note:** `npm ci` requires a committed `package-lock.json`. Include lockfile changes in commits when adjusting
