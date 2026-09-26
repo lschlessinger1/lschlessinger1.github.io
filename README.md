@@ -39,14 +39,3 @@ the committed social preview.
 
 > **Note:** `npm ci` requires a committed `package-lock.json`. Include lockfile changes in commits when adjusting
 > dependencies so the workflow can run successfully.
-
-## Search metadata
-
-Keep each work's `id` stable: it identifies the card's shareable anchor and structured-data entity.
-Titles and descriptions must describe the visible work accurately. Use `schemaType` only when the
-default link-based type is inappropriate (for example, a report stored on GitHub).
-
-The sitemap includes the homepage and same-domain project demo URLs from the JSON data. It omits
-`lastmod` because the demos are maintained in separate repositories and this build cannot reliably
-date their content changes. Update the project URL when moving a demo; do not list section fragments
-as separate pages. See [the SEO audit](docs/seo-audit-2026-09-26.md) for findings and follow-up work.
