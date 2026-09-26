@@ -2,7 +2,7 @@
 
 > Louis (Lou) Schlessinger is a machine learning engineer and researcher in mathematical reasoning, spatial cognition, computer vision, and neuro-inspired AI, exploring how intelligent systems learn, reason, and build internal representations of the world. Runner-up for the 2023 Vesuvius Challenge Grand Prize.
 
-- Also known as: Lou Schlessinger, Louie Schlessinger
+- Also known as: Lou Schlessinger, Louie Schlessinger, Louis (Lou) Schlessinger
 - Role: Machine Learning Engineer
 - Education: Washington University in St. Louis
 
