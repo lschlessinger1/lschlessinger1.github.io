@@ -11,7 +11,7 @@
  * index.html.
  *
  * Run `npm run build` after editing assets/data/*.json. CI fails if the
- * committed index.html or llms.txt is out of sync with the JSON (see ci.yml).
+ * committed index.html, llms.txt, or sitemap.xml is out of sync (see ci.yml).
  */
 const fs = require('fs');
 const path = require('path');
@@ -19,6 +19,7 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const INDEX = path.join(ROOT, 'index.html');
 const LLMS = path.join(ROOT, 'llms.txt');
+const SITEMAP = path.join(ROOT, 'sitemap.xml');
 const SIZES = '(max-width: 768px) 100vw, 600px';
 const SITE = 'https://louschlessinger.com/';
 const PERSON_ID = 'https://louschlessinger.com/#person';
@@ -60,18 +61,15 @@ function renderMedia(item, featured) {
     const title = escapeHtml(item.title);
     const alt = escapeHtml(item.imgAlt || item.title);
     const src = attrUrl(item.imgSrc);
-    let visual;
-    if (item.imageViewBox) {
-        visual = `<svg viewBox="${escapeHtml(item.imageViewBox)}" role="img" aria-label="${alt}"><image href="${src}" width="${Number(item.imageWidth)}" height="${Number(item.imageHeight)}"/></svg>`;
-    } else {
-        // Thumbnail and enlargement may use different assets; keep the original
-        // out of image sources so it is fetched only when the visitor opens it.
-        const thumbnail = item.thumbnailSrc || item.imgSrc;
-        const webp = webpVariant(thumbnail);
-        const source = webp && fs.existsSync(path.join(ROOT, webp))
-            ? `<source srcset="${attrUrl(webp)}" type="image/webp">` : '';
-        visual = `<picture>${source}<img src="${attrUrl(thumbnail)}" alt="${alt}" width="600" height="340" loading="lazy" decoding="async" sizes="${SIZES}"></picture>`;
-    }
+    // SVG <image> crops fetched full originals immediately. Real thumbnails
+    // support native lazy loading and leave the original for enlargement only.
+    if (item.thumbnailCrop && !item.thumbnailSrc) throw new Error(`Missing thumbnail for ${item.title}`);
+    const thumbnail = item.thumbnailSrc || item.imgSrc;
+    if (!fs.existsSync(path.join(ROOT, thumbnail))) throw new Error(`Missing image: ${thumbnail}`);
+    const webp = webpVariant(thumbnail);
+    const source = webp && fs.existsSync(path.join(ROOT, webp))
+        ? `<source srcset="${attrUrl(webp)}" type="image/webp">` : '';
+    const visual = `<picture>${source}<img src="${attrUrl(thumbnail)}" alt="${alt}" width="600" height="340" loading="lazy" decoding="async" sizes="${SIZES}"></picture>`;
     return `<a class="${featured ? 'featured' : 'collection'}-media result-image ${escapeHtml(item.imageClass || '')}" href="${src}" data-image data-title="${title}" data-alt="${alt}" aria-label="Enlarge image: ${title}">${visual}<span class="enlarge-image" aria-hidden="true">Enlarge</span></a>`;
 }
 
@@ -102,7 +100,8 @@ function workType(link) {
 // JSON-LD @graph of every work, each authored by the Person entity (#person).
 function renderWorksJsonLd(items) {
     const graph = items.filter(isValid).map(item => ({
-        '@type': workType(item.link),
+        '@type': item.schemaType || workType(item.link),
+        '@id': SITE + '#' + item.id,
         name: item.title,
         description: item.description,
         url: item.link,
@@ -113,6 +112,23 @@ function renderWorksJsonLd(items) {
     const json = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }, null, 4)
         .replace(/</g, '\\u003c');
     return `<script type="application/ld+json">\n${json}\n</script>`;
+}
+
+// Include the live project demos hosted on this domain as well as the home
+// page. Do not invent modification dates for separately maintained demos.
+function renderSitemap(items) {
+    const urls = new Set([SITE]);
+    for (const item of items.filter(isValid)) {
+        const url = new URL(item.link);
+        if (url.origin === new URL(SITE).origin) {
+            url.hash = '';
+            urls.add(url.href);
+        }
+    }
+    return '<?xml version="1.0" encoding="UTF-8"?>\n' +
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
+        [...urls].map(url => `  <url><loc>${escapeHtml(url)}</loc></url>`).join('\n') +
+        '\n</urlset>\n';
 }
 
 const PROFILE_LABELS = {
@@ -199,12 +215,17 @@ function main() {
         llmsSections.push({ heading: type[0].toUpperCase() + type.slice(1), items: data });
     }
 
+    const ids = allWorks.filter(isValid).map(item => item.id);
+    if (ids.some(id => !/^[a-z][a-z0-9-]*$/.test(id || '')) || new Set(ids).size !== ids.length) {
+        throw new Error('Each work needs a unique, stable, lowercase id');
+    }
     html = inject(html, 'selected', allWorks.filter(item => item.featured).map(item => renderCard(item, true)).join('\n'), eol);
     html = inject(html, 'works-jsonld', renderWorksJsonLd(allWorks), eol, 8);
 
     fs.writeFileSync(INDEX, html);
     fs.writeFileSync(LLMS, renderLlmsTxt(readPerson(html), llmsSections));
-    console.log('Rendered cards + structured data into index.html, and llms.txt');
+    fs.writeFileSync(SITEMAP, renderSitemap(allWorks));
+    console.log('Rendered cards, structured data, llms.txt, and sitemap.xml');
 }
 
 main();

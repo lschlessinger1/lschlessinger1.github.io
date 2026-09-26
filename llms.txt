@@ -13,8 +13,8 @@ This file summarizes https://louschlessinger.com/ for language models and AI age
 - [Vesuvius: patch aggregation](https://github.com/lschlessinger1/vesuvius-patch-agg-analysis): A report on patch aggregation methods in ink detection for the Vesuvius Challenge. Awarded August, 2024 Progress Prize.
 - [Vesuvius: ink detection](https://github.com/lschlessinger1/vesuvius-grand-prize-submission): A method to detect ink in carbonized micro-CT scans of the Herculaneum Papyri. Awarded runner-up in the 2023 Grand Prize.
 - [Vesuvius: scroll geometry](https://github.com/lschlessinger1/vesuvius-topogeo): A topological and geometric analysis comparing and contrasting scrolls and fragments from the Vesuvius Challenge to better understand domain differences.
-- [Automated model search](https://meta-learn.github.io/2019/papers/metalearn2019-schlessinger.pdf): Presented at the 3rd Workshop on Meta-Learning at NeurIPS 2019, Vancouver, Canada.
-- [Evolutionary kernel search](https://github.com/lschlessinger1/MS-project/blob/master/reports/defense/report/project_report.pdf): Master's Project, Washington University in St. Louis, May 2019.
+- [Automated model search](https://meta-learn.github.io/2019/papers/metalearn2019-schlessinger.pdf): Combines Bayesian optimization and genetic programming to search compositional kernels for Gaussian processes. Presented at the NeurIPS 2019 Meta-Learning workshop.
+- [Evolutionary kernel search](https://github.com/lschlessinger1/MS-project/blob/master/reports/defense/report/project_report.pdf): Automated kernel search using evolutionary algorithms. Master's project, Washington University in St. Louis, May 2019.
 
 ## Projects
 
@@ -31,7 +31,7 @@ This file summarizes https://louschlessinger.com/ for language models and AI age
 - [Income prediction](https://github.com/lschlessinger1/Income-Prediction): An evaluation of several machine learning methods applied to the Adult Data Set to predict income.
 - [Global terrorism clustering with Spark](https://github.com/lschlessinger1/Global-Terrorism-Database-K-Means): A visualization of k-means clustering on terrorist attack locations using PySpark. Dataset contains 170,000+ terrorist attacks worldwide from 1970 to 2016.
 - [Procedural terrain generation](https://louschlessinger.com/fractalTerrainGeneration/main.html): A WebGL rendering implementation of a terrain generator based on a 3D-projected terrain map. Uses the Diamond Square Algorithm to procedurally generate terrain.
-- [Image quilting](https://github.com/lschlessinger1/image-quilting): An implementation of 'Image Quilting for Texture Synthesis and Transfer' (Elfros & Freeman, 2001).
+- [Image quilting](https://github.com/lschlessinger1/image-quilting): An implementation of 'Image Quilting for Texture Synthesis and Transfer' (Efros & Freeman, 2001).
 
 ## Profiles and contact
 

@@ -86,7 +86,7 @@ h2 {
     letter-spacing: -0.035em;
 }
 
-:where(main[id], section[id]) {
+:where(main[id], section[id], article[id]) {
     scroll-margin-top: calc(var(--nav-height) + 0.75rem);
 }
 
