@@ -5,6 +5,7 @@
   "description": "Personal portfolio static site.",
   "scripts": {
     "build": "node tools/build-content.js",
+    "build:icons": "node tools/generate-favicons.js",
     "build:social": "node tools/generate-social-card.js",
     "validate:social": "node tools/validate-social-card.js",
     "lint:html": "htmlhint \"**/*.html\" --ignore node_modules",
